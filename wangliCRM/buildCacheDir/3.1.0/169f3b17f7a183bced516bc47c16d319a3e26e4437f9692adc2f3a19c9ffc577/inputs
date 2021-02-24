@@ -1,0 +1,10 @@
+COMMAND=PREDEX_LIBRARY_TO_DEX_ARCHIVE
+FILE.path=/Users/soul/GitSpace/AndroidStudioProjects/wangli-crm-android/wangliCRM/jiuyiApp/build/intermediates/transforms/desugar/debug/50.jar
+FILE.hash=36da0b8c022ab627d8ba84ceff9d45d58f8afc2e700f8761ea4e75651bf41295
+DX_VERSION=1.16
+JUMBO_MODE=true
+OPTIMIZE=true
+DEXER_TOOL=D8
+CACHE_KEY_VERSION=4
+MIN_SDK_VERSION=17
+IS_DEBUGGABLE=true
