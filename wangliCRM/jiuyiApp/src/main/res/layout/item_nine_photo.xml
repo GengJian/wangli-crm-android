@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<customer.view.SquareLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/iv_item_nine_photo_photo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <ImageView
+        android:id="@+id/iv_videoopen"
+        android:layout_width="15dp"
+        android:layout_height="20dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:background="@drawable/videoopen"
+        android:scaleType="fitXY"></ImageView>
+
+
+</customer.view.SquareLayout>

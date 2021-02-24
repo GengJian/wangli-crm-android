@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:background="@drawable/jiuyi_dialog_bg"
+    android:gravity="center">
+
+    <RelativeLayout
+        android:id="@+id/dialog_title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:id="@+id/dialog_title_textview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:lines="1"
+            android:textColor="@color/tzt_v23_dialog_title_text_color"
+            android:text="新版本升级"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:background="@color/tzt_v23_dialog_split_color"
+            android:maxHeight="1dip" />
+    </RelativeLayout>
+
+    <com.control.widget.JiuyiMaxHeightScrollView
+        android:id="@+id/dialog_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialog_title_layout"
+        android:layout_marginBottom="10dip"
+        android:layout_marginTop="10dip"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:scrollbars="none">
+
+        <TextView
+            android:id="@+id/dialog_content_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/tzt_v23_dialog_content_text_color"
+            android:textSize="15sp" />
+    </com.control.widget.JiuyiMaxHeightScrollView>
+
+    <LinearLayout
+        android:id="@+id/dialog_toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialog_scrollview"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="@color/tzt_v23_dialog_split_color"
+            android:maxHeight="1dip" />
+        <TextView
+            android:id="@+id/tv_immediately"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/jiuyi_blue"
+            android:text="立即升级" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="@color/tzt_v23_dialog_split_color"
+            android:maxHeight="1dip" />
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="暂不升级" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="@color/tzt_v23_dialog_split_color"
+            android:maxHeight="1dip" />
+
+
+        <TextView
+            android:id="@+id/tv_noalert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="3日内不再提醒" />
+
+
+    </LinearLayout>
+</RelativeLayout>

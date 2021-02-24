@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+     xmlns:android="http://schemas.android.com/apk/res/android"
+       android:layout_width="match_parent"
+   	 android:layout_height="200dp"
+   	  android:background="#00000000"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@drawable/sp_putforward"
+    android:layout_centerInParent="true"
+    android:orientation="vertical" >
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+
+        >
+        <TextView
+            android:id="@+id/tv_dialog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_centerInParent="true"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            />
+        <ImageView 
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#EFEFEF"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentBottom="true"
+            />
+    </RelativeLayout>
+	<TextView 
+	    android:id="@+id/tv_content"
+	    android:layout_width="match_parent"
+	    android:layout_height="0dp"
+	    android:layout_weight="6"
+	    android:layout_marginLeft="50dp"
+	    android:layout_marginRight="50dp"
+	    android:textColor="#000000"
+	    android:text=""
+	    android:gravity="center"
+	    />
+	
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_weight="4"
+	    android:layout_height="0dp"
+	    android:orientation="horizontal"
+		android:paddingLeft="30dp"
+		android:paddingRight="30dp"
+	    android:paddingBottom="20dp"
+	    >
+	    <TextView 
+	        android:id="@+id/tv_left"
+	        android:text="重新登录"
+	        android:gravity="center"
+	        android:layout_width="0dp"
+	        android:layout_weight="1"
+	        android:layout_height="match_parent"
+	        android:background="#FE7973"
+	        android:textColor="#ffffff"
+	        />
+	    <ImageView 
+	        android:layout_width="5dp"
+	        android:layout_height="match_parent"
+	        />
+	    <TextView 
+	        android:id="@+id/tv_right"
+	        android:text="我知道了"
+	        android:gravity="center"
+	        android:layout_width="0dp"
+	        android:layout_weight="1"
+	        android:layout_height="match_parent"
+	        android:background="#E6E7E2"
+	        android:textColor="#000000"
+	        />
+	</LinearLayout>
+</LinearLayout>
+</RelativeLayout>

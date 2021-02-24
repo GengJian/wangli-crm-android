@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">tztIflytekSDK</string>
+    <!-- 语音云官网申请的appid -->
+<!--    <string name="app_id">580dc824</string>-->
+    <string name="app_id">5b7e69da</string>
+</resources>

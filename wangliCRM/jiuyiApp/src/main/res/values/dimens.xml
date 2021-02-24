@@ -1,0 +1,130 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="def_height">50dp</dimen>
+
+    <dimen name="dp_4">4dp</dimen>
+    <dimen name="dp_10">10dp</dimen>
+    <dimen name="dp_40">40dp</dimen>
+    <dimen name="dp_72">72dp</dimen>
+
+    <dimen name="sp_12">12sp</dimen>
+    <dimen name="sp_14">14sp</dimen>
+    <dimen name="sp_16">16sp</dimen>
+    <!--h1-->
+    <dimen name="h1">9sp</dimen>
+    <!--h2-->
+    <dimen name="h2">10sp</dimen>
+    <!--h3-->
+    <dimen name="h3">11sp</dimen>
+    <!--h4-->
+    <dimen name="h4">12sp</dimen>
+    <!--h5-->
+    <dimen name="h5">13sp</dimen>
+    <!--h6-->
+    <dimen name="h6">14sp</dimen>
+    <!--h7-->
+    <dimen name="h7">15sp</dimen>
+    <!--h8-->
+    <dimen name="h8">16sp</dimen>
+    <!--h9-->
+    <dimen name="h9">17sp</dimen>
+    <!--h10-->
+    <dimen name="h10">18sp</dimen>
+    <!--h11-->
+    <dimen name="h11">19sp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="item_height">60dp</dimen>
+    <dimen name="item_margin">10dp</dimen>
+    <dimen name="item_width">67dp</dimen>
+
+
+    <!-- font sizes -->
+    <dimen name="font_larger">22sp</dimen>
+    <dimen name="font_large">18sp</dimen>
+    <dimen name="font_normal">15sp</dimen>
+    <dimen name="font_small">12sp</dimen>
+
+    <dimen name="margin_larger">24dp</dimen>
+    <dimen name="margin_large">16dp</dimen>
+    <dimen name="margin_normal">8dp</dimen>
+    <dimen name="margin_small">4dp</dimen>
+    <dimen name="linlayout_top">12dp</dimen>
+    <dimen name="linlayout_left">10dp</dimen>
+    <dimen name="linlayout_right">13dp</dimen>
+    <dimen name="btn_margin">10dp</dimen>
+    <dimen name="btn_left">13dp</dimen>
+
+    <!--控件尺寸  -->
+    <dimen name="common_topbar_height">44dp</dimen>
+    <dimen name="common_topbar_height40">40dp</dimen>
+    <dimen name="common_topbar_height50">50dp</dimen>
+    <dimen name="main_topbar_height48">48dp</dimen>
+    <dimen name="common_edittext_height">40dp</dimen>
+    <dimen name="common_topbar_width">50dp</dimen>
+    <dimen name="common_textSize_default10">10sp</dimen>
+    <dimen name="common_textSize_default11">11sp</dimen>
+    <dimen name="common_textSize_default12">12sp</dimen>
+    <dimen name="common_textSize_default13">13sp</dimen>
+    <dimen name="common_textSize_default14">14sp</dimen>
+    <dimen name="common_textSize_default15">15sp</dimen>
+    <dimen name="common_textSize_default16">16sp</dimen>
+    <dimen name="common_textSize_default17">17sp</dimen>
+    <dimen name="common_textSize_default18">18sp</dimen>
+    <dimen name="common_textSize_default20">20sp</dimen>
+    <dimen name="common_textSize_default22">22sp</dimen>
+    <dimen name="common_topbar_titleSize">22sp</dimen>
+    <dimen name="common_textSize_default24">24sp</dimen>
+    <dimen name="common_textSize_default26">26sp</dimen>
+    <dimen name="common_textSize_default28">28sp</dimen>
+    <!-- 边距-->
+    <dimen name="common_margin10">10dp</dimen>
+
+
+    <dimen name="jiuyi300dp" >300dp</dimen>
+    <dimen name="jiuyi200dp" >200dp</dimen>
+    <dimen name="jiuyi160dp" >160dp</dimen>
+    <dimen name="jiuyi140dp" >140dp</dimen>
+    <dimen name="jiuyi120dp" >120dp</dimen>
+    <dimen name="jiuyi100dp" >100dp</dimen>
+    <dimen name="jiuyi90dp" >90dp</dimen>
+    <dimen name="jiuyi80dp" >80dp</dimen>
+    <dimen name="jiuyi70dp" >70dp</dimen>
+    <dimen name="jiuyi60dp" >60dp</dimen>
+    <dimen name="jiuyi50dp" >50dp</dimen>
+    <dimen name="jiuyi40dp" >40dp</dimen>
+    <dimen name="jiuyi30dp" >30dp</dimen>
+    <dimen name="jiuyi29dp" >29dp</dimen>
+    <dimen name="jiuyi28dp" >28dp</dimen>
+    <dimen name="jiuyi27dp" >27dp</dimen>
+    <dimen name="jiuyi26dp" >26dp</dimen>
+    <dimen name="jiuyi25dp" >25dp</dimen>
+    <dimen name="jiuyi24dp" >24dp</dimen>
+    <dimen name="jiuyi23dp" >23dp</dimen>
+    <dimen name="jiuyi22dp" >22dp</dimen>
+    <dimen name="jiuyi21dp" >21dp</dimen>
+    <dimen name="jiuyi20dp" >20dp</dimen>
+    <dimen name="jiuyi19dp" >19dp</dimen>
+    <dimen name="jiuyi18dp" >18dp</dimen>
+    <dimen name="jiuyi17dp" >17dp</dimen>
+    <dimen name="jiuyi16dp" >16dp</dimen>
+    <dimen name="jiuyi15dp" >15dp</dimen>
+    <dimen name="jiuyi14dp" >14dp</dimen>
+    <dimen name="jiuyi13dp" >13dp</dimen>
+    <dimen name="jiuyi12dp" >12dp</dimen>
+    <dimen name="jiuyi11dp" >11dp</dimen>
+    <dimen name="jiuyi10dp" >10dp</dimen>
+    <dimen name="jiuyi9dp" >9dp</dimen>
+    <dimen name="jiuyi8dp" >8dp</dimen>
+    <dimen name="jiuyi7dp" >7dp</dimen>
+    <dimen name="jiuyi6dp" >6dp</dimen>
+    <dimen name="jiuyi5dp" >5dp</dimen>
+    <dimen name="jiuyi4dp" >4dp</dimen>
+    <dimen name="jiuyi3dp" >3dp</dimen>
+    <dimen name="jiuyi2dp" >2dp</dimen>
+    <dimen name="jiuyi1dp" >1dp</dimen>
+    <dimen name="jiuyi0dp" >0dp</dimen>
+    <dimen name="ui_10_dip">10dp</dimen>
+</resources>

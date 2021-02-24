@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/jiuyi_white_color"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    >
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/jiuyi_white_color"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="center"
+                android:src="@drawable/consultation_def" />
+
+            <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content"
+            android:text="目前资金紧张，暂无法付款"
+            android:textColor="@color/jiuyi_title_color" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_content2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:background="@color/jiuyi_white_color"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_askman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_gravity="left|center_horizontal"
+            android:gravity="center"
+            android:text="咨询人:张三"
+            android:textColor="@color/jiuyi_info_color"
+            android:textSize="13sp"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:background="@color/jiuyi_white_color">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="2dp"
+                android:text="2018-11-11"
+                android:textColor="@color/jiuyi_info_color" />
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_repay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@color/background">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:gravity="center_vertical"
+                android:layout_weight="1"
+                >
+                <TextView
+                    android:id="@+id/tv_man"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="FR/林可"
+                    android:textColor="@color/jiuyi_link_color"
+                    android:textSize="13sp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginLeft="3dp"
+                    android:padding="2dp"
+                    android:text="回复咨询 "
+                    android:textColor="@color/jiuyi_info_color" />
+
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="1dp"
+                android:gravity="center"
+                android:padding="2dp"
+                android:text="可以扫描产品包装箱条码查看"
+                android:textColor="@color/jiuyi_title_color" />
+        </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_below="@id/ll_content"
+        android:layout_marginLeft="40dp"
+        android:layout_height="0.1dp"
+        android:layout_weight="1"
+        android:background="@color/jiuyi_backgroud_color" />
+</RelativeLayout>

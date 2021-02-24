@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--主界面-->
+<com.control.widget.relativeLayout.JiuyiRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/jiuyi_relative_layout"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 中间主体部分Fragment -->
+    <fragment
+        android:name="com.info.fragment.tztHqLoginFragment"
+        android:id="@+id/tzt_hqlogin_fragment"
+        android:layout_marginTop="@dimen/jiuyi_titlebar_height"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </fragment>
+
+    <!-- 标题栏后于主体布局add到tztRelativeLayoutBase -->
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/jiuyi_titlebar_height"
+        android:id="@+id/jiuyi_titlebar_layout"
+        layout="@layout/jiuyi_titlebar_comm_layout"/>
+
+
+    <!--&lt;!&ndash; 进度条 &ndash;&gt;-->
+    <include layout="@layout/jiuyi_include_processbarview"/>
+</com.control.widget.relativeLayout.JiuyiRelativeLayout>
+

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--主界面-->
+<com.control.widget.relativeLayout.JiuyiRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/jiuyi_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tzt_whitepage_bgcolor"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/jiuyi_titlebar_height"
+        android:layout_alignParentTop="true"
+        android:id="@+id/jiuyi_titlebar_layout"
+        layout="@layout/jiuyi_titlebar_completer_layout"/>
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_lockpassword"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawablePadding="10dp"
+            android:drawableRight="@mipmap/et_forword"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:text="APP锁屏密码"
+            android:textColor="@color/jiuyi_title_color" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:background="@color/line_bg" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/tv_changepwd"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:drawablePadding="10dp"
+                android:drawableRight="@mipmap/et_forword"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:text="修改登录密码"
+                android:textColor="@color/jiuyi_title_color" />
+
+
+            <!--<TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/jiuyi_title_color"
+                android:text="修改登录密码" />
+
+            <TextView
+                android:id="@+id/tv_changepwd"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:drawablePadding="10dp"
+                android:drawableRight="@mipmap/et_forword"
+                android:gravity="center_vertical|right"
+                android:padding="10dp"
+                android:text=""
+                android:textColor="@color/jiuyi_title_color" />-->
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:background="@color/line_bg" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/jiuyi_title_color"
+                android:text="清除缓存" />
+
+            <TextView
+                android:id="@+id/tv_clearcache"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:drawablePadding="10dp"
+                android:drawableRight="@mipmap/et_forword"
+                android:gravity="center_vertical|right"
+                android:padding="10dp"
+                android:text="10M"
+                android:textColor="@color/jiuyi_title_color" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:background="@color/line_bg" />
+        <TextView
+            android:id="@+id/tv_aboutus"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawablePadding="10dp"
+            android:drawableRight="@mipmap/et_forword"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:text="关于我们"
+            android:textColor="@color/jiuyi_title_color" />
+
+
+        </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dip"
+        android:layout_below="@+id/ll_content"
+        android:layout_marginTop="30dp">
+
+        <com.control.widget.JiuyiButton
+            android:id="@+id/btn_relogin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/jiuyi_mine_reloginbutton_bg"
+            android:gravity="center"
+            android:text="注销"
+            android:textColor="@color/tzt_white"
+            android:textSize="18sp" />
+    </LinearLayout>
+</com.control.widget.relativeLayout.JiuyiRelativeLayout>

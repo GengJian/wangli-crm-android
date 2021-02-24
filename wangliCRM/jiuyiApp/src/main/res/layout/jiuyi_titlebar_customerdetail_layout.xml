@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 独立Activity通用标题栏布局 -->
+<!-- 整个布局分为返回按钮、文字、右侧搜索按钮 -->
+<com.jiuyi.layout.titlebar.JiuyiCustomerTitleBar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/jiuyi_titlebar_layout"
+    android:layout_width="match_parent"
+    android:layout_height="45dip"
+    android:layout_gravity="center_vertical|top"
+    android:background="@color/title_background_color"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+    <com.control.widget.magicindicator.MagicIndicator
+        android:id="@+id/magic_indicator1"
+        android:layout_width="270dp"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_height="45dp"
+        />
+
+    <ImageView
+        android:id="@+id/jiuyi_titlebar_navbarbackbg"
+        android:layout_width="60dip"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/jiuyi_navbarbackbg" />
+    <ImageView
+        android:id="@+id/jiuyi_titlebar_more"
+        android:layout_width="60dip"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/jiuyi_more"
+        />
+</com.jiuyi.layout.titlebar.JiuyiCustomerTitleBar>

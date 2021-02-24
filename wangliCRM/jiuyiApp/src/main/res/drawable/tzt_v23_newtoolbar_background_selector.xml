@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+	<item android:state_pressed="false" >
+        <layer-list >
+            <item android:bottom="@dimen/tzt_splitline_height" >
+                <shape android:shape="rectangle" >
+           			 <solid android:color="@color/tzt_v23_toolbar_background_color"/>
+       			 </shape>
+            </item>
+            <item >
+                <shape android:shape="rectangle">
+                    <stroke android:width="@dimen/tzt_splitline_height" android:color="@color/tzt_v23_toolbar_background_color"/>
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</selector>

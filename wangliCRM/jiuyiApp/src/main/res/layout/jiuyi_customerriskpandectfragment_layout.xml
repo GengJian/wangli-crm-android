@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tzt_whitepage_bgcolor"
+    >
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        app:srlHeaderMaxDragRate="2.5"
+        app:srlPrimaryColor="@android:color/transparent"
+        app:srlAccentColor="@android:color/transparent"
+        app:srlEnableLoadmore="false"
+        >
+        <!--srlHeaderMaxDragRate=2.5时候WaterDropHeader的下拉效果最好-->
+        <com.scwang.smartrefresh.header.WaterDropHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_riskwarn"
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="bottom|right" >
+
+        <ImageButton
+            android:id="@+id/ib_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/transparent"
+            android:src="@drawable/details_page_add" />
+    </LinearLayout>
+    <!-- 进度条 -->
+    <include layout="@layout/jiuyi_include_processbarview"/>
+</RelativeLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--主界面-->
+<com.control.widget.relativeLayout.JiuyiRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/tools"
+    android:id="@+id/jiuyi_relative_layout"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+
+    <ImageView
+        android:id="@+id/item_image"
+        android:scaleType="fitCenter"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        >
+    </ImageView>
+
+
+<!--    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/item_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="6dp"
+        android:scaleType="fitCenter"
+         />-->
+
+<!--    <com.jiuyi.tools.CircleImageView
+        android:id="@+id/item_image"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:padding="6dp"
+        android:scaleType="centerCrop"
+        android:layout_centerInParent="true"
+        app:civ_border_color="@color/white"
+        app:civ_border_width="2dp" />-->
+    <!--<com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/item_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        android:adjustViewBounds="true"
+        android:padding="5dp"
+        android:scaleType="centerCrop"
+        fresco:roundAsCircle="true"
+        />-->
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/jiuyi_titlebar_height"
+        android:layout_alignParentTop="true"
+        android:id="@+id/jiuyi_titlebar_layout"
+        layout="@layout/jiuyi_titlebar_comm_layout"/>
+
+
+    <include layout="@layout/jiuyi_include_processbarview" />
+</com.control.widget.relativeLayout.JiuyiRelativeLayout>
+

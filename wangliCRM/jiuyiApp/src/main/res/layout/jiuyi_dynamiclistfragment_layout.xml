@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f0f0f0">
+
+    <View
+        android:id="@+id/view_1"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentTop="true"
+        android:background="#E2E2E2" />
+
+    <RelativeLayout
+        android:id="@+id/rv_content"
+        android:layout_below="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            app:srlAccentColor="@android:color/transparent"
+            app:srlEnableLoadmore="true"
+            app:srlHeaderMaxDragRate="2.5"
+            app:srlPrimaryColor="@android:color/darker_gray">
+            <!--srlHeaderMaxDragRate=2.5时候WaterDropHeader的下拉效果最好-->
+            <com.scwang.smartrefresh.header.WaterDropHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_orderlist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="bottom|right" >
+
+        <ImageButton
+            android:id="@+id/ib_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:background="@color/transparent"
+            android:src="@drawable/news_add" />
+    </LinearLayout>
+
+</RelativeLayout>

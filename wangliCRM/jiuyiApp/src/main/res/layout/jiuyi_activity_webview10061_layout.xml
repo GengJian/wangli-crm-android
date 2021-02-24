@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--主界面-->
+<com.control.widget.relativeLayout.JiuyiRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/jiuyi_relative_layout"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- 标题栏后于主体布局add到tztRelativeLayoutBase -->
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/jiuyi_titlebar_height"
+        android:layout_alignParentTop="true"
+        android:visibility="gone"
+        android:id="@+id/jiuyi_titlebar_layout"
+        layout="@layout/jiuyi_titlebar_comm_layout"/>
+    <fragment
+        android:name="com.jiuyi.fragment.JiuyiWebViewFragment"
+        android:id="@+id/webview_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        >
+    </fragment>
+    <!-- 进度条 -->
+    <include layout="@layout/jiuyi_include_processbarview"/>
+</com.control.widget.relativeLayout.JiuyiRelativeLayout>

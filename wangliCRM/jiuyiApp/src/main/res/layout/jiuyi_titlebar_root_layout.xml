@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jiuyi.layout.titlebar.JiuyiRootTitleBar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/jiuyi_titlebar_layout"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:background="@color/title_background_color"
+    android:gravity="center_vertical">
+    <RelativeLayout
+        android:id="@+id/jiuyi_searchcustomer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="45dip"
+        android:layout_gravity="center_vertical"
+        android:background="@color/title_background_color"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:id="@+id/jiuyi_searchcustomer_inlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="50dip"
+            android:layout_marginLeft="15dip"
+            android:layout_marginTop="8dip"
+            android:layout_marginBottom="8dip"
+            android:background="@drawable/jiuyi_titlebar_searchcustomer_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="8dip"
+                android:scaleType="center"
+                android:src="@drawable/tzt_v23_title_search_gray" />
+            <com.control.widget.JiuyiEditText
+                android:id="@+id/tv_search"
+                android:visibility="gone"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/tzt_v23_edit_text_color"
+                android:gravity="left|center"
+                android:hint="请输入出差地等关键字"
+                android:textColorHint="@color/jiuyi_info_color"
+                android:tag="skin_1"
+                android:background="@null"
+                android:lines="1"
+                android:textCursorDrawable="@drawable/jiuyi_v23_cursor_shape"
+                android:focusable="true"
+                android:layout_margin="0dip"
+                android:padding="0dip"
+                android:minHeight="20dip"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:focusableInTouchMode="true"
+                android:cursorVisible="true"
+                android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/jiuyi_searchtitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left|center"
+                    android:text="@string/jiuyi_customer_edittext_hint"
+                    android:textColor="@color/jiuyi_searchtitle_color"
+                    android:textSize="13sp" />
+
+            <ImageView
+                android:id="@+id/jiuyi_searchcustomer_mic"
+                android:layout_width="24dip"
+                android:layout_height="match_parent"
+                android:scaleType="centerInside"
+                android:layout_marginRight="7dip"
+                android:visibility="gone"
+                android:src="@drawable/jiuyi_search_mic_icon"
+                 />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/jiuyi_titlebar_navbarmore"
+            android:layout_width="60dip"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dip"
+            android:contentDescription=""
+            android:scaleType="centerInside"
+            android:src="@drawable/tzt_v23_title_search"
+            tools:ignore="ContentDescription"/>
+    </RelativeLayout>
+</com.jiuyi.layout.titlebar.JiuyiRootTitleBar>

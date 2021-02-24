@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="popupwindow_anim_style">
+
+        <!-- 指定显示的动画xml -->
+        <item name="android:windowEnterAnimation">@anim/jiuyi_show_from_bottom</item>
+        <!-- 指定消失的动画xml -->
+        <item name="android:windowExitAnimation">@anim/jiuyi_hide_to_bottom</item>
+    </style>
+
+    <!--TabLayout 字号-->
+    <style name="TabLayoutTextStyle" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/tzt_tablayout_size</item>
+        <item name="textAllCaps">false</item>
+    </style>
+    <style name="TabLayoutTextStyle2" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">12sp</item>
+        <item name="textAllCaps">false</item>
+    </style>
+    <!-- 设置统一字体样式-->
+    <style name="BlackText">
+        <item name="android:shadowColor">#FF000000</item>
+        <item name="android:textColor">@color/jiuyi_black</item>
+        <item name="android:textColorHint">@color/jiuyi_info_color</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="BlackText.standard">
+        <item name="android:ellipsize">end</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+</resources>

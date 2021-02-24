@@ -1,0 +1,41 @@
+<resources>
+    <!--
+    (即大字体)注意事项
+    1、如果高度用sp作为单位，就不会出现放大字体，文字显示不下的问题
+    2、工具栏的图片放在drawable-xhdpi里放在drawable里的显示的太大
+    3、需要设置的高度有如下几个height
+    4、控件设置字号：setTextSize，使用Rc.getIns().getCanvasMainFont()
+       计算字体高度或者使用AbsoluteSizeSpan：使用Rc.getIns().getWidgetMainFont()
+       写在xml里字号：使用tzt_font_main_xml
+    5、如果区域是固定大小的，要考虑字号设置的影响，只要使用sp不使用dip就可以了
+    6、Func里有getStringWidth和getHeightBuyFontScale方法可以进行计算
+    -->
+    <!-- 通用字号，代码里设置setTextsize使用的 -->
+    <dimen name="jiuyi_font_main_canvas">16px</dimen>
+    <!-- 通用字号 -->
+    <dimen name="jiuyi_font_main_xml">16sp</dimen>
+    <!-- 字号 -->
+    <dimen name="jiuyi_font_common_xml">5sp</dimen>
+    <!-- TabLayout 字号大小 -->
+    <dimen name="tzt_tablayout_size">15sp</dimen>
+
+
+
+    <!-- 标题栏高度 -->
+    <dimen name="jiuyi_titlebar_height">44dp</dimen>
+    <!-- 底部按钮栏高度 -->
+    <dimen name="jiuyi_toolbar_height">45dp</dimen>
+    <!-- 行高 -->
+    <dimen name="jiuyi_tableline_height">51dp</dimen>
+    <!-- 表格头高度 -->
+    <dimen name="jiuyi_tablehead_height">35dp</dimen>
+    <!-- 块间分割条高度 -->
+    <dimen name="tzt_blocksplit_height">10dp</dimen>
+    <!-- 分割线高度 -->
+    <dimen name="tzt_splitline_height">1px</dimen>
+    <!-- TabLayout 按钮左右间距 -->
+    <dimen name="tzt_tablayout_item_margin">16dp</dimen>
+
+
+
+</resources>

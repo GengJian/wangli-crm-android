@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#eef0f1"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/jiuyi_customerlist_whitebg_normal"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/iv_icon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="28dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="centerCrop"
+                fresco:backgroundImage="@drawable/client_directsales"
+                fresco:roundAsCircle="true" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_orgname"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:text="通威"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_clienttype"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:drawableLeft="@drawable/client_transaction"
+                        android:drawablePadding="10dip"
+                        android:text="私企|大型|成都"
+                        android:textColor="@color/jiuyi_next_color"
+                        android:textSize="13sp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_business"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="4dp"
+                        android:drawableLeft="@drawable/client_office"
+                        android:drawablePadding="10dip"
+                        android:text="业务范围:电池片"
+                        android:textColor="@color/jiuyi_next_color"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:gravity="right"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_rank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+
+                    android:text="第1名"
+                    android:textColor="@color/jiuyi_title_color"
+                    android:textSize="13sp" />
+                <TextView
+                    android:id="@+id/tv_ranklabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="5dp"
+
+                    android:text="晶科排名"
+                    android:textColor="@color/jiuyi_next_color"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+<!--        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="6dp"
+            android:visibility="gone"
+            android:background="@color/customerlist_secondback"
+            />-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:weightSum="3"
+            android:layout_weight="1"
+            android:background="@drawable/jiuyi_customerlist_bg_normal"
+            >
+<!--        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/customerlist_secondback"
+            android:weightSum="3"
+            android:orientation="horizontal">-->
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center|center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|center_vertical"
+                    android:layout_marginTop="5dp"
+                    android:drawablePadding="8dp"
+                    android:text="采购状况"
+                    android:textColor="@color/jiuyi_info2_color"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tv_purchasecount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center|center_vertical"
+                    android:textColor="@color/jiuyi_title_color"
+                    android:text="0" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|center_vertical"
+                    android:layout_marginTop="5dp"
+                    android:drawablePadding="8dp"
+                    android:text="生产状况"
+                    android:textColor="@color/jiuyi_info2_color"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tv_productcount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center|center_vertical"
+                    android:textColor="@color/jiuyi_title_color"
+                    android:text="0" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|center_vertical"
+                    android:layout_marginTop="5dp"
+                    android:drawablePadding="8dp"
+                    android:text="销售状况"
+                    android:textColor="@color/jiuyi_info2_color"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tv_salecount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center|center_vertical"
+                    android:textColor="@color/jiuyi_title_color"
+                    android:text="0" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--默认-->
+    <item android:drawable="@drawable/jiuyi_customersort_reset_bg_normal" />
+</selector>
+

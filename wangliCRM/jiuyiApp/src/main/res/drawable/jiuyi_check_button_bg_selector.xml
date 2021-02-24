@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--触摸-->
+    <item android:state_selected="true" android:drawable="@drawable/jiuyi_check_button_bg_normal" />
+    <item android:state_focused="true" android:drawable="@drawable/jiuyi_check_button_bg_normal" />
+    <item android:state_pressed="true" android:drawable="@drawable/jiuyi_check_button_bg_normal"  />
+    <!--不可点击-->
+    <item android:state_enabled="false" android:drawable="@drawable/jiuyi_check_button_bg_normal"  />
+    <!--默认-->
+    <item android:drawable="@drawable/jiuyi_check_button_bg_normal" />
+</selector>
+

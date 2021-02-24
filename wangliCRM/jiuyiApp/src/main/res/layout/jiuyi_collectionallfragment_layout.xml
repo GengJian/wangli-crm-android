@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#f0f0f0"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E2E2E2" />
+
+<!--
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#ffffff"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/ll_monthsort"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_monthsort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="类型"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_marginLeft="5dp"
+                android:src="@mipmap/client_down_n" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_birthplace_sort"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_birthplacesort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="我的创建"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_marginLeft="5dp"
+                android:src="@mipmap/client_down_n" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_countsort"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_countsort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="收藏日期"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_marginLeft="5dp"
+                android:src="@mipmap/client_down_n" />
+        </LinearLayout>
+    </LinearLayout>
+-->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#E2E2E2" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            app:srlHeaderMaxDragRate="2.5"
+            app:srlPrimaryColor="@android:color/darker_gray"
+            app:srlAccentColor="@android:color/transparent"
+            app:srlEnableLoadmore="true"
+            >
+        <!--srlHeaderMaxDragRate=2.5时候WaterDropHeader的下拉效果最好-->
+        <com.scwang.smartrefresh.header.WaterDropHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+  <!--      <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+           />-->
+            <com.recyclerview.swipe.SwipeMenuRecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:dividerHeight="0dp"
+                android:overScrollMode="never"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+        <ImageView
+            android:id="@+id/iv_empty"
+            android:layout_above="@+id/tv_emptytext"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/nodata"
+            android:tint="@color/jiuyi_info2_color"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/tv_emptytext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            android:textColor="@color/jiuyi_info2_color"
+            android:text="暂无相关数据"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

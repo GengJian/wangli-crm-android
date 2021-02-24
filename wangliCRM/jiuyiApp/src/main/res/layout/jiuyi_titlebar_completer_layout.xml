@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 独立Activity通用标题栏布局 -->
+<!-- 整个布局分为返回按钮、文字、右侧搜索按钮 -->
+<com.jiuyi.layout.titlebar.JiuyiCommTitleBar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/jiuyi_titlebar_layout"
+    android:layout_width="match_parent"
+    android:layout_height="45dip"
+    android:layout_gravity="center_vertical|top"
+    android:background="@color/title_background_color"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/jiuyi_titlebar_textview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/tzt_v23_title_text_color"
+        android:textSize="18sp" />
+    <ImageView
+        android:id="@+id/jiuyi_titlebar_navbarbackbg"
+        android:layout_width="60dip"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:contentDescription=""
+        android:scaleType="centerInside"
+        android:src="@drawable/jiuyi_navbarbackbg"
+        tools:ignore="ContentDescription"/>
+    <TextView
+        android:id="@+id/jiuyi_titlebar_complete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp"
+        android:text="完成"
+        android:textColor="@color/tzt_v23_title_text_color"
+        android:textSize="14sp"
+         />
+</com.jiuyi.layout.titlebar.JiuyiCommTitleBar>

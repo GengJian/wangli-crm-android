@@ -1,0 +1,187 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:layout_marginBottom="5dp"
+    android:orientation="vertical">
+
+
+<RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/msg_time_shape_corners">
+
+    <TextView
+        android:id="@+id/tv_topdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:text="2月2日 18:00" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rv_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/msg_shape_corners">
+        ....
+
+        <LinearLayout
+            android:id="@+id/ll_messagemain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_dot"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_gravity="center|center_vertical"
+                    android:background="@drawable/message_dot"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:textColor="@color/jiuyi_title_color"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/jiuyi3dp"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/tvContent1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="5dp"
+                android:text="" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_customlists"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    style="@style/HorizontalDivider"
+                    />
+
+                <LinearLayout style="@style/ItemLayout">
+
+                    <View style="@style/VerticalDivider"/>
+
+                    <TextView
+                        style="@style/ItemLabel"
+                        android:text=""/>
+
+                    <View style="@style/VerticalDivider"/>
+
+                    <TextView
+                        style="@style/ItemLabel.Value"
+                        android:textColor="@color/jiuyi_link_color"
+                        android:text=""/>
+
+                    <View style="@style/VerticalDivider"/>
+                </LinearLayout>
+
+                <View style="@style/HorizontalDivider"/>
+
+                <LinearLayout style="@style/ItemLayout">
+
+                    <View style="@style/VerticalDivider"/>
+
+                    <TextView
+                        style="@style/ItemLabel"
+                        android:id="@+id/chart_min_money"
+                        android:text=""/>
+
+                    <View style="@style/VerticalDivider"/>
+
+                    <TextView
+                        style="@style/ItemLabel.Value"
+                        android:id="@+id/chart_min_oilmess"
+                        android:textColor="@color/jiuyi_title_color"
+                        android:text=""
+                        />
+
+                    <View style="@style/VerticalDivider"/>
+                </LinearLayout>
+
+                <View style="@style/HorizontalDivider"/>
+                <LinearLayout style="@style/ItemLayout">
+
+                    <View style="@style/VerticalDivider"/>
+
+                    <TextView
+                        style="@style/ItemLabel"
+                        android:text=""/>
+
+                    <View style="@style/VerticalDivider"/>
+
+                    <TextView
+                        style="@style/ItemLabel.Value"
+                        android:textColor="@color/jiuyi_title_color"
+                        android:text=""/>
+
+                    <View style="@style/VerticalDivider"/>
+                </LinearLayout>
+
+                <View style="@style/HorizontalDivider"/>
+                <LinearLayout style="@style/ItemLayout">
+
+                    <View style="@style/VerticalDivider"/>
+
+                    <TextView
+                        style="@style/ItemLabel"
+                        android:text=""/>
+
+                    <View style="@style/VerticalDivider"/>
+
+                    <TextView
+                        style="@style/ItemLabel.Value"
+                        android:textColor="@color/jiuyi_title_color"
+                        android:text=""/>
+
+                    <View style="@style/VerticalDivider"/>
+                </LinearLayout>
+
+                <View style="@style/HorizontalDivider"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    </LinearLayout>

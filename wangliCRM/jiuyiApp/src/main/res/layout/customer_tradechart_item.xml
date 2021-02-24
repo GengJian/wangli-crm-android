@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:chart="http://schemas.android.com/tools"
+    android:background="@color/jiuyi_white_color"
+    android:orientation="vertical">
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="0dp"
+        android:orientation="vertical">
+
+        <View
+            style="@style/HorizontalDivider"
+            />
+
+        <LinearLayout style="@style/ItemLayout"
+            android:layout_height="match_parent"
+            >
+
+            <View style="@style/VerticalDivider"/>
+
+            <TextView
+                android:id="@+id/tv_productcode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="10dp"
+                android:gravity="center"
+                android:text="" />
+
+            <View style="@style/VerticalDivider"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/jiuyi_linelayout_bg_selector"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_charttitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="" />
+                <com.zqx.chart.view.LineChart
+                    android:id="@+id/linechart"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="5dp"
+                    chart:lCoordinatesColor="@color/jiuyi_blue"
+                    chart:lxTextColor="@color/jiuyi_blue"
+                    chart:lyTextColor="@color/jiuyi_blue"
+                    chart:pointColor="@color/jiuyi_blue"
+                    />
+ <!--               <customer.view.LineChartView
+                    android:id="@+id/line_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:lc_main_color="#D61939"
+                    app:lc_out_circle_color="#F7D1D7"
+                    app:lc_yaxis_num="8"/>-->
+        <!--        <com.beiing.leafchart.LeafLineChart
+                    android:id="@+id/leaf_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    />-->
+      <!--          <com.control.widget.smallchart.chart.LineChart
+                    android:id="@+id/lineChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>-->
+            </LinearLayout>
+
+            <View style="@style/VerticalDivider"/>
+        </LinearLayout>
+
+        <View
+            style="@style/HorizontalDivider"
+            android:layout_marginBottom="10dp"
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>

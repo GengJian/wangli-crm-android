@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RatioImageView">
+        <attr name="ratio" format="float"/>
+    </declare-styleable>
+
+    <declare-styleable name="NineGridLayout">
+        <attr name="sapcing" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="NinePhotoLayout">
+        <!-- 当只有一张图片时，是否显示成大图，默认值为 true -->
+        <attr name="showAsLargeWhenOnlyOne" format="boolean"/>
+        <!-- Item 间的水平和垂直间距，默认值为 1dp -->
+        <attr name="itemWhiteSpacing" format="dimension|reference"/>
+        <!-- 占位图资源，默认值为 R.mipmap.bga_pp_ic_holder_light -->
+        <attr name="placeholderDrawable" format="reference"/>
+        <!-- item 的尺寸，优先级高于 bga_npl_otherWhiteSpacing，默认值为 0dp -->
+        <attr name="itemWidth" format="dimension|reference"/>
+        <!-- 列数,默认值为 3，当该值大于 3 并且数据源里只有四张图片时不会显示成 2 列 -->
+        <attr name="itemSpanCount" format="integer"/>
+    </declare-styleable>
+    <!-- 柱状图样式属性 -->
+    <declare-styleable name="zqxchart_histogram">
+        <!-- 坐标系颜色 -->
+        <attr name="hCoordinatesColor" format="color"/>
+        <attr name="rectTextColor" format="color"/>
+        <attr name="rectTextSize" format="integer"/>
+        <!-- x轴文字颜色 -->
+        <attr name="hxTextColor" format="color"/>
+        <!-- y轴文字颜色 -->
+        <attr name="hyTextColor" format="color"/>
+        <!-- x轴文字尺寸 -->
+        <attr name="hxTextSize" format="integer"/>
+        <!-- y轴文字尺寸 -->
+        <attr name="hyTextSize" format="integer"/>
+        <!-- x轴刻度点数量 -->
+        <attr name="hxPointCount" format="integer"/>
+        <!-- y轴刻度点数量 -->
+        <attr name="hyPointCount" format="integer"/>
+        <attr name="hanimType">
+            <enum name="NONE" value="-1"></enum>
+            <enum name="TRANSLATE" value="0"></enum>
+            <enum name="ALPHA" value="1"></enum>
+        </attr>
+    </declare-styleable>
+    <!-- 条形控制控件自定义属性 -->
+    <declare-styleable name="LineControllerView">
+        <!-- 名称 -->
+        <attr name="name" format="string"/>
+        <!-- 内容或当前状态 -->
+        <attr name="content" format="string"/>
+        <!-- 是否是列表中最后一个 -->
+        <attr name="isBottom" format="boolean"/>
+        <!-- 是否可以跳转 -->
+        <attr name="canNav" format="boolean"/>
+        <!-- 是否是开关 -->
+        <attr name="isSwitch" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <!-- {@deprecated Use civ_circlebackground_color instead.} -->
+        <attr name="civ_fill_color" format="color" />
+        <attr name="civ_circle_background_color" format="color" />
+    </declare-styleable>
+
+
+    <declare-styleable name="StateButton">
+
+        <!--text color-->
+        <attr name="normalTextColor" format="color|reference"/>
+        <attr name="pressedTextColor" format="color|reference"/>
+        <attr name="unableTextColor" format="color|reference"/>
+
+        <!--stroke width and color, dash width, dash gap-->
+        <attr name="strokeDashWidth" format="dimension|reference"/>
+        <attr name="strokeDashGap" format="dimension|reference"/>
+        <attr name="normalStrokeWidth" format="dimension|reference"/>
+        <attr name="pressedStrokeWidth" format="dimension|reference"/>
+        <attr name="unableStrokeWidth" format="dimension|reference"/>
+        <attr name="normalStrokeColor" format="color|reference"/>
+        <attr name="pressedStrokeColor" format="color|reference"/>
+        <attr name="unableStrokeColor" format="color|reference"/>
+
+        <!--background color-->
+        <attr name="normalBackgroundColor" format="color|reference"/>
+        <attr name="pressedBackgroundColor" format="color|reference"/>
+        <attr name="unableBackgroundColor" format="color|reference"/>
+
+        <!--background radius-->
+        <attr name="radius" format="dimension|reference"/>
+        <attr name="round" format="boolean|reference"/>
+
+        <!--animation duration-->
+        <attr name="animationDuration" format="integer|reference"/>
+
+    </declare-styleable>
+
+    <declare-styleable name="StateImageView">
+        <attr name="normalBackground" format="color|reference"/>
+        <attr name="pressedBackground" format="color|reference"/>
+        <attr name="unableBackground" format="color|reference"/>
+
+        <!--animation duration-->
+        <attr name="AnimationDuration" format="integer|reference"/>
+    </declare-styleable>
+
+
+    <array name="tick_below_text_length_5">
+        <item>2017-01</item>
+        <item>2017-02</item>
+        <item>2017-03</item>
+        <item>2017-04</item>
+        <item>2017-05</item>
+        <item>2017-06</item>
+        <item>2017-07</item>
+        <item>2017-08</item>
+        <item>2017-09</item>
+        <item>2017-10</item>
+        <item>2017-11</item>
+        <item>DEC 2018</item>
+    </array>
+    <attr name="ProgresUnReachColor" format="color"></attr>
+    <attr name="HorizontalProgresUnReachHeight" format="dimension"></attr>
+    <attr name="HorizontalProgresReachColor" format="color"></attr>
+    <attr name="HorizontalProgresUnReachColor" format="color"></attr>
+
+    <attr name="HorizontalProgresReachHeight" format="dimension"></attr>
+    <attr name="HorizontalProgresTextColor" format="color"></attr>
+    <attr name="HorizontalProgresTextSize" format="dimension"></attr>
+    <attr name="HorizontalProgresTextOffset" format="dimension"></attr>
+
+
+    <declare-styleable name="CustomHorizontalProgresStyle">
+        <attr name="HorizontalProgresUnReachColor" ></attr>
+        <attr name="HorizontalProgresUnReachHeight" ></attr>
+        <attr name="HorizontalProgresReachColor" ></attr>
+        <attr name="HorizontalProgresReachHeight" ></attr>
+        <attr name="HorizontalProgresTextColor" ></attr>
+        <attr name="HorizontalProgresTextSize" ></attr>
+        <attr name="HorizontalProgresTextOffset"></attr>
+
+    </declare-styleable>
+
+
+    <declare-styleable name="CustomCircleProgresStyle">
+        <attr name="CustomCircleRadio" format="dimension"></attr>
+        <attr name="CustomReachPaintStroken" format="dimension"></attr>
+        <attr name="CustomUnReachPaintStroken" format="dimension"></attr>
+        <attr name="CustomUnReachEnd" format="integer"></attr>
+        <attr name="CustomUnReachStart" format="integer"></attr>
+        <attr name="CustomHasProgressNum" format="boolean"></attr>
+
+    </declare-styleable>
+
+    <attr name="outRadius" format="dimension"/>
+    <attr name="innerRadius" format="dimension"/>
+    <attr name="dividerLine" format="dimension"/>
+
+    <declare-styleable name="EfficientClock">
+        <attr name="outRadius"/>
+        <attr name="innerRadius"/>
+        <attr name="dividerLine"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="WaterWaveProgress">
+        <attr name="progressWidth" format="dimension" />
+        <attr name="fontSize" format="dimension" />
+        <attr name="progressColor" format="color" />
+        <attr name="progressBgColor" format="color" />
+        <attr name="waterWaveColor" format="color" />
+        <attr name="waterWaveBgColor" format="color" />
+        <attr name="progress2WaterWidth" format="dimension" />
+        <attr name="showProgress" format="boolean" />
+        <attr name="showNumerical" format="boolean" />
+        <attr name="textColor" format="color" />
+        <attr name="progress" format="integer" />
+        <attr name="maxProgress" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="DrawableTextView">
+        <attr name="leftDrawable" format="reference|color"/>
+        <attr name="rightDrawable" format="reference|color"/>
+        <attr name="topDrawable" format="reference|color"/>
+        <attr name="bottomDrawable" format="reference|color"/>
+
+        <attr name="leftDrawableWidth" format="reference|dimension"/>
+        <attr name="rightDrawableWidth" format="reference|dimension"/>
+        <attr name="topDrawableWidth" format="reference|dimension"/>
+        <attr name="bottomDrawableWidth" format="reference|dimension"/>
+
+        <attr name="leftDrawableHeight" format="reference|dimension"/>
+        <attr name="rightDrawableHeight" format="reference|dimension"/>
+        <attr name="topDrawableHeight" format="reference|dimension"/>
+        <attr name="bottomDrawableHeight" format="reference|dimension"/>
+    </declare-styleable>
+    <declare-styleable name="LineChartView">
+        <attr name="lc_yaxis_num" format="integer" />
+        <attr name="lc_main_color" format="color" />
+        <attr name="lc_out_circle_color" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="BGAProgressBar">
+        <!-- 进度条样式，默认值为 system -->
+        <attr name="bga_pb_mode" format="enum">
+            <!-- 系统自带样式 -->
+            <enum name="system" value="0"/>
+            <!-- 水平进度条 -->
+            <enum name="horizontal" value="1"/>
+            <!-- 圆形进度条 -->
+            <enum name="circle" value="2"/>
+            <!-- 彗星进度条 -->
+            <enum name="comet" value="3"/>
+            <!-- 水波纹进度条 -->
+            <enum name="wave" value="4"/>
+        </attr>
+        <!-- 文字颜色，默认值为 #70A800 -->
+        <attr name="bga_pb_textColor" format="reference|color"/>
+        <!-- 文字大小，默认值为 10sp -->
+        <attr name="bga_pb_textSize" format="dimension"/>
+        <!-- 文字和进度条之间的间距，默认值为 4dp -->
+        <attr name="bga_pb_textMargin" format="dimension"/>
+        <!-- 已完成进度的颜色，默认值为 #70A800 -->
+        <attr name="bga_pb_reachedColor" format="reference|color"/>
+        <!-- 已完成进度的高度，默认值为 2dp -->
+        <attr name="bga_pb_reachedHeight" format="dimension"/>
+        <!-- 未完成进度的颜色，默认值为 #CCCCCC -->
+        <attr name="bga_pb_unReachedColor" format="reference|color"/>
+        <!-- 未完成进度的高度，默认值为 1dp -->
+        <attr name="bga_pb_unReachedHeight" format="dimension"/>
+        <!-- 是否为圆角，默认值为 false -->
+        <attr name="bga_pb_isCapRounded" format="boolean"/>
+        <!-- 是否隐藏文字，默认值为 false -->
+        <attr name="bga_pb_isHiddenText" format="boolean"/>
+        <!-- 圆形进度条半径，默认值为 16dp -->
+        <attr name="bga_pb_radius" format="dimension"/>
+    </declare-styleable>
+    <attr name="gallery_checkbox_button_tint_color" format="color" />
+
+</resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+	<style name="jiuyi_Theme.App" parent="android:Theme">
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:windowIsTranslucent">false</item>
+		<item name="android:windowDisablePreview">true</item>
+	</style>
+
+<!--    <style name="jiuyi_ThemeCompat.White" parent="Theme.AppCompat">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/tzt_v23_background_color</item>
+    </style>-->
+	<!-- jiuyiCommHeadPageActivity的白色版本Theme -->
+	<style name="HeadPage_Theme.White" parent="android:Theme">
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:windowIsTranslucent">false</item>
+		<item name="android:windowDisablePreview">true</item>
+	</style>
+	
+	<style name="noAnimation">
+	    <!--  small gradient at the top of the window; That’s it! Gradient is gone! -->
+	    <item name="android:windowContentOverlay">@null</item>
+	    <!-- 新的activity创建进入效果 -->
+	    <item name="android:activityOpenEnterAnimation">@null</item>
+	    <!-- activity还没有finish()下退出效果 -->
+	    <item name="android:activityOpenExitAnimation">@null</item>
+	    <!-- 上一个activity返回进入效果 -->
+	    <item name="android:activityCloseEnterAnimation">@null</item>
+	    <!-- activity finish()之后退出效果 -->
+	    <item name="android:activityCloseExitAnimation">@null</item>
+	    <item name="android:taskOpenEnterAnimation">@null</item>
+	    <item name="android:taskOpenExitAnimation">@null</item>
+	    <item name="android:taskCloseEnterAnimation">@null</item>
+	    <item name="android:taskCloseExitAnimation">@null</item>
+	    <item name="android:taskToFrontEnterAnimation">@null</item>
+	    <item name="android:taskToFrontExitAnimation">@null</item>
+	    <item name="android:taskToBackEnterAnimation">@null</item>
+	    <item name="android:taskToBackExitAnimation">@null</item>
+	</style>
+	<style name="popupAnimation" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowEnterAnimation">@anim/anim_start</item>
+        <item name="android:windowExitAnimation">@anim/anim_dismiss</item>
+    </style>
+
+
+
+
+
+
+</resources>

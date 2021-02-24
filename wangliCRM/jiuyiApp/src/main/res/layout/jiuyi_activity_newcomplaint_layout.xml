@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--主界面-->
+<com.control.widget.relativeLayout.JiuyiRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/jiuyi_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tzt_whitepage_bgcolor"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/jiuyi_titlebar_height"
+        android:layout_alignParentTop="true"
+        android:id="@+id/jiuyi_titlebar_layout"
+        layout="@layout/jiuyi_titlebar_completer_layout"/>
+
+    <ScrollView
+        android:layout_marginTop="@dimen/jiuyi_titlebar_height"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/ll_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="17dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/jiuyi_vertical_bg_normal" />
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="基本信息"
+                    android:textColor="@color/jiuyi_title_color"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_client"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_choose"
+                app:isEditable="false"
+                app:title="客户名称" />
+
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_app"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_choose"
+                app:isEditable="false"
+                app:title="申请人" />
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_csman"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_write"
+                app:isEditable="true"
+                app:jt_visible="false"
+                app:title="CS负责人" />
+
+
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_complaintdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_choose"
+                app:isEditable="false"
+                app:title="投诉日期" />
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_appdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_choose"
+                app:isEditable="false"
+                app:title="申请日期" />
+
+
+            <com.control.widget.JiuyiBigTextGroup
+                android:id="@+id/jig_remark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="100dp"
+                app:edt_hint_content="@string/hint_write"
+                app:title="备注"
+                 />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="17dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/jiuyi_vertical_bg_normal" />
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="客户反馈"
+                    android:textColor="@color/jiuyi_title_color"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_topbar_height"
+                android:gravity="center_vertical"
+                android:background="@color/jiuyi_white_color"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/BlackText.standard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:text="小包/箱批次"
+                    android:textColor="@color/jiuyi_title_color" />
+
+                <com.control.widget.JiuyiEditTextField
+                    android:id="@+id/jetf_batch"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:layout_centerVertical="true"
+                    android:hint="请输入小包/箱批次"
+                    android:singleLine="true"
+                    android:inputType="text"
+                    android:paddingLeft="10dp"
+                    app:clearButtonMode="whileEditing"
+                    android:textColor="@color/jiuyi_title_color"
+                    android:textColorHint="@color/jiuyi_info_color"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/iv_scan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:padding="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/sweep" />
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="10dp"
+                android:background="@color/line_bg"  />
+
+
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_complaintproduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_write"
+                app:isEditable="true"
+                app:jt_visible="false"
+                app:title="投诉产品" />
+            <com.control.widget.JiuyiItemGroup
+                    android:id="@+id/jig_deliverydate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:edt_hint_content="@string/hint_choose"
+                    app:isEditable="false"
+                    app:title="发货日期" />
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_deliveryno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_write"
+                app:isEditable="true"
+                app:jt_visible="false"
+                app:title="发货单号" />
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_deliverycount"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:edt_hint_content="@string/hint_write"
+                app:isEditable="true"
+                app:jt_visible="false"
+                app:title="发货数量" />
+
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_orderno"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:edt_hint_content="@string/hint_choose"
+                app:isEditable="true"
+                app:title="销售订单号" />
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_contractno"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:edt_hint_content="@string/hint_write"
+                app:isEditable="true"
+                app:jt_visible="false"
+                app:title="销售合同号" />
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_factory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_choose"
+                app:isEditable="false"
+                app:title="责任发货工厂" />
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_happendate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_choose"
+                app:isEditable="false"
+                app:title="发生日期" />
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_happenlink"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_choose"
+                app:isEditable="false"
+                app:title="发生环节" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="17dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/jiuyi_vertical_bg_normal" />
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="客诉详细"
+                    android:textColor="@color/jiuyi_title_color"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+
+            <com.recyclerview.swipe.SwipeMenuRecyclerView
+                android:id="@+id/rv_complaintlist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_add"
+                android:dividerHeight="0dp"
+                android:overScrollMode="never"
+
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+            <RelativeLayout
+                android:id="@+id/rv_new"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="5dp"
+                android:background="@color/jiuyi_white"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/iv_new"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_toLeftOf="@+id/tv_new"
+                    android:src="@drawable/purchasenew" />
+
+                <TextView
+                    android:id="@+id/tv_new"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:text="增加"
+                    android:textColor="@color/jiuyi_blue"
+                    android:textSize="15sp" />
+
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/jiuyi_backgroud_color" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="17dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/jiuyi_vertical_bg_normal" />
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="客户要求"
+                    android:textColor="@color/jiuyi_title_color"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_needreport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_choose"
+                app:isEditable="false"
+                app:title="客户要求报告" />
+
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_enddate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_choose"
+                app:isEditable="false"
+                app:title="恢复截止期" />
+            <com.control.widget.JiuyiBigTextGroup
+                android:id="@+id/jig_clientdemand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="100dp"
+                app:edt_hint_content="@string/hint_write"
+                app:title="客户要求"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="17dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/jiuyi_vertical_bg_normal" />
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="附件"
+                    android:textColor="@color/jiuyi_title_color"
+                    android:textSize="16sp" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/jiuyi_white"
+                android:orientation="vertical">
+
+                <com.control.widget.NoScrollGridView
+                    android:id="@+id/noScrollgridview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:horizontalSpacing="3dp"
+                    android:listSelector="#00000000"
+                    android:numColumns="5"
+                    android:scrollbars="none"
+                    android:verticalSpacing="5dp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/jiuyi_include_processbarview"/>
+
+</com.control.widget.relativeLayout.JiuyiRelativeLayout>

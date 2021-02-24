@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<customer.view.SquareLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:gravity="center">
+
+    <!--    <ImageView
+            android:id="@+id/item_grida_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:scaleType="fitXY"></ImageView>-->
+
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sv_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        app:failureImage="@mipmap/icon_failure"
+        app:failureImageScaleType="centerInside"
+        app:placeholderImage="@mipmap/icon_placeholder"
+        app:placeholderImageScaleType="fitCenter"
+        app:progressBarAutoRotateInterval="5000"
+        app:progressBarImage="@mipmap/icon_progress_bar"
+        app:progressBarImageScaleType="centerInside"
+        app:retryImage="@mipmap/icon_retry"
+        app:retryImageScaleType="centerInside"
+        android:scaleType="fitXY"
+        />
+
+</customer.view.SquareLayout>

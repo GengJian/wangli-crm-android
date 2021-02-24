@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/rlTimeline"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvTopLine"
+            android:layout_width="1dp"
+            android:layout_height="8dp"
+            android:layout_centerHorizontal="true"
+            android:background="#bdbdbd" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/tvDot"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/tvTopLine"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop"
+            />
+
+<!--        <TextView
+            android:id="@+id/tvDot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTopLine"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/state_get_huankuan" />-->
+
+        <TextView
+            android:layout_width="1dp"
+            android:id="@+id/tvLine"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tvDot"
+            android:layout_centerHorizontal="true"
+            android:background="#bdbdbd" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlCenter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="6dp"
+        android:paddingRight="10dp"
+        android:layout_marginLeft="20dp"
+        android:paddingTop="12dp">
+
+        <TextView
+            android:id="@+id/step_tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="6dp"
+            android:text=""
+            android:textColor="#cccccc"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/step_tv_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@+id/step_tv_time"
+            android:textColor="#1393d4"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/step_tv_des_below"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/step_tv_des"
+            android:layout_marginTop="5dp"
+            android:text=""
+            android:textColor="#999999" />
+<!--        <customer.view.DynamicUrlTextView
+            android:id="@+id/step_tv_des_below2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/step_tv_des"
+            android:layout_marginTop="5dp"
+            android:text=""
+            android:visibility="visible"
+            android:textColor="@color/jiuyi_info_color" />-->
+        <TextView
+            android:id="@+id/step_tv_creator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/step_tv_des_below"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:text=""
+            android:textColor="@color/jiuyi_info2_color" />
+
+
+     <!--   <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_post_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/step_tv_des_below"
+            android:visibility="visible"/>-->
+        <customer.view.NineGridVoiceLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/noScrollVoicegridview"
+            android:layout_below="@+id/step_tv_creator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:sapcing="3dp" />
+
+<!--        <com.jaeger.ninegridimageview.NineGridImageView
+            android:id="@+id/noScrollgridview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="75dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginTop="5dp"
+            android:visibility="gone"
+            app:imgGap="3dp"
+            app:showStyle="grid"
+            app:singleImgSize="200dp" >
+             </com.jaeger.ninegridimageview.NineGridImageView>-->
+
+        <com.jaeger.ninegridimageview.NineGridImageView
+        android:id="@+id/noScrollgridview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+        android:layout_below="@+id/noScrollVoicegridview"
+        app:imgGap="3dp"
+        app:showStyle="grid"
+        app:singleImgSize="200dp" />
+
+        <customer.view.NineGridVideoLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/noScrollVideogridview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/noScrollgridview"
+            app:sapcing="3dp" />
+
+
+        <!--<com.jaeger.ninegridimageview.NineGridImageView-->
+            <!--android:id="@+id/noScrollgridview"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/step_tv_creator"-->
+            <!--app:imgGap="3dp"-->
+            <!--app:showStyle="grid"-->
+            <!--app:singleImgSize="200dp" />-->
+
+<!--        <customer.view.MultiImageViewLayout
+            android:layout_width="match_parent"
+            android:layout_below="@+id/step_tv_des_below"
+            android:id="@+id/noScrollgridview"
+            android:layout_height="wrap_content">
+
+        </customer.view.MultiImageViewLayout>-->
+
+<!--        <android.support.v7.widget.RecyclerView
+            android:id="@+id/noScrollgridview"
+            android:layout_below="@+id/step_tv_des_below"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />-->
+
+<!--        <com.control.widget.NoScrollGridView
+            android:id="@+id/noScrollgridview"
+            android:layout_below="@+id/step_tv_des_below"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:horizontalSpacing="3dp"
+            android:listSelector="#00000000"
+            android:numColumns="3"
+            android:scrollbars="none"
+            android:verticalSpacing="5dp" />-->
+<!--        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/item_image"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/step_tv_des_below"
+            android:padding="5dp"
+            android:scaleType="centerCrop"
+            />-->
+    </RelativeLayout>
+</LinearLayout>

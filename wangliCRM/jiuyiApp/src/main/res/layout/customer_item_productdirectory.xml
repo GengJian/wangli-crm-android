@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/jiuyi_dividebackgroud_color"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/jiuyi_white_color"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_productName"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="暂无信息"
+            android:textColor="@color/jiuyi_title_color" />
+
+
+
+    </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:weightSum="2"
+            android:background="@color/jiuyi_white_color">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:gravity="left|center"
+                    android:text="产品类型："
+                    android:textColor="@color/jiuyi_info_color" />
+
+                <TextView
+                    android:id="@+id/tv_productType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:layout_marginLeft="5dp"
+                    android:text=""
+                    android:textColor="@color/jiuyi_info_color" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center"
+                    android:text="规格/型号:"
+                    android:textColor="@color/jiuyi_info_color" />
+
+                <TextView
+                    android:id="@+id/tv_productSpec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:layout_marginLeft="5dp"
+                    android:text=""
+                    android:textColor="@color/jiuyi_info_color" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:visibility="gone"
+            android:weightSum="2"
+            android:background="@color/jiuyi_white_color">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center"
+                    android:text="月采购量："
+                    android:textColor="@color/jiuyi_info_color" />
+
+                <TextView
+                    android:id="@+id/tv_monthQuantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:layout_marginLeft="5dp"
+                    android:text=""
+                    android:textColor="@color/jiuyi_info_color" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center"
+                    android:text="季采购量:"
+                    android:textColor="@color/jiuyi_info_color" />
+
+                <TextView
+                    android:id="@+id/tv_seasonQuantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:layout_marginLeft="5dp"
+                    android:text=""
+                    android:textColor="@color/jiuyi_info_color" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:weightSum="2"
+            android:background="@color/jiuyi_white_color">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center"
+                    android:text="技术要求："
+                    android:textColor="@color/jiuyi_info_color" />
+
+                <TextView
+                    android:id="@+id/tv_technologyDemand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:layout_marginLeft="5dp"
+                    android:text=""
+                    android:textColor="@color/jiuyi_info_color" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center"
+                    android:text="商务要求:"
+                    android:textColor="@color/jiuyi_info_color" />
+
+                <TextView
+                    android:id="@+id/tv_businessDemand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:layout_marginLeft="5dp"
+                    android:text=""
+                    android:textColor="@color/jiuyi_info_color" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@color/jiuyi_white_color">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center"
+                    android:text="附件："
+                    android:textColor="@color/jiuyi_info_color" />
+
+                <TextView
+                    android:id="@+id/tv_down"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="下载"
+                    android:textColor="@color/jiuyi_blue" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</RelativeLayout>

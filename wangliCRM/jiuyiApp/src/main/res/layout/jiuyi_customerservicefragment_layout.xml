@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:background="@color/jiuyi_backgroud_color"
+        >
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:contentScrim="#e4e6f1"
+            android:background="@color/jiuyi_backgroud_color"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/ll_customer_consultation"
+                        android:layout_width="0dp"
+                        android:layout_height="101dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/jiuyi_linelayout_bg_selector"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="28dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="28dp"
+                            android:src="@drawable/customer_consultation" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="24dp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_customer_consultation"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="0"
+                                    android:textColor="@color/jiuyi_title_color"
+                                    android:textSize="18sp" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="咨询"
+                                android:textColor="@color/jiuyi_info_color" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_customer_complaints"
+                        android:layout_width="0dp"
+                        android:layout_height="101dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/jiuyi_linelayout_bg_selector"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="28dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="28dp"
+                            android:src="@drawable/customer_complaints" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginTop="24dp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_customer_complaints"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="0"
+                                    android:textColor="@color/jiuyi_title_color"
+                                    android:textSize="18sp" />
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:drawablePadding="8dp"
+                                    android:text="客户投诉"
+                                    android:textColor="@color/jiuyi_info_color" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/ll_returned_goods"
+                        android:layout_width="0dp"
+                        android:layout_height="101dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/jiuyi_linelayout_bg_selector"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="28dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="28dp"
+                            android:src="@drawable/returned_goods" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="24dp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_returned_goods"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="0"
+                                    android:textColor="@color/jiuyi_title_color"
+                                    android:textSize="18sp" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="退货-换货-补 片-降档申请"
+                                android:textColor="@color/jiuyi_info_color" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_common_problem"
+                        android:layout_width="0dp"
+                        android:layout_height="101dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/jiuyi_linelayout_bg_selector"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="28dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="28dp"
+                            android:src="@drawable/common_problem" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginTop="24dp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_common_problem"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="0"
+                                    android:textColor="@color/jiuyi_title_color"
+                                    android:textSize="18sp" />
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:drawablePadding="8dp"
+                                    android:text="常见问题"
+                                    android:textColor="@color/jiuyi_info_color" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+        <LinearLayout
+            android:id="@+id/ll_title"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:gravity="center_vertical"
+            android:layout_below="@+id/ll_contact"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="3dp"
+                android:layout_height="17dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/jiuyi_vertical_bg_normal"  />
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left|center_vertical"
+                android:text="供应商名录"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/iv_new"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/purchasenew"
+                />
+        </LinearLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="always"
+        android:id="@+id/nsc_content"
+        android:background="@color/jiuyi_backgroud_color"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <!--- app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvbase"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="0dp"
+            app:cardCornerRadius="10dp"
+            app:cardUseCompatPadding="false"
+            android:gravity="center">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/jiuyi_white"
+            android:orientation="vertical">
+            <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+                android:id="@+id/refresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_infolist"
+                    android:layout_width="match_parent"
+                    android:minHeight="280dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="2dp"
+                    android:overScrollMode="never" />
+
+            </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+        </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_vertical"
+        android:background="@color/jiuyi_backgroud_color">
+
+
+        <ImageView
+            android:id="@+id/iv_no_authority"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_above="@id/tv_no_authoritytext"
+            android:visibility="gone"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/no_authority"
+
+            android:layout_marginBottom="10dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_no_authoritytext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+
+            android:textColor="@color/jiuyi_info2_color"
+            android:text="该功能将于19年4月1日上线"
+            />
+    </RelativeLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

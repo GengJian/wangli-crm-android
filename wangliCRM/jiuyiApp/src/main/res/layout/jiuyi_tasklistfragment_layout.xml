@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#f0f0f0"
+    android:orientation="vertical">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E2E2E2" />
+
+<!--
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/iv_addplan"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/news_add"
+            />
+
+        <LinearLayout
+            android:id="@+id/ll_searchplan"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:layout_marginBottom="10dip"
+            android:background="@drawable/jiuyi_titlebar_searchtask_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="5dp"
+                android:scaleType="center"
+                android:src="@drawable/news_search" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left|center"
+                android:text="请输入任务关键字等"
+                android:textColor="@color/jiuyi_searchtitle_color"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+-->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/iv_addplan"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/news_add2"
+            />
+
+        <LinearLayout
+            android:id="@+id/ll_searchplan"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="20dip"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/jiuyi_titlebar_searchcustomer_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="5dp"
+                android:scaleType="center"
+                android:src="@drawable/news_search" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left|center"
+                android:text="请输入任务关键字等"
+                android:textColor="@color/jiuyi_searchtitle_color"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#ffffff"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/ll_monthsort"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_monthsort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="我的"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_marginLeft="5dp"
+                android:src="@mipmap/client_down_n" />
+        </LinearLayout>
+
+      <!--  <LinearLayout
+            android:id="@+id/ll_birthplace_sort"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_birthplacesort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="等级"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_marginLeft="5dp"
+                android:src="@mipmap/client_down_n" />
+        </LinearLayout>-->
+
+        <LinearLayout
+            android:id="@+id/ll_countsort"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_countsort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="任务截止日期"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_marginLeft="5dp"
+                android:src="@mipmap/client_down_n" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#E2E2E2" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            app:srlHeaderMaxDragRate="2.5"
+            app:srlPrimaryColor="@android:color/darker_gray"
+            app:srlAccentColor="@android:color/transparent"
+            app:srlEnableLoadmore="true"
+            >
+        <!--srlHeaderMaxDragRate=2.5时候WaterDropHeader的下拉效果最好-->
+        <com.scwang.smartrefresh.header.WaterDropHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_orderlist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+           />
+
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </RelativeLayout>
+
+</LinearLayout>

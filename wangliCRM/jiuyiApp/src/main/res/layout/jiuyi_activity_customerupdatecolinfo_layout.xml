@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--主界面-->
+<com.control.widget.relativeLayout.JiuyiRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/jiuyi_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tzt_whitepage_bgcolor"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/jiuyi_titlebar_height"
+        android:layout_alignParentTop="true"
+        android:id="@+id/jiuyi_titlebar_layout"
+        layout="@layout/jiuyi_titlebar_cancelcompleter_layout"/>
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_topbar_height"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/tv_date"
+                style="@style/BlackText.standard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:paddingRight="10dp"
+                android:paddingLeft="20dp"
+                android:textColor="@color/jiuyi_title_color"
+                android:visibility="gone"
+                android:textColorHint="@color/jiuyi_info_color" />
+
+            <com.control.widget.JiuyiEditText
+                android:id="@+id/et_col"
+                style="@style/BlackText.standard"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:gravity="center_vertical|right"
+                android:singleLine="false"
+                android:layout_weight="1"
+                android:background="@null"
+                android:tag="skin_1"
+                android:textColorHint="@color/jiuyi_info_color" />
+            <TextView
+                android:id="@+id/tv_type"
+                style="@style/BlackText.standard"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical|end"
+                android:hint="@string/hint_choose"
+                android:paddingEnd="15dp"
+                android:paddingStart="0dp"
+                android:visibility="gone"
+                android:textColor="@color/jiuyi_info_color"
+                android:textColorHint="@color/jiuyi_info_color"
+                />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:background="@color/line_bg" />
+
+
+    </LinearLayout>
+
+    <include layout="@layout/jiuyi_include_processbarview"/>
+
+</com.control.widget.relativeLayout.JiuyiRelativeLayout>

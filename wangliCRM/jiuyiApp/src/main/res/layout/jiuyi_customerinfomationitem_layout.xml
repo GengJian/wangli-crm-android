@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_detail"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:spinner="http://schemas.android.com/tools"
+    android:background="@color/jiuyi_white_color"
+    android:orientation="vertical">
+
+    <customer.view.JiuyiIntelligenceBar
+        android:id="@+id/cob_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:paddingLeft="0dp"
+        />
+
+</LinearLayout>

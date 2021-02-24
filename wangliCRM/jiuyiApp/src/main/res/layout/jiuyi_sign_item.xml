@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/jiuyi_dividebackgroud_color"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textSize="13sp"
+                android:textColor="@color/jiuyi_info_color"
+                 android:text="打卡时间:" />
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:textSize="17sp"
+                android:textColor="@color/jiuyi_title_color"
+                android:text="暂无相关信息" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/sign_location"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:textSize="13sp"
+            android:textColor="@color/jiuyi_info_color"
+            android:text="暂无相关位置信息" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textSize="13sp"
+                android:textColor="@color/jiuyi_info_color"
+                android:text="批注:" />
+            <TextView
+                android:id="@+id/tv_remark"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:textSize="13sp"
+                android:textColor="@color/jiuyi_title_color"
+                android:text="暂无" />
+
+        </LinearLayout>
+        <com.jaeger.ninegridimageview.NineGridImageView
+            android:id="@+id/noScrollgridview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:visibility="gone"
+            app:imgGap="3dp"
+            app:showStyle="grid"
+            app:singleImgSize="100dp" >
+
+        </com.jaeger.ninegridimageview.NineGridImageView>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 交易登陆，选择账号    android:alpha="0xAA" -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/jiuyi_popwindow_shape"
+    android:orientation="vertical"
+    android:padding="5dip" >
+
+    <ListView
+        android:id="@+id/tzt_trendmenu_listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:dividerHeight="@dimen/tzt_splitline_height"
+        android:divider="#e4e4e4"
+        android:listSelector="#ffffff"
+        android:fadingEdge="none"
+        android:focusable="true"
+        android:scrollbars="none"
+        android:scrollingCache="false" >
+    </ListView>
+
+</LinearLayout>

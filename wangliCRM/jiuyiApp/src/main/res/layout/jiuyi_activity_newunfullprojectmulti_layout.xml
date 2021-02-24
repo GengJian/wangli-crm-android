@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--主界面-->
+<com.control.widget.relativeLayout.JiuyiRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/jiuyi_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tzt_whitepage_bgcolor"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/jiuyi_titlebar_height"
+        android:layout_alignParentTop="true"
+        android:id="@+id/jiuyi_titlebar_layout"
+        layout="@layout/jiuyi_titlebar_completer_layout"/>
+
+    <ScrollView
+        android:layout_marginTop="@dimen/jiuyi_titlebar_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scrollbars="none">
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_project"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_write"
+                app:isEditable="true"
+                app:jt_visible="false"
+                app:title="工程" />
+        <com.control.widget.JiuyiItemGroup
+            android:id="@+id/jig_reasonsNoPerformance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:edt_hint_content="@string/hint_write"
+            app:isEditable="true"
+            app:jt_visible="false"
+            app:title="未履行原因" />
+
+        <customer.view.JiuyiToggleButtonGroup
+                android:id="@+id/jig_isfollowup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="合同是否有效" />
+        <com.control.widget.JiuyiItemGroup
+            android:id="@+id/jig_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:edt_hint_content="@string/hint_choose"
+            app:isEditable="false"
+            app:jt_visible="true"
+            app:title="预计下单时间" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dip"
+            android:layout_below="@+id/ll_content"
+            android:layout_marginTop="15dp">
+
+            <com.control.widget.JiuyiButton
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/jiuyi_v23_button_bg_disable"
+                android:gravity="center"
+                android:text="确定"
+                android:textColor="@color/tzt_white"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+
+
+
+
+
+    </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/jiuyi_include_processbarview"/>
+
+</com.control.widget.relativeLayout.JiuyiRelativeLayout>

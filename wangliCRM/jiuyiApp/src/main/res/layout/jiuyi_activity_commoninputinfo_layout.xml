@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--主界面-->
+<com.control.widget.relativeLayout.JiuyiRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/jiuyi_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/jiuyi_backgroud_color"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/jiuyi_titlebar_height"
+        android:layout_alignParentTop="true"
+        android:id="@+id/jiuyi_titlebar_layout"
+        layout="@layout/jiuyi_titlebar_completer_layout"/>
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <com.control.widget.JiuyiEditTextField
+            android:id="@+id/content_edt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:singleLine="false"
+            android:paddingLeft="10dp"
+            app:clearButtonMode="never"
+            android:gravity="top|left"
+            android:hint="请输入"
+            android:minLines="7"
+            android:inputType="textMultiLine"
+            android:textColor="@color/jiuyi_title_color"
+            android:textColorHint="@color/jiuyi_info_color"
+            android:textSize="14sp" />
+
+
+    </LinearLayout>
+
+    <include layout="@layout/jiuyi_include_processbarview"/>
+
+</com.control.widget.relativeLayout.JiuyiRelativeLayout>

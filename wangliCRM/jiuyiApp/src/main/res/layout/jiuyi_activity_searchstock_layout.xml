@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--主界面-->
+<com.control.widget.relativeLayout.JiuyiRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/jiuyi_relative_layout"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- 中间主体部分viewpage+Fragment -->
+    <fragment
+        android:name="com.hq.paihang.fragment.tztSearchStockFragment"
+        android:id="@+id/tzt_searchstock_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </fragment>
+
+
+
+    <include layout="@layout/jiuyi_include_processbarview" />
+</com.control.widget.relativeLayout.JiuyiRelativeLayout>
+

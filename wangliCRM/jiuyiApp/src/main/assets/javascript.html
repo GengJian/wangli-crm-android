@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <meta charset="utf-8">
+      <title>Carson_Ho</title>
+
+     <script type="text/javascript">
+         function callAndroid(){
+            document.location = "http://action:2631/?id=32&viewType=view&backPageType=travel-business&title=差旅详情";
+          <!--  MyWebView.onJsOverrideUrlLoading("http://action:2021/?id=80553899&viewType=edit");-->
+      <!--      MyWebView.callNativeFuctionFromWeb("browseropen","browseropen","{\"url\":\"https://www.baidu.com\",\"i\":3,\"b\":\"true\",\"c\":字符}");-->
+<!--             MyWebView.onJsOverrideUrlLoading("http://action:2678/?id=300&viewtype=SINGLEEDIT&title=情报信息编辑");-->
+<!--             MyWebView.onJsOverrideUrlLoading("http://action:10057/?url=http://crm-test-api.aikosolar.net/api/file/b6872c16719c414687fd6f6f28dfafbc&position=0");-->
+<!--                MyWebView.onJsOverrideUrlLoading("http://action:10057/?url=http://crm-test-api.aikosolar.net/api/file/befa1a1eb5aa45e9a0d6671a51dc0e42|http://crm-test-api.aikosolar.net/api/file/b6872c16719c414687fd6f6f28dfafbc|&position=1");-->
+                <!--   alert(MyWebView.getSysVersion2());-->
+                 <!--  alert('第一行\n第二行');-->
+<!--                 document.location = "http://action:10059/?url=http://crm-test-api.aikosolar.net/file/201903/51385a611987402da386b2bc3f3ba2a4.mp3&extdata=30";-->
+              <!--   MyWebView.onJsOverrideUrlLoading("http://action:10059/?url=http://crm-test-api.aikosolar.net/file/201903/51385a611987402da386b2bc3f3ba2a4.mp3&extdata=30");-->
+                <!--   MyWebView.onJsOverrideUrlLoading("http://action:10058/?url=http://crm-test-api.aikosolar.net/file/201903/1d3c3d27394b4bb8921bd40ed845817d.mp4&filename=测试了");-->
+         }
+      </script>
+</head>
+
+<!-- 点击按钮则调用callAndroid（）方法  -->
+   <body>
+     <button type="button" id="button1" onclick="callAndroid()">点击调用Android代码</button>
+   </body>
+</html>
+
+<!--
+<html>
+<head>
+    <script type="text/javascript">
+function show_alert(){
+	alert('第一行\n第二行');
+}
+
+function show_confirm(){
+	var result = confirm('是否删除！');
+	if(result){
+		alert('删除成功！');
+	}else{
+		alert('不删除！');
+	}
+}
+
+function show_prompt(){
+	var value = prompt('输入你的名字：', MyWebView.getSysVersion());
+	if(value == null){
+		alert('你取消了输入！');
+	}else if(value == ''){
+		alert('姓名输入为空，请重新输入！');
+		show_prompt();
+	}else{
+		alert('你好，'+value);
+	}
+}
+</script>
+</head>
+<body>
+<input id="alert_button" type="button" value="alert" onclick="show_alert()" >
+<input id="confirm_button" type="button" value="confirm" onclick="show_confirm()" >
+<input id="prompt_button" type="button" value="prompt" onclick="show_prompt()" >
+</body>
+</html>
+
+-->

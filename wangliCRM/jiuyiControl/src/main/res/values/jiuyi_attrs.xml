@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <declare-styleable name="LazyViewPager">
+        <attr name="init_lazy_item_offset" format="float" />
+    </declare-styleable>
+
+
+    <declare-styleable name="ItemGroup">
+        <!--标题的文字-->
+        <attr name="title" format="string" />
+        <!--标题的字体大小-->
+        <attr name="title_size" format="dimension" />
+        <!--标题的字体颜色-->
+        <attr name="title_color" format="color" />
+        <!--输入框的内容-->
+        <attr name="edt_content" format="string" />
+        <!--输入框的字体大小-->
+        <attr name="edt_text_size" format="dimension" />
+        <!--输入框的字体颜色-->
+        <attr name="edt_text_color" format="color" />
+        <!--输入框提示的内容-->
+        <attr name="edt_hint_content" format="string" />
+        <!--输入框的提示字体的字体颜色-->
+        <attr name="edt_hint_text_color" format="color" />
+        <!--输入框是否可以编辑内容-->
+        <attr name="isEditable" format="boolean"/>
+        <!--向的右箭头图标是否可见-->
+        <attr name="jt_visible" format="boolean"/>
+        <!--item布局的内边距-->
+        <attr name="paddingLeft" format="dimension"/>
+        <attr name="paddingRight" format="dimension"/>
+        <attr name="paddingTop" format="dimension"/>
+        <attr name="paddingBottom" format="dimension"/>
+
+        <attr name="drawable_left" format="reference" />
+        <attr name="drawable_right" format="reference" />
+        <attr name="line_color" format="color" />
+        <attr name="line_height" format="integer" />
+    </declare-styleable>
+    <!--带清除按钮的EditText-->
+    <declare-styleable name="EditTextField">
+        <!-- 清除按钮显示模式 -->
+        <attr name="clearButtonMode">
+            <!--不显示清空按钮-->
+            <enum name="never" value="0" />
+            <!--不为空，获得焦点与没有获得焦点都显示清空按钮-->
+            <enum name="always" value="1" />
+            <!--不为空，且在编辑状态时（及获得焦点）显示清空按钮-->
+            <enum name="whileEditing" value="2" />
+            <!--不为空，且不在编译状态时（焦点不在输入框上）显示清空按钮-->
+            <enum name="unlessEditing" value="3" />
+        </attr>
+        <attr name="clearButtonDrawable" format="reference"/>
+    </declare-styleable>
+</resources>

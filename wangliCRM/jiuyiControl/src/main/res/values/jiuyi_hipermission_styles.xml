@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="jiuyiPermissionStyle">
+        <item name="PermissionButtonBackground">@drawable/jiuyi_dialog_buttonbg_confirm</item>
+        <item name="PermissionBackround">@drawable/shape_bg_white</item>
+        <item name="PermissionButtonTextColor">@android:color/white</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+</resources>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/dialog_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:background="#33000000"
+        android:gravity="bottom"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/default_set"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:text="默认设置\n9:00-16:00首页为自选股,其他时间为首页"
+                android:textColor="#838383" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="#ececec" />
+
+            <TextView
+                android:id="@+id/set_root"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:gravity="center"
+                android:onClick="click"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="首页"
+                android:textColor="#3AC0FA"
+                android:textSize="17sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ececec" />
+            <TextView
+                android:id="@+id/set_hq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:gravity="center"
+                android:onClick="click"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="行情"
+                android:textColor="#3AC0FA"
+                android:textSize="17sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ececec" />
+            <TextView
+                android:id="@+id/set_jy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:gravity="center"
+                android:onClick="click"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="交易"
+                android:textColor="#3AC0FA"
+                android:textSize="17sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ececec" />
+
+            <TextView
+                android:id="@+id/set_zx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:gravity="center"
+                android:onClick="click"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="资讯"
+                android:textColor="#3AC0FA"
+                android:textSize="17sp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ececec" />
+            <TextView
+                android:id="@+id/set_me"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:gravity="center"
+                android:onClick="click"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="我"
+                android:textColor="#3AC0FA"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#ffffff" >
+
+            <TextView
+                android:id="@+id/tv_cancle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:gravity="center"
+                android:onClick="click"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="取消"
+                android:textColor="#3AC0FA"
+                android:textSize="17sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

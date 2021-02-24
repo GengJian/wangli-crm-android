@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--主界面-->
+<com.control.widget.relativeLayout.JiuyiRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/jiuyi_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tzt_whitepage_bgcolor"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/jiuyi_titlebar_height"
+        android:layout_alignParentTop="true"
+        android:id="@+id/jiuyi_titlebar_layout"
+        layout="@layout/jiuyi_titlebar_completer_layout"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="55dp"
+        android:scrollbars="none"
+        >
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <com.control.widget.JiuyiItemGroup
+            android:id="@+id/ig_client"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:edt_hint_content="请选择客户"
+            app:isEditable="false"
+            app:paddingLeft="15dp"
+            app:title="客户" />
+
+
+<!--        <com.control.widget.JiuyiEditTextField
+            android:id="@+id/edt_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:singleLine="false"
+            android:paddingLeft="10dp"
+            app:clearButtonMode="never"
+            android:gravity="top|left"
+            android:hint="请输入沟通内容"
+            android:minLines="5"
+            android:inputType="textMultiLine"
+            android:textColor="@color/jiuyi_title_color"
+            android:textColorHint="@color/jiuyi_info_color"
+            android:textSize="14sp" />-->
+        <com.bobomee.android.mentions.edit.MentionEditText
+            android:id="@+id/edt_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:layout_marginLeft="15dp"
+            android:gravity="top|left"
+            android:hint="请输入动态内容"
+            android:inputType="textMultiLine"
+            android:minLines="5"
+            android:layout_marginTop="5dp"
+            android:singleLine="false"
+            android:textColor="@color/jiuyi_title_color"
+            android:textColorHint="@color/jiuyi_info_color"
+            android:textSize="14sp"
+            app:clearButtonMode="never"
+            />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_voicelist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_piclist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_videolist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="0dp"
+            android:background="@color/line_bg" />
+
+        <LinearLayout
+            android:id="@+id/item_group_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_topbar_height"
+            android:gravity="center_vertical"
+            android:weightSum="4"
+            android:orientation="horizontal">
+            <customer.view.DrawableTextView
+                android:id="@+id/tv_at"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:background="@color/jiuyi_white_color"
+                android:text="同事"
+                android:textColor="@color/jiuyi_info_color"
+                android:textSize="15sp"
+                app:leftDrawable="@drawable/at"
+                app:leftDrawableHeight="20dp"
+                app:leftDrawableWidth="20dp"/>
+            <customer.view.DrawableTextView
+                android:id="@+id/tv_voice"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:background="@color/jiuyi_white_color"
+                android:text="语音"
+                android:textColor="@color/jiuyi_info_color"
+                android:textSize="15sp"
+                app:leftDrawable="@drawable/voice"
+                app:leftDrawableHeight="20dp"
+                app:leftDrawableWidth="20dp"/>
+            <customer.view.DrawableTextView
+                android:id="@+id/tv_picture"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:background="@color/jiuyi_white_color"
+                android:text="图片"
+                android:textColor="@color/jiuyi_info_color"
+                android:textSize="15sp"
+                app:leftDrawable="@drawable/picture"
+                app:leftDrawableHeight="20dp"
+                app:leftDrawableWidth="20dp"/>
+            <customer.view.DrawableTextView
+                android:id="@+id/tv_video"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:background="@color/jiuyi_white_color"
+                android:text="视频"
+                android:textColor="@color/jiuyi_info_color"
+                android:textSize="15sp"
+                app:leftDrawable="@drawable/video"
+                app:leftDrawableHeight="20dp"
+                app:leftDrawableWidth="20dp"/>
+        </LinearLayout>
+
+
+        <!-- <customer.view.JiuyiCommunicationBar
+             android:id="@+id/cob_bar"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             app:paddingLeft="0dp"
+              />-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/jiuyi_backgroud_color"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="3dp"
+                        android:layout_height="17dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/jiuyi_vertical_bg_normal" />
+
+                    <Space
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/tv_accountinfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="关联情报"
+                        android:textColor="@color/jiuyi_title_color"
+                        android:textSize="16sp" />
+
+                <!--    <ImageView
+                        android:id="@+id/iv_new"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:gravity="center_vertical"
+                        android:src="@drawable/purchasenew" />-->
+
+                </LinearLayout>
+
+        <com.recyclerview.swipe.SwipeMenuRecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_add"
+            android:dividerHeight="0dp"
+            android:overScrollMode="never"
+
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="0dp"
+            android:background="@color/jiuyi_backgroud_color" />
+        <RelativeLayout
+            android:id="@+id/rv_new"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/jiuyi_white"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/iv_new"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_toLeftOf="@+id/tv_new"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/purchasenew" />
+
+            <TextView
+                android:id="@+id/tv_new"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:textColor="@color/jiuyi_blue"
+                android:textSize="15sp"
+                android:text="增加" />
+
+
+        </RelativeLayout>
+
+
+
+
+
+    </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <include layout="@layout/jiuyi_include_processbarview"/>
+
+</com.control.widget.relativeLayout.JiuyiRelativeLayout>

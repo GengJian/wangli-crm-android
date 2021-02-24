@@ -1,0 +1,19 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    xmlns:chart="http://schemas.android.com/apk/res-auto"
+    android:background="@color/jiuyi_white">
+
+     <customer.view.Histogram
+                           android:layout_marginTop="10dp"
+                           android:id="@+id/histogramchart"
+                           android:layout_width="match_parent"
+                           android:layout_height="200dp"
+                           android:layout_marginRight="5dp"
+                           chart:hCoordinatesColor="@color/jiuyi_cost_color"
+                           chart:hxTextColor="@color/jiuyi_title_color"
+                           chart:hyTextColor="@color/jiuyi_info2_color"
+                           />
+
+</FrameLayout>

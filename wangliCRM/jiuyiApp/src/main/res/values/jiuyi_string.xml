@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- string的维护 -->
+<!-- 每一类的string放到相应的片断下 -->
+<resources>
+	<!--搜索界面-->
+	<string name="jiuyi_customer_edittext_hint">客户名称/首字母/联系人名称/电话</string>
+	<string name="jiuyi_customer_pop_speak">轻点麦克风说话</string>
+	<string name="jiuyi_customer_pop_speak_nothing">您好像什么也没说</string>
+	<string name="jiuyi_customer_pop_speak_nonet">世界上最遥远的距离就是没网</string>
+	<string name="jiuyi_customer_pop_speak_listening">正在听您说...</string>
+	<string name="jiuyi_customer_pop_speak_click">轻点完成说话</string>
+	<string name="jiuyi_cancel">取消</string>
+	<string name="jiuyi_customer_pop_speak_loud">请说出</string>
+	<string name="jiuyi_supportbyiflytek">该技术由科大讯飞提供</string>
+	<string name="jiuyi_customer_name">客户或联系人的名称</string>
+	<string name="jiuyi_customer_pop_speak_nopermission">1.您可能没有录音权限\r\n2.您的录音设备可能被占用</string>
+	<!-- 其他 -->
+    <string name="jiuyi_app_name">王力CRM</string><!-- 软件名字 -->
+
+	<!--手机号激活label-->
+	<string name="jiuyi_login_note1">进行手机号注册认证</string>
+	<string name="jiuyi_login_note2">未收到短信验证码？</string>
+	<string name="jiuyi_login_note3">请使用语音验证</string>
+	<string name="tip_permission_camera">没有使用相机的权限，请在权限管理中开启</string>
+	<string name="tip_permission_storage">没有使用SD卡的权限，请在权限管理中开启</string>
+	<string name="tip_permission_camera_storage">没有使用相机和SD卡的权限，请在权限管理中开启</string>
+    <string name="tip_type_not_image">选择的不是图片</string>
+
+	<string name="jiuyi_v23_passwordlockInputErrorMsg">连续错误超过5次，将退出登录并清除原先设定密码。可在重新登录后重新设置锁屏密码！ </string>
+
+
+</resources>

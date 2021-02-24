@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--可点击-->
+    <item android:state_enabled="true" android:color="@color/tzt_v23_comm_green_color"/>
+    <!--不可点击-->
+    <item android:state_enabled="false" android:color="#CCCCCC"  />
+    <!--默认-->
+    <item android:color="@color/tzt_v23_comm_green_color" />
+</selector>
+

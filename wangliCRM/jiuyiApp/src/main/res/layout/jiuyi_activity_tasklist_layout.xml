@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--主界面-->
+<com.control.widget.relativeLayout.JiuyiRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/jiuyi_relative_layout"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/jiuyi_titlebar_height"
+        android:layout_alignParentTop="true"
+        android:id="@+id/jiuyi_titlebar_layout"
+        layout="@layout/jiuyi_titlebar_comm_layout"/>
+    <android.support.design.widget.TabLayout
+        android:id="@+id/jiuyi_risk_tablayout"
+        android:layout_below="@id/jiuyi_titlebar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+
+        app:tabGravity="center"
+        app:tabMode="scrollable"
+        android:background="@color/jiuyi_white_color"
+        app:tabIndicatorColor="@color/jiuyi_blue"
+        app:tabSelectedTextColor="@color/jiuyi_blue"
+        app:tabTextColor="@color/jiuyi_title_color"
+        app:tabTextAppearance="@style/TabLayoutTextStyle" />
+
+    <com.jiuyi.tools.jiuyiCustomerViewPager
+        android:id="@+id/jiuyi_customer_riskviewpager"
+        android:layout_below="@id/jiuyi_risk_tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+
+    <include layout="@layout/jiuyi_include_processbarview" />
+</com.control.widget.relativeLayout.JiuyiRelativeLayout>
+

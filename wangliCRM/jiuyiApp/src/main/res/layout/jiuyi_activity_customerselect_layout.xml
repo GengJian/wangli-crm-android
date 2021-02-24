@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--主界面-->
+<com.control.widget.relativeLayout.JiuyiRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/jiuyi_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tzt_whitepage_bgcolor"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/jiuyi_titlebar_height"
+        android:layout_alignParentTop="true"
+        android:id="@+id/jiuyi_titlebar_layout"
+        layout="@layout/jiuyi_titlebar_cancelcompleter_layout"/>
+    <LinearLayout
+        android:id="@+id/jiuyi_searchcustomer_inlayout"
+        android:layout_below="@+id/jiuyi_titlebar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="10dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginTop="8dip"
+        android:layout_marginBottom="8dip"
+        android:background="@drawable/jiuyi_titlebar_searchcustomer_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="8dip"
+            android:scaleType="center"
+            android:src="@drawable/tzt_v23_title_search_gray" />
+
+                  <com.control.widget.JiuyiEditText
+                      android:id="@+id/et_search"
+                      android:layout_width="0dp"
+                      android:layout_height="match_parent"
+                      android:layout_weight="1"
+                      android:textColor="@color/tzt_v23_edit_text_color"
+                      android:gravity="left|center"
+                      android:hint="搜索客户名称"
+                      android:textColorHint="@color/jiuyi_info_color"
+                      android:tag="skin_1"
+                      android:background="@null"
+                      android:lines="1"
+                      android:textCursorDrawable="@drawable/jiuyi_v23_cursor_shape"
+                      android:focusable="true"
+                      android:layout_margin="0dip"
+                      android:padding="0dip"
+                      android:minHeight="20dip"
+                      android:imeOptions="actionSearch"
+                      android:inputType="text"
+                      android:focusableInTouchMode="true"
+                      android:cursorVisible="true"
+                      android:textSize="13sp" />
+        <ImageView
+            android:id="@+id/jiuyi_searchcustomer_mic"
+            android:layout_width="24dip"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:layout_marginRight="7dip"
+            android:visibility="gone"
+            android:src="@drawable/jiuyi_search_mic_icon"
+            />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_customerlist"
+        android:layout_below="@+id/jiuyi_searchcustomer_inlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            app:srlHeaderMaxDragRate="2.5"
+            app:srlPrimaryColor="@android:color/darker_gray"
+            app:srlAccentColor="@android:color/transparent"
+            app:srlEnableLoadmore="true"
+            >
+            <!--srlHeaderMaxDragRate=2.5时候WaterDropHeader的下拉效果最好-->
+            <com.scwang.smartrefresh.header.WaterDropHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:dividerHeight="0dp"
+                android:overScrollMode="never"
+
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/tv_emptytext"
+        android:layout_above="@+id/iv_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:textColor="@color/jiuyi_info2_color"
+        android:text="暂无相关数据"
+        />
+
+
+    <include layout="@layout/jiuyi_include_processbarview"/>
+
+</com.control.widget.relativeLayout.JiuyiRelativeLayout>

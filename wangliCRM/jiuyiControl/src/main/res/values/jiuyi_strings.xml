@@ -1,0 +1,22 @@
+<resources>
+<!--=====全局字符·开始=================================================================-->
+    <string name="app_name">jiuyiControl</string>
+
+    <!--dialog的确定按钮的文字-->
+    <string name="dialogbuttontext_confirm">确定</string>
+    <!--dialog的取消按钮的文字-->
+    <string name="dialogbuttontext_cancel">取消</string>
+
+
+
+
+<!--=====全局字符·结束=================================================================-->
+
+    <!--=====系统公共字符·开始=================================================================-->
+    <string name="exit_action_true">确定</string>
+    <string name="exit_action_cancel">取消</string>
+    <string name="exit_content">您确定退出程序么？</string>
+    <string name="brvah_loading">正在加载中...</string>
+    <string name="brvah_load_failed">加载失败，请点我重试</string>
+    <string name="brvah_load_end">没有更多数据</string>
+</resources>

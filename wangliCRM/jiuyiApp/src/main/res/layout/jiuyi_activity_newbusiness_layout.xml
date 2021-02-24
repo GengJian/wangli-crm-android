@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--主界面-->
+<com.control.widget.relativeLayout.JiuyiRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/jiuyi_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tzt_whitepage_bgcolor"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/jiuyi_titlebar_height"
+        android:layout_alignParentTop="true"
+        android:id="@+id/jiuyi_titlebar_layout"
+        layout="@layout/jiuyi_titlebar_completer_layout"/>
+
+    <ScrollView
+        android:layout_marginTop="@dimen/jiuyi_titlebar_height"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/ll_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="17dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/jiuyi_vertical_bg_normal" />
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="基本信息"
+                    android:textColor="@color/jiuyi_title_color"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_write"
+                app:isEditable="true"
+                app:jt_visible="false"
+                app:title="商机标题" />
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_choose"
+                app:isEditable="false"
+                app:title="商机类型" />
+
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_source"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_choose"
+                app:isEditable="false"
+                app:title="商机来源" />
+
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_oldclient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:edt_hint_content="@string/hint_choose"
+                app:isEditable="false"
+                app:title="老客户" />
+
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_choose"
+                app:isEditable="false"
+                app:title="关联活动" />
+
+
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_clue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_choose"
+                app:isEditable="false"
+                app:title="关联线索" />
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_person"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:edt_hint_content="@string/hint_choose"
+                app:isEditable="false"
+                app:title="提交人" />
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_commitdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:edt_hint_content="@string/hint_choose"
+                app:isEditable="false"
+                app:title="提交日期" />
+
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_client"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_choose"
+                app:isEditable="false"
+                app:title="客户" />
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_linkman"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_write"
+                app:isEditable="true"
+                app:jt_visible="false"
+                app:title="客户联系人" />
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_duty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_write"
+                app:isEditable="true"
+                app:jt_visible="false"
+                app:title="联系人职位" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_topbar_height"
+                android:gravity="center_vertical"
+                android:background="@color/jiuyi_white"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/BlackText.standard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:gravity="center_vertical"
+                    android:text="联系人电话"
+                    android:textColor="@color/jiuyi_title_color" />
+
+                <EditText
+                    android:id="@+id/jig_linkmantel"
+                    style="@style/BlackText.standard"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|right"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:maxLength="15"
+                    android:maxLines="1"
+
+                    android:background="@null"
+                    android:hint="@string/hint_write"
+                    android:singleLine="true"
+                    android:textColorHint="@color/jiuyi_info_color" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/line_bg" />
+
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_dealdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_choose"
+                app:isEditable="false"
+                app:title="预计成交日期" />
+<!--            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_amt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_write"
+                app:isEditable="true"
+                app:jt_visible="false"
+                app:title="商机金额" />-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_topbar_height"
+                android:gravity="center_vertical"
+                android:background="@color/jiuyi_white"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/BlackText.standard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:gravity="center_vertical"
+                    android:text="商机金额(元)"
+                    android:textColor="@color/jiuyi_title_color" />
+
+                <EditText
+                    android:id="@+id/jig_amt"
+                    style="@style/BlackText.standard"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|right"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:maxLength="11"
+                    android:maxLines="1"
+                    android:inputType="numberDecimal"
+                    android:digits="1234567890."
+                    android:background="@null"
+                    android:hint="@string/hint_write"
+                    android:singleLine="true"
+                    android:textColor="@color/jiuyi_info_color"
+                    android:textColorHint="@color/jiuyi_info_color" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/line_bg" />
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_import"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_choose"
+                app:isEditable="false"
+                app:title="重要程度" />
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_bigtype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_choose"
+                app:isEditable="false"
+                app:title="产品大类" />
+
+
+            <com.control.widget.JiuyiBigTextGroup
+                android:id="@+id/jig_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="100dp"
+                app:edt_hint_content="@string/hint_write"
+                app:title="商机内容"
+                 />
+
+            <customer.view.JiuyiTitleGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="友商"
+                />
+
+            <com.recyclerview.swipe.SwipeMenuRecyclerView
+                android:id="@+id/rv_complaintlist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_add"
+                android:dividerHeight="0dp"
+                android:overScrollMode="never"
+
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+            <RelativeLayout
+                android:id="@+id/rv_new"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="5dp"
+                android:background="@color/jiuyi_white"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/iv_new"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_toLeftOf="@+id/tv_new"
+                    android:src="@drawable/purchasenew" />
+
+                <TextView
+                    android:id="@+id/tv_new"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:text="增加"
+                    android:textColor="@color/jiuyi_blue"
+                    android:textSize="15sp" />
+
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/jiuyi_backgroud_color" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="17dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/jiuyi_vertical_bg_normal" />
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="附件内容"
+                    android:textColor="@color/jiuyi_title_color"
+                    android:textSize="16sp" />
+
+
+            </LinearLayout>
+            <customer.view.JiuyiAttachment
+                android:id="@+id/ah_attach"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="0/9" />
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/jiuyi_include_processbarview"/>
+
+</com.control.widget.relativeLayout.JiuyiRelativeLayout>

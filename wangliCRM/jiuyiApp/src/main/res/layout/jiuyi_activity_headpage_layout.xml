@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tzt_headpage_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top|right"
+    android:layout_gravity="center">
+    <!--scaleType="centerCrop"必不可少，否则图片会变小-->
+    <ImageView
+        android:id="@+id/tzt_headpage_welcomeimage"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ImageView>
+
+    <RelativeLayout
+        android:id="@+id/tzt_headpage_time_layout"
+        android:layout_width="80sp"
+        android:layout_height="35dip"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="35dip"
+        android:layout_marginTop="35dip"
+        android:background="@drawable/tzt_welcomimage_timeborder"
+        android:gravity="center"
+        android:visibility="invisible"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tzt_headpage_timelable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="5dip"
+            android:text="跳过"
+            android:textColor="@color/tzt_black"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/tzt_headpage_timevalue"
+            android:layout_toRightOf="@id/tzt_headpage_timelable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="3dip"
+            android:layout_weight="1"
+            android:lines="1"
+            android:text="3秒"
+            android:textColor="#c59031"
+            android:textSize="17sp" />
+    </RelativeLayout>
+</RelativeLayout>

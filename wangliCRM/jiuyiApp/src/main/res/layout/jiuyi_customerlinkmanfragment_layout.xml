@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+    <android.support.design.widget.TabLayout
+        android:id="@+id/jiuyi_tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:tabGravity="fill"
+        app:tabMode="fixed"
+        android:background="@color/jiuyi_white_color"
+        app:tabIndicatorColor="@color/jiuyi_blue"
+        app:tabSelectedTextColor="@color/jiuyi_blue"
+        app:tabTextColor="@color/jiuyi_title_color"
+        app:tabTextAppearance="@style/TabLayoutTextStyle" />
+    <View
+        android:id="@+id/view_1"
+        android:layout_below="@id/jiuyi_tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#dddddd" />
+
+    <com.jiuyi.tools.jiuyiCustomerViewPager
+        android:id="@+id/jiuyi_customer_viewpager"
+        android:layout_below="@id/view_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+
+    <!-- 进度条 -->
+    <include layout="@layout/jiuyi_include_processbarview"/>
+</RelativeLayout>
+

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--主界面-->
+<com.control.widget.relativeLayout.JiuyiRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/jiuyi_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tzt_whitepage_bgcolor"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/jiuyi_titlebar_height"
+        android:layout_alignParentTop="true"
+        android:id="@+id/jiuyi_titlebar_layout"
+        layout="@layout/jiuyi_titlebar_completer_layout"/>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/osv_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/jiuyi_titlebar_height"
+        android:scrollbars="none">
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/jiuyi_backgroud_color"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="3dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/jiuyi_vertical_bg_normal" />
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_accountinfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="基本信息"
+                android:textColor="@color/jiuyi_title_color"
+                android:textSize="16sp" />
+
+
+
+        </LinearLayout>
+
+        <com.control.widget.JiuyiItemGroup
+            android:id="@+id/ig_infomationtype"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:edt_hint_content="请选择情报大类"
+            app:isEditable="false"
+            app:title="情报大类" />
+        <com.control.widget.JiuyiItemGroup
+            android:id="@+id/ig_linkcustomer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:edt_hint_content="请选择关联对象"
+            app:isEditable="false"
+            app:title="关联对象" />
+        <com.control.widget.JiuyiItemGroup
+            android:id="@+id/ig_businesstype"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:edt_hint_content="请选择业务类型"
+            app:isEditable="false"
+            app:title="业务类型" />
+        <com.control.widget.JiuyiItemGroup
+            android:id="@+id/ig_visilbity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:edt_hint_content="请选择可见范围"
+            app:isEditable="false"
+            app:title="可见范围" />
+        <com.control.widget.JiuyiItemGroup
+            android:id="@+id/ig_person"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:edt_hint_content="请选择人员"
+            app:isEditable="false"
+            app:title="人员" />
+        <ListView
+            android:id="@+id/lv_companyaddresslist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:divider="@color/jiuyi_dividebackgroud_color"
+            android:dividerHeight="@dimen/tzt_splitline_height"
+            android:fadingEdge="none"
+            android:focusable="true"
+            android:listSelector="@color/jiuyi_white_color"
+            android:scrollbars="none"
+            android:scrollingCache="false"
+            >
+        </ListView>
+
+        <RelativeLayout
+            android:id="@+id/rv_addtitle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/jiuyi_white"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_new"
+                android:layout_width="66dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/jiuyi_v23_button_bg_normal"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="+ 新情报"
+                android:textColor="@color/jiuyi_white"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/cb_selectall"
+                style="@style/CustomCheckboxTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="3dp"
+                android:layout_toLeftOf="@id/iv_delete"
+                android:padding="5dp"
+                android:text="全选"
+                android:textColor="@color/jiuyi_info_color" />
+            <ImageView
+                android:id="@+id/iv_delete"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="15dp"
+                android:duplicateParentState="true"
+                android:padding="5dp"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/addressdel" />
+
+
+        </RelativeLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_infodetaillist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <include layout="@layout/jiuyi_include_processbarview"/>
+
+</com.control.widget.relativeLayout.JiuyiRelativeLayout>

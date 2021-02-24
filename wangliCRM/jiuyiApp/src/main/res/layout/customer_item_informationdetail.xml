@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/jiuyi_dividebackgroud_color"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/jiuyi_white_color"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="目前资金紧张，暂无法付款"
+            android:textColor="@color/jiuyi_title_color" />
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="需响应" />
+
+    </LinearLayout>
+        <TextView
+            android:id="@+id/tv_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_gravity="left|center_horizontal"
+            android:gravity="center"
+            android:text="提出人:张三"
+            android:textColor="@color/jiuyi_info_color"
+            android:textSize="13sp"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:background="@color/jiuyi_white_color">
+            <TextView
+                android:id="@+id/tv_plansend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left|center"
+                android:text="创建人"
+                android:textColor="@color/jiuyi_info_color" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="2dp"
+                android:text="创建人日期"
+                android:textColor="@color/jiuyi_info_color" />
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@color/background">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:gravity="center_vertical"
+                android:layout_weight="1"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:text="回复:"
+                    android:textColor="@color/jiuyi_link_color" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:text="可以扫描产品包装箱条码查看"
+                    android:textColor="@color/jiuyi_title_color" />
+
+
+
+            </LinearLayout>
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+        <!--        <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_weight="1"
+                    android:background="@color/line_bg" />-->
+
+    </LinearLayout>
+</RelativeLayout>

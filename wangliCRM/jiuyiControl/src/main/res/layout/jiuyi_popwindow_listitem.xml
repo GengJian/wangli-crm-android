@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 交易登陆，选择账号（单挑记录）-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:textColor="@color/tzt_gravy"
+        android:id="@+id/tzt_trendmenu_item"
+        />
+</LinearLayout>

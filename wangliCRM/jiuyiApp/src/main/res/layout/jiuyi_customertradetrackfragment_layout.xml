@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/tzt_whitepage_bgcolor">
+
+<!--
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        >
+        <ListView
+            android:id="@+id/lvTrace"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="false"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:listSelector="@android:color/transparent"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="8dp" />
+    </ScrollView>
+-->
+
+    <ListView
+        android:id="@+id/lvTrace"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:listSelector="@android:color/transparent"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp" />
+    <!-- 进度条 -->
+    <include layout="@layout/jiuyi_include_processbarview"/>
+</RelativeLayout>

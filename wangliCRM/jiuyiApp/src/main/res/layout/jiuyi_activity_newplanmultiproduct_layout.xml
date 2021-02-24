@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--主界面-->
+<com.control.widget.relativeLayout.JiuyiRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/jiuyi_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tzt_whitepage_bgcolor"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/jiuyi_titlebar_height"
+        android:layout_alignParentTop="true"
+        android:id="@+id/jiuyi_titlebar_layout"
+        layout="@layout/jiuyi_titlebar_completer_layout"/>
+
+        <LinearLayout
+            android:id="@+id/ll_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:layout_below="@+id/jiuyi_titlebar_layout"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_topbar_height"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/BlackText.standard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="批号"
+                    android:textColor="@color/jiuyi_title_color" />
+
+                <TextView
+                    android:id="@+id/tv_batchNum"
+                    style="@style/BlackText.standard"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|end"
+                    android:hint="@string/hint_choose"
+                    android:paddingEnd="15dp"
+                    android:paddingStart="0dp"
+                    android:textColor="@color/jiuyi_title_color"
+                    android:textColorHint="@color/jiuyi_info_color"
+                    />
+
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:contentDescription="@null"
+                    android:src="@mipmap/et_forword" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/line_bg" />
+
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_topbar_height"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/BlackText.standard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="等级"
+                    android:textColor="@color/jiuyi_title_color" />
+
+                <TextView
+                    android:id="@+id/tv_level"
+                    style="@style/BlackText.standard"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|right"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="20dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="自动带出"
+                    android:textColor="@color/jiuyi_title_color"
+                    android:textColorHint="@color/jiuyi_info_color" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/line_bg" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_topbar_height"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/BlackText.standard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_vertical"
+                    android:text="规格"
+                    android:textColor="@color/jiuyi_title_color" />
+
+                <TextView
+                    android:id="@+id/tv_spec"
+                    style="@style/BlackText.standard"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|right"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="20dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="自动带出"
+                    android:textColor="@color/jiuyi_title_color"
+                    android:textColorHint="@color/jiuyi_info_color" />
+
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/line_bg" />
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_topbar_height"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/BlackText.standard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_vertical"
+                    android:text="件重"
+                    android:textColor="@color/jiuyi_title_color" />
+
+                <TextView
+                    android:id="@+id/tv_weight"
+                    style="@style/BlackText.standard"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|right"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="20dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="自动带出"
+                    android:textColor="@color/jiuyi_title_color"
+                    android:textColorHint="@color/jiuyi_info_color" />
+
+                <!--          <ImageButton
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_marginRight="15dp"
+                              android:background="@color/white"
+                              android:contentDescription="@null"
+                              android:src="@drawable/client_arrow" />-->
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/line_bg" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_topbar_height"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/BlackText.standard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_vertical"
+                    android:text="配方"
+                    android:textColor="@color/jiuyi_title_color" />
+
+                <TextView
+                    android:id="@+id/tv_prescription"
+                    style="@style/BlackText.standard"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|right"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="20dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="自动带出"
+                    android:textColor="@color/jiuyi_title_color"
+                    android:textColorHint="@color/jiuyi_info_color" />
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/line_bg" />
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_topbar_height"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/BlackText.standard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_vertical"
+                    android:text="工厂"
+                    android:textColor="@color/jiuyi_title_color" />
+
+                <TextView
+                    android:id="@+id/tv_factory"
+                    style="@style/BlackText.standard"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|right"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="20dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="自动带出"
+                    android:textColor="@color/jiuyi_title_color"
+                    android:textColorHint="@color/jiuyi_info_color" />
+
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/line_bg" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_topbar_height"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/BlackText.standard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_vertical"
+                    android:text="数量(KG)"
+                    android:textColor="@color/jiuyi_title_color" />
+
+       <!--         <TextView
+                     android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    android:text="" />-->
+
+                <com.control.widget.JiuyiEditText
+                    android:id="@+id/et_count"
+                    style="@style/BlackText.standard"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:inputType="numberDecimal"
+                    android:background="@null"
+                    android:hint=" 请输入数量"
+                    android:textColorHint="@color/jiuyi_info_color"
+                    android:textColor="@color/jiuyi_title_color"
+                    />
+            </LinearLayout>
+
+
+        </LinearLayout>
+<!--    </ScrollView>-->
+
+    <include layout="@layout/jiuyi_include_processbarview"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dip"
+        android:layout_below="@+id/ll_content"
+        android:layout_marginTop="15dp">
+
+        <com.control.widget.JiuyiButton
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/jiuyi_v23_button_bg_disable"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@color/tzt_white"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</com.control.widget.relativeLayout.JiuyiRelativeLayout>

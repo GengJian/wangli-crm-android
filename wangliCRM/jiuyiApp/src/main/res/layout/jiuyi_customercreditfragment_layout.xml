@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.control.widget.JiuyiSwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:gravity="center|top">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/tzt_whitepage_bgcolor">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        >
+
+        <LinearLayout
+            android:id="@+id/ll_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_list"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:gravity="center_vertical"
+                android:background="@drawable/jiuyi_linelayout_bg_selector"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_refresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|center_vertical"
+                    android:text=""
+                    android:textColor="@color/jiuyi_info_color"
+                    android:textSize="14sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_chart"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/jiuyi_linelayout_bg_selector"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_charttitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:text="" />
+
+                <com.beiing.leafchart.LeafLineChart
+                    android:id="@+id/leaf_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:gravity="center_vertical"
+                android:background="@drawable/jiuyi_linelayout_bg_selector"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/tv_credit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|center_vertical"
+                    android:text="客户信用评级:AA"
+                    android:textColor="@color/jiuyi_info_color"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/jiuyi_linelayout_bg_selector"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="3dp"
+                        android:layout_height="17dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/jiuyi_vertical_bg_normal" />
+
+                    <Space
+                        android:layout_width="5dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:text="分子公司应收余额"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+                    <View
+                        style="@style/HorizontalDivider"
+                        android:id="@+id/view_line2"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/ll_title"
+                        android:layout_below="@+id/view_line2"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@color/jiuyi_white_color"
+                        >
+                        <View style="@style/VerticalDivider"
+                            android:layout_marginLeft="5dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/tv_producttype"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center"
+                            android:text="公司代码"
+                            android:textColor="@color/jiuyi_title_color" />
+                        <View style="@style/VerticalDivider"/>
+
+                        <TextView
+                            android:id="@+id/tv_productname"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/jiuyi_title_color"
+                            android:text="公司名称" />
+                        <View style="@style/VerticalDivider"/>
+                        <TextView
+                            android:id="@+id/tv_productcomponent"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/jiuyi_title_color"
+                            android:text="币种" />
+                        <View style="@style/VerticalDivider"/>
+
+                        <TextView
+                            android:id="@+id/tv_operation"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/jiuyi_title_color"
+                            android:text="余额(万)" />
+                        <View style="@style/VerticalDivider"
+                            android:layout_marginRight="5dp"
+                            />
+                    </LinearLayout>
+                    <View
+                        style="@style/HorizontalDivider"
+                        android:id="@+id/view_line"
+                        android:layout_below="@+id/ll_title"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        />
+
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_debtlist"
+                        android:layout_below="@+id/view_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="-5dp"
+                        />
+                    <TextView
+                        android:id="@+id/tv_emptytext"
+                        android:layout_below="@+id/view_line"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:layout_centerHorizontal="true"
+                        android:visibility="gone"
+                        android:textColor="@color/jiuyi_info2_color"
+                        android:text="暂无相关数据"
+                        />
+  <!--                  <ImageView
+                        android:id="@+id/iv_empty"
+                        android:layout_above="@+id/tv_emptytext"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/nodata"
+                        android:tint="@color/jiuyi_info2_color"
+                        android:visibility="gone"
+                        />-->
+
+
+                </RelativeLayout>
+
+                <!-- <View
+                     android:layout_width="match_parent"
+                     android:layout_height="0.5dp"
+                     android:layout_marginTop="0dp"
+                     android:background="@color/line_bg"
+                     />
+
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="40dp"
+                     android:background="@color/jiuyi_white_color"
+                     >
+                     <View style="@style/VerticalDivider"
+                         android:layout_marginLeft="5dp"
+                         />
+
+                     <TextView
+                         android:id="@+id/tv_producttype"
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:layout_weight="1"
+                         android:layout_gravity="center_vertical"
+                         android:gravity="center"
+                         android:textColor="@color/jiuyi_title_color"
+                         android:text="公司代码" />
+                     <View style="@style/VerticalDivider"/>
+
+                     <TextView
+                         android:id="@+id/tv_productname"
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:layout_weight="1"
+                         android:gravity="center"
+                         android:layout_gravity="center_vertical"
+                         android:textColor="@color/jiuyi_title_color"
+                         android:text="公司名称" />
+                     <View style="@style/VerticalDivider"/>
+
+                     <TextView
+                         android:id="@+id/tv_productcomponent"
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:layout_weight="1"
+                         android:gravity="center"
+                         android:layout_gravity="center_vertical"
+                         android:textColor="@color/jiuyi_title_color"
+                         android:text="币种" />
+                     <View style="@style/VerticalDivider"/>
+
+                     <TextView
+                         android:id="@+id/tv_operation"
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:layout_weight="1"
+                         android:gravity="center"
+                         android:layout_gravity="center_vertical"
+                         android:textColor="@color/jiuyi_title_color"
+                         android:text="余额" />
+                     <View style="@style/VerticalDivider"
+                         android:layout_marginRight="5dp"
+                         />
+                 </LinearLayout>
+
+                 <android.support.v7.widget.RecyclerView
+                     android:id="@+id/rv_debtlist"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content" />-->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginTop="20dp"
+                    android:weightSum="2"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_gravity="center_vertical"
+                            android:text="欠款总额：" />
+
+                        <TextView
+                            android:id="@+id/tv_debtSum"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/jiuyi_credit_color"
+                            android:textSize="10sp"
+                            android:text="" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_gravity="center_vertical"
+                            android:text="0至账期：" />
+
+                        <TextView
+                            android:id="@+id/tv_zeroperiod"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/jiuyi_credit_color"
+                            android:text="" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="20dp"
+                    android:weightSum="2"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_gravity="center_vertical"
+                            android:text="账期至90天：" />
+
+                        <TextView
+                            android:id="@+id/tv_90dayperiod"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/jiuyi_credit_color"
+                            android:text="" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_gravity="center_vertical"
+                            android:text="大于90天：" />
+
+                        <TextView
+                            android:id="@+id/tv_over90day"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/jiuyi_credit_color"
+                            android:text="" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_overdue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+
+                android:background="@drawable/jiuyi_linelayout_bg_selector"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="3dp"
+                        android:layout_height="17dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/jiuyi_vertical_bg_normal" />
+
+                    <Space
+                        android:layout_width="5dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/tv_overduedaylabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:text="该客户最长逾期天数为:"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_overdueday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="@color/jiuyi_red"
+                        android:text="120天" />
+
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                      android:layout_marginTop="0dp"
+                    android:background="@color/line_bg"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_monthbook"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/jiuyi_title_color"
+                            android:text="￥66" />
+
+                        <TextView
+                            android:id="@+id/tv_monthbooklabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="7dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:text="本月订单(万)" />
+                    </LinearLayout>
+                    <View style="@style/VerticalDivider"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_monthdelivery"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/jiuyi_title_color"
+                            android:text="￥66" />
+
+                        <TextView
+                            android:id="@+id/tv_monthdeliverylabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_marginTop="7dp"
+                            android:textSize="12sp"
+                            android:text="本月发货(万)" />
+                    </LinearLayout>
+                    <View style="@style/VerticalDivider"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_monthbill"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="￥56"
+                            android:textColor="@color/jiuyi_title_color" />
+
+                        <TextView
+                            android:id="@+id/tv_monthbilllabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:layout_marginTop="7dp"
+                            android:text="本月开票(万)" />
+                    </LinearLayout>
+                    <View style="@style/VerticalDivider"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_monthpayment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/jiuyi_title_color"
+                            android:text="￥56" />
+
+                        <TextView
+                            android:id="@+id/tv_monthpaymentlabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_marginTop="7dp"
+                            android:textSize="12sp"
+                            android:text="本月回款(万)" />
+                    </LinearLayout>
+
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/line_bg"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:weightSum="4"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_premonthbook"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/jiuyi_title_color"
+                            android:text="￥120" />
+
+                        <TextView
+                            android:id="@+id/tv_premonthbooklabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="7dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:text="上月订单(万)" />
+                    </LinearLayout>
+                    <View style="@style/VerticalDivider"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_premonthdelivery"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/jiuyi_title_color"
+                            android:text="￥100" />
+
+                        <TextView
+                            android:id="@+id/tv_premonthdeliverylabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:layout_marginTop="7dp"
+                            android:text="上月发货(万)" />
+                    </LinearLayout>
+                    <View style="@style/VerticalDivider"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_premonthbill"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/jiuyi_title_color"
+                            android:text="￥90" />
+
+                        <TextView
+                            android:id="@+id/tv_premonthbilllabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:layout_marginTop="7dp"
+                            android:text="上月开票(万)" />
+                    </LinearLayout>
+                    <View style="@style/VerticalDivider"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_premonthpayment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/jiuyi_title_color"
+                            android:text="￥20" />
+
+                        <TextView
+                            android:id="@+id/tv_premonthpaymentlabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:layout_marginTop="7dp"
+                            android:text="上月回款(万)" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/jiuyi_linelayout_bg_selector"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="3dp"
+                        android:layout_height="17dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/jiuyi_vertical_bg_normal" />
+
+                    <Space
+                        android:layout_width="5dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/tv_debtarrivelabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="截止到今日(2017-12-09):"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_searchdebtdetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:drawableLeft="@drawable/client_search"
+                        android:textColor="@color/jiuyi_link_color"
+                        android:text="欠款明细表" />
+
+                </LinearLayout>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_arrivemoney"
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <!-- 进度条 -->
+    <include layout="@layout/jiuyi_include_processbarview"/>
+    <ImageView
+        android:id="@+id/iv_no_authority"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@id/tv_no_authoritytext"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/no_authority"
+        android:visibility="gone"
+        android:layout_marginBottom="10dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_no_authoritytext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:visibility="gone"
+        android:textColor="@color/jiuyi_info2_color"
+        android:text="暂无权限查看"
+        />
+
+</RelativeLayout>
+</com.control.widget.JiuyiSwipeRefreshLayout>

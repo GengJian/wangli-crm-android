@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/impresentation/impresentation.iml" filepath="$PROJECT_DIR$/impresentation/impresentation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/imsdk/imsdk.iml" filepath="$PROJECT_DIR$/imsdk/imsdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/imtlslibrary/imtlslibrary.iml" filepath="$PROJECT_DIR$/imtlslibrary/imtlslibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/imui/imui.iml" filepath="$PROJECT_DIR$/imui/imui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jiuyiApp/jiuyiApp.iml" filepath="$PROJECT_DIR$/jiuyiApp/jiuyiApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jiuyiControl/jiuyiControl.iml" filepath="$PROJECT_DIR$/jiuyiControl/jiuyiControl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jiuyiIflytekSDK/jiuyiIflytekSDK.iml" filepath="$PROJECT_DIR$/jiuyiIflytekSDK/jiuyiIflytekSDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jiuyiRxHttp/jiuyiRxHttp.iml" filepath="$PROJECT_DIR$/jiuyiRxHttp/jiuyiRxHttp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wangliCRM.iml" filepath="$PROJECT_DIR$/wangliCRM.iml" />
+    </modules>
+  </component>
+</project>

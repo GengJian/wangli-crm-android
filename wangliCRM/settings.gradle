@@ -1,0 +1,1 @@
+include ':jiuyiControl', ':jiuyiApp', ':jiuyiIflytekSDK', ':jiuyiRxHttp', ':imsdk', ':imui', ':impresentation', ':imtlslibrary'

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/jiuyi_white_color"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/leftContent"
+        style="@style/BlackText.standard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:gravity="center_vertical"
+        android:text=""
+        android:textColor="@color/jiuyi_info_color" />
+
+    <TextView
+        android:id="@+id/rightContent"
+        style="@style/BlackText.standard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_vertical"
+        android:text=""
+        android:paddingEnd="10dp"
+        android:paddingStart="0dp"
+        android:textColor="@color/jiuyi_title_color"
+ />
+
+</LinearLayout>

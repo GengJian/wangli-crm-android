@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 独立Activity个股搜索布局 -->
+<!-- 整个布局分两部分，上部分是输入代码的输入框，下部分是listview列表 -->
+<!--  -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/jiuyi_mainbodyview_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/jiuyi_searchcustomer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="45dip"
+        android:layout_gravity="center_vertical"
+        android:background="@color/jiuyi_blue"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:id="@+id/jiuyi_searchcustomer_inlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="8dip"
+            android:layout_marginLeft="15dip"
+            android:layout_marginRight="50dip"
+            android:layout_marginTop="8dip"
+            android:background="@drawable/jiuyi_titlebar_searchcustomer_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="8dip"
+                android:scaleType="center"
+                android:src="@drawable/tzt_v23_title_search_gray" />
+
+            <com.control.widget.JiuyiEditText
+                android:id="@+id/jiuyi_searchcustomer_edit"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="0dip"
+                android:layout_weight="1"
+                android:background="@null"
+                android:cursorVisible="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="left|center"
+                android:hint="请输入姓名/首字母/手机号"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:lines="1"
+                android:minHeight="20dip"
+                android:padding="0dip"
+                android:singleLine="true"
+                android:tag="skin_1"
+                android:textColor="@color/jiuyi_info_color"
+                android:textColorHint="@color/jiuyi_info_color"
+                android:textCursorDrawable="@drawable/jiuyi_v23_cursor_shape"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:id="@+id/jiuyi_searchcustomer_mic"
+                android:layout_width="24dip"
+                android:layout_height="match_parent"
+                android:layout_marginRight="7dip"
+                android:scaleType="centerInside"
+                android:src="@drawable/jiuyi_search_mic_icon" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/jiuyi_searchcustomer_backup"
+            android:layout_width="50dip"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dip"
+            android:gravity="center"
+            android:text="@string/jiuyi_cancel"
+            android:textColor="@color/jiuyi_white_color"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_searchhistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <customer.view.FlowTagLayout
+            android:id="@+id/flowTagLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp" />
+
+        <LinearLayout
+            android:id="@+id/ll_clear_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dip"
+            android:focusableInTouchMode="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+<!--            <ImageView
+                android:layout_width="30dip"
+                android:layout_height="30dip"
+                android:duplicateParentState="true"
+                android:padding="5dp"
+                android:src="@mipmap/delete" />-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/jiuyi_white_color"
+                android:padding="8dp"
+                android:textColor="@color/jiuyi_blue"
+                android:text="清空搜索历史" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_searchresult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_searchresult"
+            style="@style/BlackText.standard"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:paddingEnd="15dp"
+            android:paddingStart="15dp"
+            android:textColor="@color/jiuyi_info_color" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/line_bg" />
+    </LinearLayout>
+
+    <com.control.widget.recyclerView.JiuyiRecyclerView
+        android:id="@+id/jiuyi_searchcustomer_recycleview"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_gravity="center_vertical" />
+
+    <LinearLayout
+        android:id="@+id/ll_searchcontactresult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_searchcontactresult"
+            style="@style/BlackText.standard"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:paddingEnd="15dp"
+            android:paddingStart="15dp"
+            android:textColor="@color/jiuyi_info_color" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/line_bg" />
+    </LinearLayout>
+
+    <com.control.widget.recyclerView.JiuyiRecyclerView
+        android:id="@+id/jiuyi_searchcontact_recycleview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical" />
+
+
+
+    <!-- 语音搜索 -->
+    <RelativeLayout
+        android:id="@+id/jiuyi_searchcustomer_pop_speek"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:background="@color/jiuyi_white_color"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/jiuyi_searchcustomer_pop_speek_ivback"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="15dp"
+            android:src="@drawable/jiuyi_searchcustomer_closespeak_icon" />
+
+        <TextView
+            android:id="@+id/jiuyi_searchcustomer_pop_speek_tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="78dp"
+            android:text="@string/jiuyi_customer_pop_speak_listening"
+            android:textColor="@color/jiuyi_blue"
+            android:textSize="27sp" />
+
+        <TextView
+            android:id="@+id/jiuyi_searchcustomer_pop_speek_tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/jiuyi_searchcustomer_pop_speek_tv1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:text="@string/jiuyi_customer_pop_speak_loud"
+            android:textColor="@color/jiuyi_info_color"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tzt_searchstock_pop_speek_tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/jiuyi_searchcustomer_pop_speek_tv2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="14dp"
+            android:text="@string/jiuyi_customer_name"
+            android:textColor="@color/jiuyi_info_color"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/jiuyi_searchcustomer_pop_speek_ivstart"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="103dp"
+            android:src="@drawable/jiuyi_searchcustomer_voicebg1" />
+
+        <TextView
+            android:id="@+id/jiuyi_searchcustomer_pop_speek_tv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="63dp"
+            android:text="@string/jiuyi_customer_pop_speak_click"
+            android:textColor="@color/jiuyi_info_color"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/jiuyi_searchcustomer_pop_speek_tv5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="40dp"
+            android:text="@string/jiuyi_supportbyiflytek"
+            android:textColor="@color/jiuyi_info_color"
+            android:textSize="12sp"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</LinearLayout>

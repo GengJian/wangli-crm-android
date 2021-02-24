@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 柱状图颜色属性 -->
+    <integer-array name="histogram_color" >
+        <item>@color/jiuyi_cost_color</item>
+        <item>@color/jiuyi_cost_color</item>
+        <item>@color/jiuyi_cost_color</item>
+        <item>@color/jiuyi_cost_color</item>
+        <item>@color/jiuyi_cost_color</item>
+        <item>@android:color/holo_blue_dark</item>
+        <item>@color/colorAccent</item>
+    </integer-array>
+
+</resources>

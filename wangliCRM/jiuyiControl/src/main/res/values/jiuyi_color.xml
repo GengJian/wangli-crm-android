@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--########通用########-->
+    <!--Theme和Activity背景色：-->
+    <color name="tzt_v23_background_color">#13191f</color><!-- 通用的背景底色 -->
+
+    <!--通用背景色：-->
+    <color name="tzt_v23_comm_background_color">#181e24</color><!-- 通用背景颜色（未特殊定义的背景色） -->
+    <color name="tzt_v23_important_color">#FFFFFF</color><!-- 重要字体黑色颜色 -->
+    <color name="tzt_v23_comm_text_color">#CCCCCC</color><!-- 通用字体颜色（未特殊定义的背景色，） 代替mainFontColor -->
+    <color name="tzt_v23_label_text_color">#48535D</color><!--次要文字颜色 -->
+    <color name="tzt_v23_label2_text_color">#424d56</color><!-- 辅助文字颜色 -->
+	<color name="tzt_v23_comm_green_color">#00a9f8</color><!-- 通用蓝色（比方说搜索的语音提示界面） -->
+    <color name="tzt_v23_comm_split_color">#22282f</color><!-- 通用分割线颜色 -->
+
+    <!--标题栏-->
+    <color name="title_background_color">#0089d1</color><!-- 标题背景色 -->
+    <color name="tzt_v23_title_text_color">#ffffff</color><!-- 标题字体颜色 -->
+    <color name="tzt_v23_title_second_text_color">#ffffff</color><!-- 二级标题字体颜色 -->
+
+
+	<!--底部工具栏toolbar-->
+	<color name="tzt_v23_toolbar_background_color">#ffffff</color><!-- toolbar背景颜色 -->
+	<color name="tzt_v23_toolbar_text_select_color">#0089d1</color><!-- toolbar按钮选中颜色 -->
+	<color name="tzt_v23_toolbar_text_unselect_color">#a4a4a4</color><!-- toolbar按钮非选中颜色 -->
+
+   
+    <color name="tzt_v23_rise_color">#ff4540</color><!-- 颜色 -->
+
+    <!--输入框和选择框-->
+    <color name="tzt_v23_edit_background_color">#13191f</color><!-- 输入框背景色 -->
+    <color name="tzt_v23_edit_text_color">#cccccc</color><!-- 输入框字体颜色 -->
+    <color name="tzt_v23_edit_hint_color">#424d56</color><!-- 输入框Hint颜色 -->
+    <color name="tzt_v23_edit_border_color">#2b323a</color><!-- 输入框边框颜色 -->
+    <color name="tzt_v23_edit_cuersor_color">#00a9f8</color><!-- 输入框光标颜色 -->
+    <!--文本框-->
+    <color name="tzt_v23_label_background_color">#13191f</color><!-- 文本框背景色 -->
+    <color name="tzt_v23_label_border_color">#13191f</color><!-- 文本框边框颜色 -->
+
+    <!--按钮（正常）-->
+    <color name="tzt_v23_button_background_color">#0089d1</color><!-- 按钮背景色 -->
+    <color name="tzt_v23_button_border_color">#0089d1</color><!-- 按钮边框颜色 -->
+    <color name="tzt_v23_button_text_color">#ffffff</color><!-- 按钮字体颜色 -->
+    <!--按钮（选中）-->
+    <color name="tzt_v23_button_select_background_color">#0089d1</color><!-- 按钮背景色 -->
+    <color name="tzt_v23_button_select_border_color">#0089d1</color><!-- 按钮边框颜色 -->
+    <color name="tzt_v23_button_select_text_color">#ffffff</color><!-- 按钮字体颜色 -->
+    <!--按钮（不可点击）-->
+	<color name="tzt_v23_button_login_background_color">#0089d1</color><!-- 按钮背景色 -->
+    <color name="tzt_v23_button_disable_background_color">#dcdcdc</color><!-- 按钮背景色 -->
+    <color name="tzt_v23_button_disable_border_color">#dcdcdc</color><!-- 按钮边框颜色 -->
+    <color name="tzt_v23_button_disable_text_color">#ffffff</color><!-- 按钮字体颜色 -->
+    <!--按钮（返回按钮正常）-->
+    <color name="tzt_v23_backbutton_background_color">#FFFFFF</color><!-- 按钮背景色 -->
+    <color name="tzt_v23_backbutton_border_color">#0089d1</color><!-- 按钮边框颜色 -->
+    <color name="tzt_v23_backbutton_text_color">#FFFFFF</color><!-- 按钮字体颜色 -->
+    <!--按钮（返回按钮选中）-->
+    <color name="tzt_v23_backbutton_select_background_color">#FFFFFF</color><!-- 按钮背景色 -->
+    <color name="tzt_v23_backbutton_select_border_color">#FFFFFF</color><!-- 按钮边框颜色 -->
+    <color name="tzt_v23_backbutton_select_text_color">#FF4540</color><!-- 按钮字体颜色 -->
+    <!--按钮（返回按钮不可点击）-->
+    <color name="tzt_v23_backbutton_disable_background_color">#FFFFFF</color><!-- 按钮背景色 -->
+    <color name="tzt_v23_backbutton_disable_border_color">#e5e5e5</color><!-- 按钮边框颜色 -->
+    <color name="tzt_v23_backbutton_disable_text_color">#CCCCCC</color><!-- 按钮字体颜色 -->
+
+
+    <!--弹出框（从界面底部弹出）-->
+    <color name="tzt_v23_dialog_background_color">#ffffff</color><!-- 弹出框背景色 -->
+    <color name="tzt_v23_dialog_split_color">#e5e5e5</color><!-- 弹出框标题下方分割线颜色 -->
+    <color name="tzt_v23_dialog_title_text_color">#666666</color><!-- 弹出框标题字体颜色 -->
+    <color name="tzt_v23_dialog_content_text_color">#333333</color><!-- 弹出框内容字体颜色 -->
+
+
+	<!--按钮（正常）-->
+	<color name="tzt_check_button_background_color">#db7000</color><!-- 按钮背景色 -->
+	<color name="tzt_check_button_border_color">#ffffff</color><!-- 按钮边框颜色 -->
+	<color name="tzt_check_button_text_color">#ffffff</color><!-- 按钮字体颜色 -->
+
+    <!--标题分段控件-->
+    <color name="tzt_v23_segment_text_color">#ffffff</color><!-- 字体颜色 -->
+    <color name="tzt_v23_segment_select_text_color">#ff4540</color><!-- 选中字体颜色 -->
+    <!--顶部tabbar-->
+    <color name="tzt_v23_tabbar_background_color">#181E24</color><!-- tabbar背景颜色 -->
+    <color name="tzt_v23_tabbar_background_select_color">#181E24</color><!-- tabbar选择背景颜色 -->
+    <color name="tzt_v23_tabbar_text_color">#86919B</color><!-- tabbar按钮非选中颜色 -->
+    <color name="tzt_v23_tabbar_text_select_color">#FF4540</color><!-- tabbar按钮选中颜色 -->
+
+	<color name="tzt_v23_customer_title_color">#E0EFFD</color><!-- 字体颜色 -->
+
+
+	<color name="tzt_mainColor">#01BD78</color><!-- 主色调 -->
+	<color name="tzt_lableColor">#ffff00</color><!-- 标签字体，即在输入框之前显示的标签一致 -->
+	<color name="tzt_select_hintcolor">@color/tzt_v23_comm_text_color</color><!-- hint项被选中的颜色 -->
+
+	<!-- #################### 输入框、spinner ####################  -->
+	<color name="tzt_edittext_background_bordercolor">#343434</color><!-- 输入框背景资源的边框颜色 -->
+	<color name="tzt_edittext_background_bgcolor">#232323</color><!-- 输入框背景资源的背景颜色 -->
+	
+
+	<color name="tzt_buttonbar_dialog_confirm_color">@color/tzt_white</color><!-- Dialog按钮 确定颜色 -->
+	<color name="tzt_buttonbar_dialog_normal_color">@color/tzt_black</color><!-- Dialog按钮 通用颜色 -->
+	<color name="tzt_buttonbar_dialog_confirm_bgcolor">#0089d1</color><!-- Dialog按钮 确定背景颜色 -->
+	<color name="tzt_buttonbar_dialog_normal_bgcolor">#E8E7E4</color><!-- Dialog按钮 通用背景颜色 -->
+	<color name="tzt_buttonbar_dialog_confirmdown_bgcolor">#0089d1</color><!-- Dialog按钮 通用背景颜色 -->
+	<color name="tzt_buttonbar_dialog_normaldown_bgcolor">#E8E7E4</color><!-- Dialog按钮 通用背景颜色 -->
+
+	<!-- #################### 公共部分 #################### -->
+
+
+
+	<color name="tzt_selftoast_textview_bgcolor">#80000000</color><!-- 自定义Toast里的文本的背景颜色 -->
+	<color name="tzt_CircleFlowIndicator_color">#666666</color><!-- viewpage的底部点点的默认颜色 -->
+
+	<!-- 白色界面的背景颜色 -->
+	<color name="tzt_whitepage_bgcolor">#F0F0F0</color><!-- 白色界面的背景颜色 -->	
+	<color name="tzt_whitepage_hintcolor">#AEAEAE</color><!-- 白色界面的输入框hint颜色，用于登陆等 -->
+	<color name="tzt_whitepage_splitcolor">#E4E4E4</color><!-- 白色界面的行分割线颜色，用于登陆等 -->
+	<color name="tzt_whitepage_lablecolor">#666666</color><!-- 白色界面的标签和提示文字颜色，用于登陆等 -->
+
+
+	<!-- 首页搜索 -->
+	<color name="tzt_rootlayout_search_color">#666666</color><!-- 首页標題欄上的搜索字体颜色-->
+	<color name="tzt_rootlayout_search_bgcolor">#14161b</color><!-- 首页標題欄上的搜索背景颜色-->
+	
+	<!-- 搜索 -->
+	<color name="tzt_searchlayout_search_color">@color/tzt_v23_comm_text_color</color><!-- 搜索界面的搜索字体颜色-->
+	<color name="tzt_searchlayout_search_bgcolor">@color/tzt_white</color><!-- 搜索界面的搜索背景颜色-->
+	<color name="tzt_searchlayout_leftmarket_color">@color/tzt_white</color><!-- 搜索界面的左边的字体颜色-->
+	<color name="tzt_searchlayout_leftmarket_bgcolor">#00a9f8</color><!-- 搜索界面的左边的背景颜色色-->
+
+	<!-- 底部工具栏选中颜色-->
+	<color name="tzt_NewToolbar_color">#B2B3B3</color><!-- 工具栏NewToolbar的按钮颜色）-->
+	<color name="tzt_NewToolbar_select_color">#BC2929</color><!-- 底部工具栏NewToolbar的按钮选中颜色）-->
+
+
+	<color name="tzt_SearchSelDate_havetab_bgcolor">#1F1F1F</color><!-- 表格查询输入行（不是输入框）有选择周月的，背景颜色 -->
+	<color name="tzt_SearchSelDate_notab_bgcolor">@color/tzt_v23_comm_text_color</color><!-- 表格查询输入行（不是输入框）没有选择周月的，背景颜色 -->
+	<color name="tzt_SearchSelDate_edittext_color">@color/tzt_v23_comm_text_color</color><!-- 表格查询输框文字颜色 -->
+	<color name="tzt_SearchSelDate_confirm_color">#FFFFFF</color><!-- 表格查询确定按钮的文字颜色 -->
+	<color name="tzt_SearchSelDate_edittext_bordecolor">#343434</color><!-- 交易表格查询输框背景颜色 -->
+	<color name="tzt_SearchSelDate_arrow_color">#656565</color><!-- 表格时间控件箭头颜色 -->
+
+	<!-- rootlayout标题和主工作区的分割线 -->
+<!--	<drawable name="tzt_htsccfttitlebarshadw">@color/tzt_v23_comm_background_color</drawable>-->
+
+	<!-- 日期控件 -->
+	<color name="tzt_searchdate_toptab_bgcolor">#424242</color><!-- 顶部tab的背景颜色（黑色色块无三角） -->
+	<color name="tzt_searchdate_toptab_selbgcolor">#424242</color><!-- 顶部tab选中时的背景颜色（黑色色块无三角） -->
+	<color name="tzt_searchdate_toptab_color">#FFFFFF</color><!-- 顶部tab的字体颜色（黑色色块有三角） -->
+	<color name="tzt_searchdate_toptab_selcolor">#00A9F8</color><!-- 顶部tab选中时的字体颜色 （黑色色块有三角）-->
+	<color name="tzt_SearchSelDate_edittext_bgcolor">#232323</color><!-- 顶部tab选中时的字体颜色 （黑色色块有三角）-->
+
+    <color name="tzt_white">#FFFFFFFF</color>
+    <color name="tzt_black">#000000</color>
+    <color name="tzt_orange">#FFb400</color>
+    <color name="tzt_yellow">#FFFF00</color>
+    <color name="tzt_red">#FF0000</color>
+    <color name="tzt_gravy">#333333</color>
+    <color name="tzt_blue">#3366FF</color>
+    <color name="tzt_green">#00FF00</color>
+	<color name="tzt_transparent">#00000000</color>
+	<!--标题栏按钮 不可用的颜色，例如设置的恢复默认按钮 -->
+	<color name="tzt_titlebar_select_text_color">#66FFFFFF</color>
+
+    <!-- 选中的行的bordercolor -->
+    <color name="tzt_datepick_wheel_line_bordercolor">#D0D0D0</color>
+    <!-- 总体的上下边框color -->
+    <color name="tzt_datepick_wheel_topbottom_color">#999999</color>
+
+
+	<!--自定义键盘颜色-->
+	<color name="tzt_v23_keyboard_pressed_color">#D4D6D8</color>
+	<color name="tzt_v23_keyboard_changetype_text_color">#00a9f8</color>
+	<color name="tzt_v23_keyboard_text_color">#333333</color>
+	<color name="tzt_v23_keyboard_blue_color">#0080f3</color>
+	<color name="tzt_v23_keyboard_gray_color">#D1D5DB</color>
+	<color name="tzt_v23_keyboard_write_color">#FFFFFF</color>
+
+	<!--指纹解锁颜色-->
+	<color name="passwordlock_unlock_background_color">#333333</color><!--指纹解锁界面背景颜色-->
+	<color name="passwordlock_popwindow_background_color">#DCE0DD</color><!--指纹解锁PopWindow背景颜色-->
+	<color name="passwordlock_popwindow_text_color">#000000</color><!--指纹解锁PopWindow内字体颜色-->
+	<color name="passwordlock_popwindow_split_color">#57656B</color><!--指纹解锁PopWindow内分割线颜色-->
+
+	<color name="jiuyi_mainbackgroud_color">#0089d1</color>
+	<color name="jiuyi_link_color">#336699</color>
+	<color name="jiuyi_title_color">#282828</color>
+	<color name="jiuyi_next_color">#888888</color>
+	<color name="jiuyi_info_color">#888888</color>
+	<color name="jiuyi_info2_color">#bfbfbf</color>
+	<color name="jiuyi_backgroud_color">#f2f3f5</color>
+	<color name="jiuyi_dividebackgroud_color">#f2f3f5</color>
+	<color name="jiuyi_divideline_color">#f2f3f5</color>
+	<color name="jiuyi_linebackground_color">#E5E5E5</color>
+	<color name="jiuyi_tab_color">#a4a4a4</color>
+	<color name="jiuyi_white_color">#FFFFFF</color>
+	<color name="jiuyi_btnback_color">#F4F4F4</color>
+	<color name="jiuyi_linkback_color">#E5E5E5</color>
+	<color name="jiuyi_company_color">#888888</color>
+	<color name="jiuyi_red_color">#ec675d</color>
+	<color name="jiuyi_yellow_color">#f4b74f</color>
+	<color name="jiuyi_blue">#0089d1</color>
+	<color name="jiuyi_green">#f4b74f</color>
+	<color name="jiuyi_red">#FF0000</color>
+	<color name="listview_splitcolor">#252b31</color>
+	<color name="list_hand_color">#cccccc</color>
+	<color name="jiuyi_radar">#4290F7</color>
+	<color name="jiuyi_white">#FFFFFFFF</color>
+	<color name="jiuyi_black">#000000</color>
+	<color name="jiuyi_orange">#FFb400</color>
+	<color name="jiuyi_yellow">#FFFF00</color>
+	<color name="jiuyi_transparent">#00000000</color>
+	<color name="line_bg">#e5e5e5</color>
+	<color name="commentColor">#f6f6f6</color>
+	<color name="commentTextColor">#444444</color>
+	<color name="commentLocationBgColor">#dddddd</color>
+
+	<color name="item_group_title">#282828</color>
+	<color name="item_group_edt">#888888</color>
+	<color name="item_group_divider">#eeeeee</color>
+
+</resources>

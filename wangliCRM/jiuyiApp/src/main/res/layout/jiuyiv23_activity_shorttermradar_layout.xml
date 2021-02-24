@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 短线雷达布局 -->
+<com.control.widget.relativeLayout.JiuyiRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tzt_mainbodyview_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+      <com.control.widget.recyclerView.JiuyiRecyclerView
+        android:id="@+id/tzt_recycleview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/jiuyi_titlebar_layout"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"/>
+
+    <!-- 标题栏后于主体布局add到tztRelativeLayoutNew -->
+
+    <include
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:layout_alignParentTop="true"
+        layout="@layout/jiuyi_titlebar_comm_layout" />
+
+
+
+    <include layout="@layout/jiuyi_include_processbarview" />
+
+</com.control.widget.relativeLayout.JiuyiRelativeLayout>

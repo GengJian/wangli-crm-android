@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tzt_whitepage_bgcolor"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        >
+
+        <LinearLayout
+            android:id="@+id/ll_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/common_topbar_height"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    >
+
+                    <TextView
+                        style="@style/BlackText.standard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:gravity="center_vertical"
+                        android:text="SAP账号"
+                        android:textColor="@color/jiuyi_title_color" />
+
+                    <TextView
+                        android:id="@+id/tv_sapaccount"
+                        style="@style/BlackText.standard"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|end"
+                        android:hint="@string/hint_choose"
+                        android:paddingEnd="10dp"
+                        android:paddingStart="0dp"
+                        android:text=""
+                        android:textColor="@color/jiuyi_info_color"
+                        android:textColorHint="@color/jiuyi_info_color" />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/white"
+                        android:contentDescription="@null"
+                        android:src="@mipmap/et_forword"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/line_bg"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/common_topbar_height"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    >
+
+                    <TextView
+                        style="@style/BlackText.standard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:gravity="center_vertical"
+                        android:text="创建人"
+                        android:textColor="@color/jiuyi_title_color" />
+
+                    <TextView
+                        android:id="@+id/tv_creator"
+                        style="@style/BlackText.standard"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|end"
+                        android:hint="@string/hint_choose"
+                        android:paddingEnd="10dp"
+                        android:paddingStart="0dp"
+                        android:text=""
+                        android:textColor="@color/jiuyi_info_color"
+                        android:textColorHint="@color/jiuyi_info_color" />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/white"
+                        android:contentDescription="@null"
+                        android:src="@mipmap/et_forword"/>
+                </LinearLayout>
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/line_bg"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/common_topbar_height"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    >
+
+                    <TextView
+                        style="@style/BlackText.standard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:gravity="center_vertical"
+                        android:text="创建日期"
+                        android:textColor="@color/jiuyi_title_color" />
+
+                    <TextView
+                        android:id="@+id/tv_creatordate"
+                        style="@style/BlackText.standard"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|end"
+                        android:hint="@string/hint_choose"
+                        android:paddingEnd="10dp"
+                        android:paddingStart="0dp"
+                        android:text=""
+                        android:textColor="@color/jiuyi_info_color"
+                        android:textColorHint="@color/jiuyi_info_color" />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/white"
+                        android:contentDescription="@null"
+                        android:src="@mipmap/et_forword"/>
+                </LinearLayout>
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/line_bg"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/common_topbar_height"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    >
+
+                    <TextView
+                        style="@style/BlackText.standard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:gravity="center_vertical"
+                        android:text="最后修改人"
+                        android:textColor="@color/jiuyi_title_color" />
+
+                    <TextView
+                        android:id="@+id/tv_lastmodifyman"
+                        style="@style/BlackText.standard"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|end"
+                        android:hint="@string/hint_choose"
+                        android:paddingEnd="10dp"
+                        android:paddingStart="0dp"
+                        android:text=""
+                        android:textColor="@color/jiuyi_info_color"
+                        android:textColorHint="@color/jiuyi_info_color" />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/white"
+                        android:contentDescription="@null"
+                        android:src="@mipmap/et_forword"/>
+                </LinearLayout>
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/line_bg"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/common_topbar_height"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    >
+
+                    <TextView
+                        style="@style/BlackText.standard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:gravity="center_vertical"
+                        android:text="修改日期"
+                        android:textColor="@color/jiuyi_title_color"/>
+
+                    <TextView
+                        android:id="@+id/tv_modifydate"
+                        style="@style/BlackText.standard"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|end"
+                        android:hint="@string/hint_choose"
+                        android:paddingEnd="10dp"
+                        android:paddingStart="0dp"
+                        android:text=""
+                        android:textColor="@color/jiuyi_info_color"
+                        android:textColorHint="@color/jiuyi_info_color" />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/white"
+                        android:contentDescription="@null"
+                        android:src="@mipmap/et_forword"/>
+                </LinearLayout>
+                <View
+                    android:id="@+id/view5"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/line_bg"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/common_topbar_height"
+                    android:visibility="gone"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    >
+
+                    <TextView
+                        style="@style/BlackText.standard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:gravity="center_vertical"
+                        android:text="协助人"
+                        android:textColor="@color/jiuyi_title_color" />
+
+                    <TextView
+                        android:id="@+id/tv_assistant"
+                        style="@style/BlackText.standard"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|end"
+                        android:hint="@string/hint_choose"
+                        android:paddingEnd="10dp"
+                        android:paddingStart="10dp"
+                        android:text=""
+                        android:singleLine="false"
+                        android:ellipsize="none"
+                        android:maxLines="5"
+                        android:inputType="textMultiLine"
+                        android:textColor="@color/jiuyi_title_color"
+                        android:textColorHint="@color/jiuyi_title_color" />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/white"
+                        android:contentDescription="@null"
+                        android:src="@drawable/canupdate"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+    <!-- 进度条 -->
+    <include layout="@layout/jiuyi_include_processbarview"/>
+    <ImageView
+        android:id="@+id/iv_no_authority"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@id/tv_no_authoritytext"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/no_authority"
+        android:visibility="gone"
+        android:layout_marginBottom="10dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_no_authoritytext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:visibility="gone"
+        android:textColor="@color/jiuyi_info2_color"
+        android:text="暂无权限查看"
+        />
+
+</RelativeLayout>

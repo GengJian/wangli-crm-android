@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+	<drawable name="tzt_red">#ffff0000</drawable>
+	<drawable name="tzt_blue">#ff0000ff</drawable>
+	<drawable name="tzt_green">#ff00ff00</drawable>
+	<drawable name="tzt_yellow">#ffffff00</drawable>
+	<drawable name="tzt_keybtncolor">#ff565656</drawable>
+	<drawable name="tzt_white2">#ffC6C6C6</drawable>
+	<drawable name="tzt_white">#ffffffff</drawable>
+	<drawable name="tzt_backgroundblack">#ff1D1D1D</drawable>
+	<drawable name="tzt_translucent_background">#e0000000</drawable>
+	<drawable name="tzt_transbg">#00000000</drawable>
+	<drawable name="tzt_transparent_background">#00000000</drawable>
+	<drawable name="tzt_gray">#ffb4b4b4</drawable>
+	<drawable name="tzt_tuhuang">#fffed000</drawable>
+	<drawable name="tzt_black">#ff000000</drawable>
+	<drawable name="tzt_line">#ffd2d2d2</drawable>
+	<drawable name="tzt_line_background">#ffeef0f1</drawable>
+</resources>

@@ -1,0 +1,31 @@
+<LinearLayout android:id="@+id/ll_customlist"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <View
+        style="@style/HorizontalDivider" />
+
+    <LinearLayout style="@style/ItemLayout">
+
+        <View style="@style/VerticalDivider" />
+
+        <TextView
+            android:id="@+id/tv_label"
+            style="@style/ItemLabel"
+            android:text="订单号:" />
+
+        <View style="@style/VerticalDivider" />
+
+        <TextView
+            android:id="@+id/tv_value"
+            style="@style/ItemLabel.Value"
+            android:text="201711100011"
+            android:textColor="@color/jiuyi_link_color" />
+
+        <View style="@style/VerticalDivider" />
+    </LinearLayout>
+
+
+</LinearLayout>

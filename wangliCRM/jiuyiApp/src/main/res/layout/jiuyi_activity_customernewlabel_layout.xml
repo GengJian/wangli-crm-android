@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--主界面-->
+<com.control.widget.relativeLayout.JiuyiRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:zhy="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/jiuyi_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tzt_whitepage_bgcolor"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/jiuyi_titlebar_height"
+        android:layout_alignParentTop="true"
+        android:id="@+id/jiuyi_titlebar_layout"
+        layout="@layout/jiuyi_titlebar_completer_layout"/>
+    <ScrollView
+        android:id="@+id/sc_content"
+        android:layout_below="@+id/jiuyi_titlebar_layout"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="8dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="15dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.control.widget.JiuyiEditText
+                    android:id="@+id/et_newlabel"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="0dip"
+                    android:layout_weight="1"
+                    android:background="@drawable/jiuyi_newlabel_bg"
+                    android:cursorVisible="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="left|center"
+                    android:hint="+自定义标签"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:minHeight="20dip"
+                    android:paddingLeft="10dp"
+                    android:singleLine="true"
+                    android:tag="skin_1"
+                    android:textColor="@color/jiuyi_title_color"
+                    android:textColorHint="@color/jiuyi_info_color"
+                    android:textCursorDrawable="@drawable/jiuyi_v23_cursor_shape"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+                    android:text="添加"
+                    android:textColor="@color/jiuyi_blue" />
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/jiuyi_info_color"
+            android:text="已选标签" />
+
+        <customer.view.FlowTagLayout
+            android:id="@+id/id_flowlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp" />
+
+   <!--     <com.zhy.view.flowlayout.TagFlowLayout
+            android:id="@+id/id_flowlayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            zhy:max_select="-1"
+            >
+        </com.zhy.view.flowlayout.TagFlowLayout>-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/jiuyi_info_color"
+            android:text="常用标签" />
+
+        <customer.view.FlowTagLayout
+            android:id="@+id/tfl_normallabels"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp" />
+
+       <!-- <com.zhy.view.flowlayout.TagFlowLayout
+            android:id="@+id/tfl_normallabels"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            zhy:max_select="-1"
+            >
+        </com.zhy.view.flowlayout.TagFlowLayout>-->
+
+    </LinearLayout>
+
+    </ScrollView>
+
+</com.control.widget.relativeLayout.JiuyiRelativeLayout>

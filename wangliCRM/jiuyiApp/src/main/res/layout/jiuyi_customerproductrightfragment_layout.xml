@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#fbfbfb"
+        android:orientation="horizontal" >
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/jiuyi_title_color"
+            android:textSize="17sp"
+            android:text="产品信息" />
+
+        <TextView
+            android:id="@+id/tv_newrecord"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:padding="5dp"
+            android:paddingLeft="5dp"
+            android:drawablePadding="5dp"
+             android:drawableLeft="@drawable/c_produce_new_record"
+            android:background="@drawable/jiuyi_customer_newrecord_bg_normal"
+            android:text="新纪录" />
+
+    </RelativeLayout>
+    <View
+        style="@style/HorizontalDivider"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/jiuyi_white_color"
+        >
+        <View style="@style/VerticalDivider"
+            android:layout_marginLeft="5dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_producttype"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:textColor="@color/jiuyi_title_color"
+            android:text="产品类型" />
+        <View style="@style/VerticalDivider"/>
+
+        <TextView
+            android:id="@+id/tv_productname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/jiuyi_title_color"
+            android:text="产品名称" />
+        <View style="@style/VerticalDivider"/>
+
+        <TextView
+            android:id="@+id/tv_productcomponent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/jiuyi_title_color"
+            android:text="成分含量" />
+        <View style="@style/VerticalDivider"/>
+
+        <TextView
+            android:id="@+id/tv_operation"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/jiuyi_title_color"
+            android:text="操作" />
+        <View style="@style/VerticalDivider"
+            android:layout_marginRight="5dp"
+            />
+    </LinearLayout>
+    <View
+        style="@style/HorizontalDivider"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        />
+<!--    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        app:srlHeaderMaxDragRate="2.5"
+        app:srlPrimaryColor="@android:color/darker_gray"
+        app:srlAccentColor="@android:color/white"
+        app:srlEnableLoadmore="true"
+        >
+    &lt;!&ndash;srlHeaderMaxDragRate=2.5时候WaterDropHeader的下拉效果最好&ndash;&gt;
+    <com.scwang.smartrefresh.header.WaterDropHeader
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_productlist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="3dp"
+        />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>-->
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="always"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_productlist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="3dp"
+        />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <View
+        style="@style/HorizontalDivider"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        />
+
+</LinearLayout>

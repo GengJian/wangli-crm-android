@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--主界面-->
+<com.control.widget.relativeLayout.JiuyiRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/jiuyi_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tzt_whitepage_bgcolor"
+    >
+
+    <!--scaleType="centerCrop"必不可少，否则图片会变小-->
+    <ImageView
+        android:id="@+id/jiuyi_loginimage"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/login_bg"
+        >
+    </ImageView>
+
+    <LinearLayout
+        android:id="@+id/jiuyi_linearlayout_note"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="vertical"
+     >
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="70dp"
+            android:src="@drawable/login_logo"
+             />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/jiuyi_linearlayout_phonenumber"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/jiuyi_linearlayout_note"
+        android:layout_gravity="center"
+        android:background="@color/tzt_transparent"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/login_username" />
+
+        <com.control.widget.JiuyiEditText
+            android:id="@+id/edit_phonenumber"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="账号"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:tag="skin_1"
+            android:textColorHint="@color/jiuyi_loginhit_color"
+            android:textColor="@color/jiuyi_white_color"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/jiuyi_blankline1"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@id/jiuyi_linearlayout_phonenumber"
+        android:background="@color/jiuyi_white_color" />
+
+    <ImageView
+        android:id="@+id/jiuyi_blankline2"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@id/jiuyi_linearlayout_yanzhengma"
+        android:background="@color/jiuyi_white_color" />
+
+    <LinearLayout
+        android:id="@+id/jiuyi_linearlayout_yanzhengma"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/jiuyi_blankline1"
+        android:layout_gravity="center"
+        android:background="@color/tzt_transparent"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/login_password" />
+        <com.control.widget.JiuyiEditText
+            android:id="@+id/edit_password"
+            style="@style/BlackText.standard"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="密码"
+            android:inputType="textPassword"
+
+            android:singleLine="true"
+            android:tag="skin_1"
+            android:textColorHint="@color/jiuyi_loginhit_color"
+            android:textColor="@color/jiuyi_white_color"
+            android:textSize="16sp"/>
+
+<!--
+        <com.control.widget.JiuyiEditText
+            android:id="@+id/edit_password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="密码"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:tag="skin_1"
+            android:text=""
+            android:textColorHint="@color/jiuyi_loginhit_color"
+            android:textColor="@color/jiuyi_white_color"
+            android:textSize="16sp" />
+-->
+        <TextView
+            android:id="@+id/image_yanzhengma"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/jiuyi_loginbutton_bg_normal"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="获取验证码"
+            android:textColor="@color/jiuyi_loginhit_color"
+            android:textSize="14sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/jiuyi_linearlayout_login"
+        android:layout_width="match_parent"
+        android:layout_height="44dip"
+        android:layout_marginTop="45dp"
+        android:layout_below="@id/jiuyi_linearlayout_yanzhengma"
+       >
+        <com.control.widget.JiuyiButton
+            android:id="@+id/iamge_login"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/jiuyi_login_button_bg_disable"
+             android:gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:text="登录"
+            android:textColor="@color/tzt_white"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <!--&lt;!&ndash; 进度条 &ndash;&gt;-->
+    <include layout="@layout/jiuyi_include_processbarview"
+        android:id="@+id/include" />
+
+    <CheckBox
+        android:id="@+id/jiuyi_cbx_pwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/jiuyi_linearlayout_note"
+        android:layout_below="@+id/jiuyi_linearlayout_yanzhengma"
+        android:visibility="gone"
+        android:text="记住密码" />
+
+    <!-- 标题栏后于主体布局add到tztRelativeLayoutBase -->
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/jiuyi_titlebar_height"
+        android:id="@+id/jiuyi_titlebar_layout"
+        android:visibility="gone"
+        layout="@layout/jiuyi_titlebar_comm_layout"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/jiuyi_linearlayout_login"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_forget_pwd2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_toStartOf="@+id/include"
+            android:textColor="@color/jiuyi_loginhit_color"
+                  android:text="我有问题？" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+               android:src="@drawable/login_contactnumber" />
+
+        <TextView
+            android:id="@+id/tv_tel_manager2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/login_contactnumber"
+            android:drawablePadding="2dp"
+            android:textColor="@color/jiuyi_white_color"
+            android:text="联系管理员" />
+    </LinearLayout>
+</com.control.widget.relativeLayout.JiuyiRelativeLayout>
+

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/jiuyi_dividebackgroud_color"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:background="@drawable/jiuyi_listitem_bg_selector"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/iv_icon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                fresco:backgroundImage="@drawable/client_directsales"
+                android:scaleType="centerCrop"
+                fresco:roundAsCircle="true" />
+
+            <!--        <ImageView
+                        android:id="@+id/iv_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/client_directsales" />-->
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_date"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginTop="10dp"
+                        android:text=""
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_productstatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignRight="@+id/tv_date"
+                        android:background="@drawable/order_bg"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/jiuyi_white_color" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_clientname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:drawableLeft="@drawable/order_origin"
+                        android:drawablePadding="10dip"
+                        android:textColor="@color/jiuyi_title_color"
+                        android:textSize="15sp"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/tv_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:text="" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_producttype"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:drawableLeft="@drawable/order_produat_news"
+                    android:drawablePadding="10dip"
+                    android:textColor="@color/jiuyi_info2_color"
+                    android:text="" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/line_bg"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="75dp"
+                android:textColor="@color/jiuyi_info2_color"
+                android:text="业务员:" />
+
+            <TextView
+                android:id="@+id/tv_salername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/jiuyi_info2_color"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/tv_amt"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/jiuyi_red_color"
+                android:text="" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
+    android:background="@color/tzt_whitepage_bgcolor"
+    >
+
+<!--    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        >-->
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        app:srlHeaderMaxDragRate="2.5"
+        app:srlPrimaryColor="@android:color/transparent"
+        app:srlAccentColor="@android:color/transparent"
+        app:srlEnableLoadmore="false"
+        >
+    <!--srlHeaderMaxDragRate=2.5时候WaterDropHeader的下拉效果最好-->
+    <com.scwang.smartrefresh.header.WaterDropHeader
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent"
+            android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:weightSum="3"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/ll_transaction_contract"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/jiuyi_linelayout_bg_selector"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                       android:layout_marginTop="20dp"
+                        android:src="@drawable/c_transaction_contract" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/jiuyi_info_color"
+                            android:text="商务合同" />
+
+                        <TextView
+                            android:id="@+id/tv_transaction_contract"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginBottom="10dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/jiuyi_title_color"
+                            android:text="0" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll_tradeorder"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/jiuyi_linelayout_bg_selector"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/c_transaction_order" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/jiuyi_info_color"
+                            android:text="销售订单" />
+
+                        <TextView
+                            android:id="@+id/tv_transaction_order"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginBottom="10dp"
+                            android:textColor="@color/jiuyi_title_color"
+                            android:textStyle="bold"
+                            android:text="0" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_tradedelivery"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/jiuyi_linelayout_bg_selector"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/c_transaction_ship" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                       android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textColor="@color/jiuyi_info_color"
+                            android:text="发货" />
+
+                        <TextView
+                            android:id="@+id/tv_transaction_ship"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:textColor="@color/jiuyi_title_color"
+                            android:textStyle="bold"
+                            android:text="0" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:weightSum="3"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/ll_tradeinvoice"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/jiuyi_linelayout_bg_selector"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/c_transaction_invoice" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="发票"
+                            android:textColor="@color/jiuyi_info_color" />
+
+                        <TextView
+                            android:id="@+id/tv_transaction_invoice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="2dp"
+                            android:text="0"
+                            android:textColor="@color/jiuyi_title_color"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll_tradetelemoney"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/jiuyi_linelayout_bg_selector"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/c_transaction_wire_transfer" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/jiuyi_info_color"
+                            android:text="电汇/承兑" />
+
+                        <TextView
+                            android:id="@+id/tv_transaction_wire_transfer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
+                            android:textColor="@color/jiuyi_title_color"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="10dp"
+                            android:text="0" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_tradelogistics"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/jiuyi_linelayout_bg_selector"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/c_transaction_logistics" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/jiuyi_info_color"
+                            android:text="外贸物流" />
+
+                        <TextView
+                            android:id="@+id/tv_transaction_logistics"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="2dp"
+                            android:text="0"
+                            android:textColor="@color/jiuyi_title_color"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:weightSum="3"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/ll_bankstatement"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/jiuyi_linelayout_bg_selector"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/c_bankstatement" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="对账单"
+                            android:textColor="@color/jiuyi_info_color" />
+
+                        <TextView
+                            android:id="@+id/tv_bankstatement"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="2dp"
+                            android:text="0"
+                            android:textColor="@color/jiuyi_title_color"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/jiuyi_linelayout_bg_selector"
+                    android:visibility="invisible"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/c_transaction_wire_transfer" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:visibility="invisible"
+                            android:textColor="@color/jiuyi_info_color"
+                            android:text="" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:visibility="invisible"
+                    android:background="@drawable/jiuyi_linelayout_bg_selector"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/c_transaction_logistics" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:visibility="invisible"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/jiuyi_info_color"
+                            android:text="" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+              <android.support.v7.widget.CardView
+                  android:id="@+id/cvcompanynews"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:layout_marginTop="10dp"
+                  android:layout_marginBottom="10dp"
+                  android:layout_marginLeft="10dp"
+                  android:layout_marginRight="10dp">
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:layout_marginBottom="15dp"
+                      android:layout_marginLeft="10dp"
+                      android:layout_marginTop="14dp"
+                      android:orientation="vertical">
+                      <LinearLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="horizontal">
+
+                          <View
+                              android:layout_width="3dp"
+                              android:layout_height="17dp"
+                              android:layout_marginTop="2dp"
+                              android:background="@drawable/jiuyi_vertical_bg_normal"  />
+
+                          <Space
+                              android:layout_width="10dp"
+                              android:layout_height="match_parent" />
+
+                          <TextView
+                              android:id="@+id/tvtitle"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="1"
+                              android:gravity="left"
+                              android:text="产品价格走势"
+                              android:textColor="@color/black"
+                              android:textSize="16sp" />
+                      </LinearLayout>
+                      <!--                  <com.beiing.leafchart.LeafLineChart
+                                            android:id="@+id/leaf_chart"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:visibility="visible"
+                                            />-->
+                      <android.support.v7.widget.RecyclerView
+                          android:id="@+id/rv_chart"
+                          android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          />
+                      <ImageView
+                          android:id="@+id/iv_empty"
+                          android:layout_width="100dp"
+                          android:layout_height="100dp"
+                          android:layout_above="@id/tv_emptytext"
+                          android:gravity="center"
+                          android:layout_gravity="center_horizontal"
+                          android:src="@drawable/nodata"
+                          android:tint="#ABABAB"
+                          android:visibility="gone"
+                          android:layout_marginBottom="10dp"
+                          />
+
+                      <TextView
+                          android:id="@+id/tv_emptytext"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:gravity="center"
+                          android:visibility="gone"
+                          android:layout_gravity="center_horizontal"
+                          android:textColor="@color/jiuyi_info2_color"
+                          android:text="暂无相关数据"
+                          />
+
+                  </LinearLayout>
+
+
+              </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+<!--    </ScrollView>-->
+    <!-- 进度条 -->
+    <include layout="@layout/jiuyi_include_processbarview"/>
+</RelativeLayout>

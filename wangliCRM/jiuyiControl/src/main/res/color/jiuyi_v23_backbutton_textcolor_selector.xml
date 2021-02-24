@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--触摸-->
+    <item android:state_selected="true" android:color="@color/tzt_v23_backbutton_select_text_color" />
+    <item android:state_focused="true" android:color="@color/tzt_v23_backbutton_select_text_color" />
+    <item android:state_pressed="true" android:color="@color/tzt_v23_backbutton_select_text_color"  />
+    <!--不可点击-->
+    <item android:state_enabled="false" android:color="@color/tzt_v23_backbutton_disable_text_color"  />
+    <!--默认-->
+    <item android:color="@color/tzt_v23_backbutton_text_color" />
+</selector>
+

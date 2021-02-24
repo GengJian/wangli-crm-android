@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/jiuyi_white">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        >
+
+        <LinearLayout
+            android:id="@+id/ll_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_remark"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                >
+
+                <LinearLayout
+                    android:id="@+id/ll_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="拜访备注"
+                            android:textColor="@color/jiuyi_title_color"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_new"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/labeledit" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_remark"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:hint="暂无备注"
+                        android:textColorHint="@color/jiuyi_info_color"
+                        android:textColor="@color/jiuyi_info_color"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_attach"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <customer.view.JiuyiAttachment
+                        android:id="@+id/ah_attach"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:title="0/9" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+    <!-- 进度条 -->
+    <include layout="@layout/jiuyi_include_processbarview"/>
+
+</RelativeLayout>

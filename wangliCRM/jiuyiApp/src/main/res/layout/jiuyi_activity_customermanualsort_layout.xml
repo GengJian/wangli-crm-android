@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--主界面-->
+<com.control.widget.relativeLayout.JiuyiRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/jiuyi_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/jiuyi_titlebar_height"
+        android:layout_alignParentTop="true"
+        android:id="@+id/jiuyi_titlebar_layout"
+        android:visibility="gone"
+        layout="@layout/jiuyi_titlebar_customerdetail_layout"/>
+
+
+    <LinearLayout
+        android:id="@+id/drawer_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="@color/white"
+        android:orientation="vertical">
+        <!-- 进度条 -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/linlayout_left"
+                    android:layout_marginTop="20dp"
+                    android:text="按交易类型" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/linlayout_top"
+                    android:layout_marginLeft="@dimen/linlayout_left"
+                    android:layout_marginRight="@dimen/linlayout_right"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_agency"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:text="经销商" />
+
+                    <Button
+                        android:id="@+id/btn_directclient"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_marginLeft="@dimen/btn_left"
+                        android:text="直接客户" />
+
+                    <Button
+                        android:id="@+id/btn_competeclient"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_marginLeft="@dimen/btn_left"
+                        android:text="友商客户" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/linlayout_top"
+                    android:layout_marginLeft="@dimen/linlayout_left"
+                    android:layout_marginRight="@dimen/linlayout_right"
+                    android:weightSum="3"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_agencynext"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_weight="1"
+                        android:text="经销商下游" />
+
+                    <Button
+                        android:id="@+id/btn_nodirectclient"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_marginLeft="@dimen/btn_left"
+                        android:layout_weight="1"
+                        android:text="非直接客户" />
+                    <Button
+                        android:id="@+id/btn_nodirectclient2"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_marginLeft="@dimen/btn_left"
+                        android:layout_weight="1"
+                        android:visibility="invisible"
+                        android:text="非直接客户" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_control"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/linlayout_left"
+                    android:layout_marginTop="@dimen/linlayout_top"
+                    android:text="按负责人" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/linlayout_top"
+                    android:layout_marginLeft="@dimen/linlayout_left"
+                    android:layout_marginRight="@dimen/linlayout_right"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_mine"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_weight="1"
+                        android:text="我的" />
+
+                    <Button
+                        android:id="@+id/btn_minebranch"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_marginLeft="@dimen/btn_left"
+                        android:layout_weight="1"
+                        android:text="我的下属" />
+
+                    <Button
+                        android:id="@+id/btn_nobody"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_marginLeft="@dimen/btn_left"
+                        android:layout_weight="1"
+                        android:textSize="13dp"
+                        android:text="不属于任何人的" />
+                </LinearLayout>
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/line_bg"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="@dimen/linlayout_left"
+                    android:layout_marginRight="@dimen/linlayout_right"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="按区域" />
+
+                    <TextView
+                        android:id="@+id/textView19"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_weight="1"
+                        android:text="TextView" />
+                </LinearLayout>
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/line_bg"
+                    />
+
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/linlayout_left"
+                    android:layout_marginTop="15dp"
+                    android:text="按领域" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/linlayout_top"
+                    android:layout_marginLeft="@dimen/linlayout_left"
+                    android:layout_marginRight="@dimen/linlayout_right"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_circular"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_weight="1"
+                        android:text="圆机" />
+
+                    <Button
+                        android:id="@+id/btn_package"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_marginLeft="@dimen/btn_left"
+                        android:layout_weight="1"
+                        android:text="包纱" />
+
+                    <Button
+                        android:id="@+id/btn_warp"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_marginLeft="@dimen/btn_left"
+                        android:layout_weight="1"
+                        android:text="经编" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/linlayout_top"
+                    android:layout_marginLeft="@dimen/linlayout_left"
+                    android:layout_marginRight="@dimen/linlayout_right"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_paperdiaper"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_weight="1"
+                        android:text="纸尿裤" />
+
+                    <Button
+                        android:id="@+id/bt_zhibag"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_marginLeft="@dimen/btn_left"
+                        android:layout_weight="1"
+                        android:text="织带" />
+
+                    <Button
+                        android:id="@+id/btn_other"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_marginLeft="@dimen/btn_left"
+                        android:layout_weight="1"
+                        android:text="其他" />
+
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_use"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/linlayout_left"
+                    android:layout_marginTop="15dp"
+                    android:text="按用途" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/linlayout_top"
+                    android:layout_marginLeft="@dimen/linlayout_left"
+                    android:layout_marginRight="@dimen/linlayout_right"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_single"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+
+                        android:layout_weight="1"
+                        android:text="单面机" />
+
+                    <Button
+                        android:id="@+id/btn_double"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_marginLeft="@dimen/btn_left"
+                        android:layout_weight="1"
+                        android:text="双面机" />
+
+                    <Button
+                        android:id="@+id/btn_smallround"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_marginLeft="@dimen/btn_left"
+                        android:layout_weight="1"
+                        android:text="小圆机" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/linlayout_top"
+                    android:layout_marginLeft="@dimen/linlayout_left"
+                    android:layout_marginRight="@dimen/linlayout_right"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_commonbag"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+
+                        android:layout_weight="1"
+                        android:text="普通空包" />
+
+                    <Button
+                        android:id="@+id/btn_superspeedbag"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_marginLeft="@dimen/btn_left"
+                        android:layout_weight="1"
+                        android:textSize="12dp"
+                        android:text="高速空包一体机" />
+
+                    <Button
+                        android:id="@+id/btn_cottonbag"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_marginLeft="@dimen/btn_left"
+                        android:layout_weight="1"
+                        android:text="棉包芯" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/linlayout_top"
+                    android:layout_marginLeft="@dimen/linlayout_left"
+                    android:layout_marginRight="@dimen/linlayout_right"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_machinebag"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_weight="1"
+                        android:text="机包" />
+
+                    <Button
+                        android:id="@+id/btn_doubling"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_marginLeft="@dimen/btn_left"
+                        android:layout_weight="1"
+                        android:text="并线" />
+
+                    <Button
+                        android:id="@+id/btn_supersoft"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_marginLeft="@dimen/btn_left"
+                        android:layout_weight="1"
+                        android:text="超柔" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/linlayout_top"
+                    android:layout_marginLeft="@dimen/linlayout_left"
+                    android:layout_marginRight="@dimen/linlayout_right"
+                    android:weightSum="3"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_non-inverte"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_weight="1"
+                        android:text="不倒绒" />
+
+                    <Button
+                        android:id="@+id/btn_useother"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_marginLeft="@dimen/btn_left"
+                        android:layout_weight="1"
+                        android:text="其他" />
+                    <Button
+                        android:id="@+id/btn_nodirectclient3"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_marginLeft="@dimen/btn_left"
+                        android:layout_weight="1"
+                        android:visibility="invisible"
+                        android:text="接客户" />
+
+
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_accountperiod"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/linlayout_left"
+                    android:layout_marginTop="15dp"
+                    android:text="按账期" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/linlayout_top"
+                    android:layout_marginLeft="@dimen/linlayout_left"
+                    android:layout_marginRight="@dimen/linlayout_right"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_0day"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_weight="1"
+                        android:text="0天" />
+
+                    <Button
+                        android:id="@+id/btn_30day"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/btn_left"
+                        android:text="30天" />
+                    <Button
+                        android:id="@+id/btn_45day"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/btn_left"
+                        android:text="45天" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/linlayout_top"
+                    android:layout_marginLeft="@dimen/linlayout_left"
+                    android:layout_marginRight="@dimen/linlayout_right"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_60day"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_weight="1"
+                        android:text="60天" />
+
+                    <Button
+                        android:id="@+id/btn_90day"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/btn_left"
+                        android:text="90天" />
+                    <Button
+                        android:id="@+id/btn_90moreday"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/btn_left"
+                        android:text="90天以上" />
+
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_limit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/linlayout_left"
+                    android:layout_marginTop="15dp"
+                    android:text="按额度" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/linlayout_top"
+                    android:layout_marginLeft="@dimen/linlayout_left"
+                    android:layout_marginRight="@dimen/linlayout_right"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_10wan"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_weight="1"
+                        android:text="10-30万" />
+
+                    <Button
+                        android:id="@+id/btn_30wan"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/btn_left"
+                        android:text="30-50万" />
+                    <Button
+                        android:id="@+id/btn_50wan"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/btn_left"
+                        android:text="50-100万" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/linlayout_top"
+                    android:layout_marginLeft="@dimen/linlayout_left"
+                    android:layout_marginRight="@dimen/linlayout_right"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_100wan"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_weight="1"
+                        android:text="100万-200万" />
+
+                    <Button
+                        android:id="@+id/btn_200wan"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/btn_left"
+                        android:text="200万-500万" />
+                    <Button
+                        android:id="@+id/btn_500wan"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/jiuyi_customersearchbutton_bg_selector"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/btn_left"
+                        android:text="500万以上" />
+
+                </LinearLayout>
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/line_bg"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="@dimen/linlayout_left"
+                    android:layout_marginRight="@dimen/linlayout_right"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_risk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/linlayout_left"
+                        android:layout_marginTop="15dp"
+                        android:text="按潜在风险等级" />
+
+                    <TextView
+                        android:id="@+id/textView1149"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|right"
+                        android:text="TextView" />
+                </LinearLayout>
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/line_bg"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="@dimen/linlayout_left"
+                    android:layout_marginRight="@dimen/linlayout_right"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_lastcommitday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/linlayout_left"
+                        android:layout_marginTop="15dp"
+                        android:text="距最后一次成交日" />
+
+                    <TextView
+                        android:id="@+id/textView119"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|right"
+                        android:text="TextView" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:gravity="center|center_vertical"
+                    android:weightSum="2"
+                    android:orientation="horizontal">
+
+
+
+                    <com.control.widget.JiuyiButton
+                        android:id="@+id/button_reset"
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:layout_weight="1"
+
+                        android:background="@drawable/jiuyi_v23_backbutton_bg_selector"
+                        android:gravity="center"
+                        android:lines="1"
+                        android:text="重置"
+                        android:textColor="@color/jiuyi_info_color"
+                        android:textSize="17sp" />
+                    <com.control.widget.JiuyiButton
+                        android:id="@+id/button_confirm"
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:layout_weight="1"
+
+                        android:background="@drawable/jiuyi_v23_button_bg_selector"
+                        android:gravity="center"
+                        android:lines="1"
+                        android:text="确定"
+                        android:textColor="@color/jiuyi_v23_button_textcolor_selector"
+                        android:textSize="17sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+
+    <include layout="@layout/jiuyi_include_processbarview"/>
+</com.control.widget.relativeLayout.JiuyiRelativeLayout>

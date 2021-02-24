@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 选中的行的bordercolor -->
+    <color name="tzt_datepick_wheel_line_bordercolor">#D0D0D0</color>
+    <!-- 总体的上下边框color -->
+    <color name="tzt_datepick_wheel_topbottom_color">#999999</color>
+</resources>

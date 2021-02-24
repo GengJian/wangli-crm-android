@@ -1,0 +1,1726 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.wanglicrm.android">
+
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <!-- 必须设定CHANGE CONFIGURATION权限-->
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"/>
+    <!-- 必须设定Dialog全局控制的权限-->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
+    <!-- 指纹识别权限 -->
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+
+    <!--重力加速度传感器权限 -->
+    <uses-permission android:name="android.hardware.sensor.accelerometer"/>
+
+    <!-- imsdk用到的权限 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!--允许程序设置内置sd卡的写权限-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--允许程序获取网络状态-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--允许程序访问WiFi网络信息-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!--用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+    <!--用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <!--用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+    <!--用于读取手机当前的状态-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+    <!--用于申请调用A-GPS模块-->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"></uses-permission>
+    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE"/>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+
+    <!-- mi push -->
+    <permission
+        android:name="com.jiuyi.android.permission.MIPUSH_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.jiuyi.android.permission.MIPUSH_RECEIVE" />
+    <!--mz push-->
+    <!-- 兼容flyme5.0以下版本，魅族内部集成pushSDK必填，不然无法收到消息-->
+    <uses-permission android:name="com.meizu.flyme.push.permission.RECEIVE"></uses-permission>
+    <permission android:name="com.jiuyi.android.push.permission.MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.jiuyi.android.push.permission.MESSAGE"></uses-permission>
+
+    <!--  兼容flyme3.0配置权限-->
+    <uses-permission android:name="com.meizu.c2dm.permission.RECEIVE" />
+    <permission android:name="com.jiuyi.android.permission.C2D_MESSAGE"
+        android:protectionLevel="signature"></permission>
+    <uses-permission android:name="com.jiuyi.android.permission.C2D_MESSAGE"/>
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <application
+        android:name="com.jiuyi.app.JiuyiMainApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:largeHeap="true"
+        android:label="@string/jiuyi_app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:networkSecurityConfig="@xml/network_security_config"
+        tools:remove="android:supportsRtl"
+        tools:replace="android:allowBackup,android:label">
+
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.wanglicrm.android.fileProvider"
+            android:exported="false"
+            tools:replace="android:authorities"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                tools:replace="android:resource"
+                android:resource="@xml/file_path"/>
+        </provider>
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="a5fcf4d8d1a7c3b5a11d7d30084e9ffc" />
+        <!--
+            android:value="486ff7ddaaf0f4148a8aad2e6b45e8ed" />-->
+
+
+
+        <meta-data android:name="com.tencent.rdm.uuid" android:value="76597675-b279-43ec-844c-5abae57e8d63" />
+        <activity android:name="messages.timchat.ui.SplashActivity"
+            android:screenOrientation="portrait">
+      <!--      <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+               &lt;!&ndash; <category android:name="android.intent.category.LAUNCHER" />&ndash;&gt;
+            </intent-filter>-->
+        </activity>
+
+        <!-- 启动页-->
+        <activity
+            android:name="com.jiuyi.activity.common.activity.JiuyiHeadPageActivity"
+
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/HeadPage_Theme.White"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <!-- 首页-->
+        <activity
+            android:name="com.jiuyi.activity.common.activity.JiuyiRootActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="false">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+            </intent-filter>
+
+        </activity>
+        <activity
+            android:name="com.jiuyi.activity.common.activity.JiuyiCommonFormActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <!-- 权限配置页-->
+        <activity
+            android:name="com.jiuyi.activity.common.activity.JiuyiCaptureActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.jiuyi.activity.common.activity.JiuyiLoginActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.jiuyi.activity.common.activity.JiuyiChangePasswordActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="commonlyused.activity.JiuyiPlanListActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="dynamic.activity.JiuyiDynamicDetailActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="messages.timchat.ui.JiuyiPopStartActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="messages.timchat.ui.JiuyiMessageDetailActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="messages.timchat.ui.JiuyiChatActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerMainActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerSearchActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="commonlyused.activity.JiuyiTaskSearchActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="dynamic.activity.JiuyiOrderSearchActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="commonlyused.activity.JiuyiContactSearchActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerProductSearchActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerDetailActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerNewLinkmanActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="customer.activity.JiuyiCustomerNewReceiptAddressActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerNewRiskActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiNewCustomerActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerNewTradeContactActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerNewNeedPlanActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerNewLabelActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerNewProductInfoActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerNewEquipmentActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerNewCompeteInfoActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerNewProductCheckActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerNewProductBondActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerNewProductLandActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerNewProductDynamicActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerNewProductImportActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiPaintPointNewActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerNewProductLicenseActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerNewProductMaterialActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerNewProductPurchaseActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerNewProductTaxActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerNewRecruitmentActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerNewMarketDynamicActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerNewMarketComplaintActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerTradeDetailInfo"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerNewReceiptPlanActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:windowSoftInputMode="adjustPan|stateHidden"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="customer.activity.JiuyiCustomerTransferActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerReleaseActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerUpdateCreditActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerClaimActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="customer.activity.JiuyiNewSpecialPriceActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiAddProductActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="customer.activity.JiuyiNewPlanOrderActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiAddPlanProductActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiNewPlanMultiActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiNewPlanMutiProductActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerPictureActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="customer.activity.JiuyiCustomerUpdateColInfoActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCommonInputInfoActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerAssistantActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiAssistantNewActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerSelectActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerTradeActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="customer.activity.JiuyiCustomerProductStatusActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="dynamic.activity.JiuyiCustomerNewBusinessActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiNewBusinessDetailMutiActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="commonlyused.activity.JiuyiRetailChannelNewActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="commonlyused.activity.JiuyiChannelDevelopNewActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="commonlyused.activity.JiuyiMarketEngineerNewActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="commonlyused.activity.JiuyiHuaJueMarketNewActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="commonlyused.activity.JiuyiJinMumenMarketNewActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="commonlyused.activity.JiuyiDirectSalesNewActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="commonlyused.activity.JiuyiStrategicEngineeringNewActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="dynamic.activity.JiuyiCustomerNewClueActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="commonlyused.activity.JiuyiNewRetailChannelDtailMutiActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+        android:name="commonlyused.activity.JiuyiNewMarketClientDtailMutiActivity"
+        android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+        android:hardwareAccelerated="true"
+        android:screenOrientation="portrait"
+        android:exported="false"
+        >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN"/>
+        </intent-filter>
+    </activity>
+        <activity
+            android:name="commonlyused.activity.JiuyiNewDirectSalesPojectDtailMutiActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="commonlyused.activity.JiuyiNewUnfullProjectDtailMutiActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="commonlyused.activity.JiuyiNewMarketHuaJueDtailMutiActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="commonlyused.activity.JiuyiNengChengMarketNewActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="commonlyused.activity.JiuyiFourMarketPlanNewActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="commonlyused.activity.JiuyiNewUnfullProjectHuaJueDtailMutiActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="commonlyused.activity.JiuyiNewProjectHuaJueDtailMutiActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="commonlyused.activity.JiuyiNewProjectDtailMutiActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="commonlyused.activity.JiuyiNewStategicItemDtailMutiActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="commonlyused.activity.JiuyiNewVisitIntentDtailMutiActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="commonlyused.activity.JiuyiNewSignIntentionDtailMutiActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.jiuyi.activity.common.activity.TbsReaderActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiOrgDeptSelectActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <!-- 有固定URL的网页界面-->
+        <!-- 10061的网页界面-->
+        <activity
+            android:name="com.jiuyi.activity.common.activity.JiuyiWebviewActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.jiuyi.activity.common.activity.JiuyiWebviewPictureActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+        <!-- 我的发货收款计划主界面-->
+        <activity
+            android:name="mine.activity.JiuyiMineDeliveryReceiptPlanActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="mine.activity.JiuyiMineCollectionActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="mine.activity.JiuyiMineNewFeedbackActivity"
+            android:windowSoftInputMode="adjustPan|stateVisible|adjustResize"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="mine.activity.JiuyiMineSettingActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="mine.activity.JiuyiMineAboutusActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="mine.activity.JiuyiMineSignRecordActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="mine.activity.JiuyiMineSignActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:windowSoftInputMode="adjustPan|stateHidden"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+        <!-- 密码锁定 主界面-->
+        <activity
+            android:name="com.jiuyi.activity.passwordlock.activity.JiuyiPasswordLockActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <!-- 密码锁定 解锁界面-->
+        <activity
+            android:name="com.jiuyi.activity.passwordlock.activity.JiuyiPasswordUnLockedActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <!-- 密码锁定 开启锁屏、关闭锁屏、修改密码、开启指纹、关闭指纹界面-->
+        <activity
+            android:name="com.jiuyi.activity.passwordlock.activity.JiuyiPasswordLockSetActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <!-- 密码锁定 设置锁屏时间界面-->
+        <activity
+            android:name="com.jiuyi.activity.passwordlock.activity.JiuyiPasswordLockTimeSetActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name="commonlyused.activity.JiuyiNormalOrgAddressListActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name="commonlyused.activity.JiuyiNormalDeptAddressListActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="commonlyused.activity.JiuyiNormalsubordinateContactsActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="commonlyused.activity.JiuyiNormalCustomerContactActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="commonlyused.activity.JiuyiNormalImportantContactActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="commonlyused.activity.JiuyiNormalCompanyAddressListActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="commonlyused.activity.JiuyiCustomerContactsInfoActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="commonlyused.activity.JiuyiNormalTaskListActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="commonlyused.activity.JiuyiNormalNewTaskActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="commonlyused.activity.JiuyiNormalNewFeedbackActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerVisitDetailActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerReceiptDetailActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCommunicationRecordNewActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerInfomationActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiRecordActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiRecordPlayActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerNewComplaintActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="customer.activity.JiuyiCustomerNewConsultationActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiCustomerNewReplyActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="customer.activity.JiuyiNewComplaintDetailMutiActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:name="customer.activity.PickerActivity" />
+        <activity
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:name="customer.activity.PreviewActivity" />
+
+        <!-- imsdk界面-->
+
+        <activity android:name="messages.timchat.ui.HomeActivity" />
+        <activity
+            android:name="messages.timchat.ui.ChatActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name="messages.timchat.ui.SearchFriendActivity" />
+        <activity android:name="messages.timchat.ui.AddFriendActivity" />
+        <activity
+            android:name="messages.timchat.ui.ProfileActivity"
+            android:launchMode="singleTask" />
+        <activity android:name="messages.timchat.ui.ManageFriendGroupActivity" />
+        <activity android:name="messages.timchat.ui.VideoActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="messages.timchat.ui.CreateGroupActivity" />
+        <activity android:name="messages.timchat.ui.TCVideoRecordActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="messages.timchat.ui.TCVideoPreviewActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="messages.timchat.ui.GroupProfileActivity"
+            android:launchMode="singleTask" />
+
+<!--
+        <activity
+            android:name="customer.activity.RouteNaviActivity"
+            android:screenOrientation="portrait" />
+-->
+
+
+        <!-- 消息收发service -->
+        <service
+            android:name="com.tencent.qalsdk.service.QalService"
+            android:exported="false"
+            android:process=":QALSERVICE" />
+        <service
+            android:name="com.tencent.qalsdk.service.QalAssistService"
+            android:exported="false"
+            android:process=":QALSERVICE" />
+        <!-- 离线消息广播接收器 -->
+        <receiver
+            android:name="com.tencent.qalsdk.QALBroadcastReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.tencent.qalsdk.broadcast.qal" />
+            </intent-filter>
+        </receiver>
+        <!-- 系统消息广播接收器 -->
+        <receiver
+            android:name="com.tencent.qalsdk.core.NetConnInfoCenter"
+            android:process=":QALSERVICE">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.TIME_SET" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.tencent.qalsdk.service.TASK_REMOVED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- mipush -->
+        <service
+            android:name="com.xiaomi.push.service.XMJobService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:process=":MiPushService" />
+        <service
+            android:name="com.xiaomi.push.service.XMPushService"
+            android:enabled="true"
+            android:process=":MiPushService" />
+        <service
+            android:name="com.xiaomi.mipush.sdk.PushMessageHandler"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name="com.xiaomi.mipush.sdk.MessageHandleService"
+            android:enabled="true" />
+
+        <receiver
+            android:name="messages.timchat.utils.MiPushMessageReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.MESSAGE_ARRIVED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.ERROR" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.xiaomi.push.service.receivers.NetworkStatusReceiver"
+            android:exported="true">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.xiaomi.push.service.receivers.PingReceiver"
+            android:exported="false"
+            android:process=":MiPushService">
+            <intent-filter>
+                <action android:name="com.xiaomi.push.PING_TIMER" />
+            </intent-filter>
+        </receiver>
+        <!-- mipush -->
+
+
+        <!-- hwpush -->
+
+
+        <!-- 第三方相关 :接收Push消息（注册、Push消息、Push连接状态、标签，LBS上报结果）广播 -->
+        <receiver android:name="messages.timchat.utils.HwPushMessageReceiver">
+            <intent-filter>
+
+                <!-- 必须,用于接收token -->
+                <action android:name="com.huawei.android.push.intent.REGISTRATION" />
+                <!-- 必须，用于接收消息 -->
+                <action android:name="com.huawei.android.push.intent.RECEIVE" />
+                <!-- 可选，用于点击通知栏或通知栏上的按钮后触发onEvent回调 -->
+                <action android:name="com.huawei.android.push.intent.CLICK" />
+                <!-- 可选，查看push通道是否连接，不查看则不需要 -->
+                <action android:name="com.huawei.intent.action.PUSH_STATE" />
+                <!-- 可选，标签、地理位置上报回应，不上报则不需要 -->
+                <action android:name="com.huawei.android.push.plugin.RESPONSE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="CS_cloud_ablitity"
+                android:value="successRateAnalytics" />
+        </receiver>
+
+        <!--
+             备注：Push相关的android组件需要添加到业务的AndroidManifest.xml,
+        	 Push相关android组件运行在另外一个进程是为了防止Push服务异常而影响主业务
+        -->
+
+
+        <!-- PushSDK:PushSDK接收外部请求事件入口 -->
+        <receiver
+            android:name="com.huawei.android.pushagent.PushEventReceiver"
+            android:process=":HwPushService">
+            <intent-filter>
+                <action android:name="com.huawei.android.push.intent.REFRESH_PUSH_CHANNEL" />
+                <action android:name="com.huawei.intent.action.PUSH" />
+                <action android:name="com.huawei.intent.action.PUSH_ON" />
+                <action android:name="com.huawei.android.push.PLUGIN" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.huawei.android.pushagent.PushBootReceiver"
+            android:process=":HwPushService">
+            <intent-filter>
+                <action android:name="com.huawei.android.push.intent.REGISTER" />
+                <!-- <action android:name="android.net.conn.CONNECTIVITY_CHANGE" /> -->
+            </intent-filter>
+
+            <meta-data
+                android:name="CS_cloud_version"
+                android:value="\u0032\u0037\u0030\u0035" />
+        </receiver>
+
+        <!-- PushSDK:Push服务 -->
+        <service
+            android:name="com.huawei.android.pushagent.PushService"
+            android:process=":HwPushService"/>
+
+
+
+        <!--mz push-->
+        <!-- push应用定义消息receiver声明 -->
+        <receiver android:name="messages.timchat.utils.MeizuPushMessageReceiver">
+            <intent-filter>
+                <!-- 接收push消息 -->
+                <action android:name="com.meizu.flyme.push.intent.MESSAGE" />
+                <!-- 接收register消息 -->
+                <action android:name="com.meizu.flyme.push.intent.REGISTER.FEEDBACK" />
+                <!-- 接收unregister消息-->
+                <action android:name="com.meizu.flyme.push.intent.UNREGISTER.FEEDBACK"/>
+                <!-- 兼容低版本Flyme3推送服务配置 -->
+                <action android:name="com.meizu.c2dm.intent.REGISTRATION" />
+                <action android:name="com.meizu.c2dm.intent.RECEIVE" />
+                <category android:name="com.tencent.qcloud.timchat"></category>
+            </intent-filter>
+        </receiver>
+        <!-- hwpush -->
+
+        <!-- firebase -->
+        <!--<service android:name="com.tencent.qcloud.timchat.utils.MyFirebaseInstanceIDService" android:exported="true">-->
+
+        <!--<intent-filter>-->
+        <!--<action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>-->
+        <!--</intent-filter>-->
+        <!--</service>-->
+        <!-- firebase -->
+
+        <!-- 高德服务 -->
+
+
+        <!-- 定位需要的服务 使用2.0的定位需要加上这个 -->
+        <service android:name="com.amap.api.location.APSService" >
+        </service>
+
+
+        <activity android:name="messages.timchat.ui.ImageViewActivity" />
+        <activity android:name="messages.timchat.ui.EditActivity" />
+        <activity android:name="messages.timchat.ui.SearchGroupActivity" />
+        <activity android:name="messages.timchat.ui.ApplyGroupActivity" />
+        <activity android:name="messages.timchat.ui.GroupManageMessageActivity" />
+        <activity android:name="messages.timchat.ui.FriendshipManageMessageActivity" />
+        <activity android:name="messages.timchat.ui.GroupListActivity" />
+        <activity android:name="messages.timchat.ui.ChooseFriendActivity" />
+        <activity android:name="messages.timchat.ui.GroupMemberActivity" />
+        <activity
+            android:name="messages.timchat.ui.customview.DialogActivity"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity android:name="messages.timchat.ui.GroupMemberProfileActivity" />
+        <activity android:name="messages.timchat.ui.FriendshipHandleActivity" />
+        <activity android:name="messages.timchat.ui.AboutActivity" />
+        <activity android:name="messages.timchat.ui.BlackListActivity"></activity>
+        <activity android:name="messages.timchat.ui.ImagePreviewActivity"></activity>
+        <activity android:name="messages.timchat.ui.MessageNotifySettingActivity"></activity>
+
+
+        <activity android:name="customer.activity.AlbumActivity"/>
+        <activity android:name="customer.activity.GalleryActivity"/>
+        <activity android:name="customer.activity.ImageBrowseActivity"/>
+
+
+
+        <activity
+            android:name="mine.activity.JiuyiMineScheduleActivity"
+            android:exported="true"
+        />
+
+    </application>
+
+</manifest>

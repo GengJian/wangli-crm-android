@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/jiuyi_white_color"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/common_topbar_height"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/leftContent"
+            style="@style/BlackText.standard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:gravity="center_vertical"
+            android:text=""
+            android:textColor="@color/jiuyi_info_color" />
+
+        <TextView
+            android:id="@+id/rightContent"
+            style="@style/BlackText.standard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical|end"
+            android:hint="@string/hint_choose"
+            android:paddingEnd="10dp"
+            android:paddingStart="0dp"
+            android:singleLine="false"
+            android:ellipsize="none"
+            android:inputType="textMultiLine"
+            android:text=""
+            android:textColor="@color/jiuyi_title_color"
+            android:textColorHint="@color/jiuyi_title_color" />
+
+        <ImageButton
+            android:id="@+id/imageUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@color/white"
+            android:contentDescription="@null"
+            android:src="@mipmap/et_forword" />
+    </LinearLayout>
+
+</LinearLayout>

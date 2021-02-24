@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/jiuyi_white_color"
+    android:orientation="vertical">
+    <View
+        style="@style/HorizontalDivider"
+        android:layout_marginRight="0dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/jiuyi_white_color"
+        >
+        <View style="@style/VerticalDivider"
+            />
+
+        <TextView
+            android:id="@+id/leftContent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="right"
+            android:layout_marginRight="20dp"
+            android:singleLine="true"
+            android:text="" />
+        <View style="@style/VerticalDivider"/>
+
+        <TextView
+            android:id="@+id/rightContent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:layout_marginLeft="20dp"
+            android:singleLine="true"
+            android:textColor="@color/jiuyi_title_color"
+            android:text="" />
+        <View style="@style/VerticalDivider"
+
+            />
+
+        <!-- <ImageView
+             android:id="@+id/tv_operation"
+             android:layout_width="50dp"
+             android:layout_height="50dp"
+             android:gravity="center"
+             android:layout_gravity="center_vertical"
+            android:src="@drawable/c_produce_delete"
+             />-->
+    </LinearLayout>
+<!--    <View
+        style="@style/HorizontalDivider"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        />-->
+</LinearLayout>

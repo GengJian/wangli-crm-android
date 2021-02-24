@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--主界面-->
+<com.control.widget.relativeLayout.JiuyiRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/jiuyi_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tzt_whitepage_bgcolor"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/jiuyi_titlebar_height"
+        android:layout_alignParentTop="true"
+        android:id="@+id/jiuyi_titlebar_layout"
+        layout="@layout/jiuyi_titlebar_completer_layout"/>
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/startRecord"
+                android:layout_weight="1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="开始录音" />
+
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/stopRecord"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="完成录音" />
+
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/startPlay"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="开始播放" />
+
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/stopPlay"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="停止播放" />
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/pausePlay"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="暂停播放" />
+           <!-- <Button
+                android:layout_weight="1"
+                android:id="@+id/delete"
+                android:visibility="gone"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="删除" />-->
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center_horizontal"
+            android:text="您本次的录音时长为：       00:00:00"
+            android:textColor="#0000ff"
+            android:textSize="20sp" />
+
+        <ListView
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp" >
+        </ListView>
+
+
+    </LinearLayout>
+
+    <include layout="@layout/jiuyi_include_processbarview"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:background="#fff">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_above="@+id/ll_bottomButton"
+            android:background="@color/line_bg" />
+
+        <LinearLayout
+            android:id="@+id/ll_bottomButton"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <customer.view.DrawableTextView
+                android:id="@+id/delete"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/jiuyi_white_color"
+                android:drawablePadding="5dp"
+                android:text="删除"
+                android:textColor="@color/jiuyi_info_color"
+                android:textSize="17sp"
+                app:leftDrawable="@drawable/addressdel"
+                app:leftDrawableHeight="20dp"
+                app:leftDrawableWidth="20dp" />
+
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</com.control.widget.relativeLayout.JiuyiRelativeLayout>

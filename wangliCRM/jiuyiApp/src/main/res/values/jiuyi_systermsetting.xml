@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+特殊字符的写法
+XML标志符的数字和字符串转义符
+"     (&#34; 或 &quot;)
+'     (&#39; 或 &apos;)
+&     (&#38; 或 &amp;)
+lt(<) (&#60; 或 &lt;)
+gt(>) (&#62; 或 &gt;)
+%s     变量格式替换成%1$s, %1表示第一个位置的变量, $s表示为字符串类型
+-->
+<resources>
+    <!--###### 系统级配置 ####################################################################-->
+    <!--升级版本号-->
+    <string name="jiuyi_upversion">1.13.001</string>
+    <!--软件版本号 -->
+    <string name="jiuyi_sysversion">1.13.001</string>
+
+    <!--来源-->
+    <string name="jiuyi_cfrom">jiuyi</string>
+    <string name="jiuyi_tfrom">android</string>
+
+    <!--ui文件夹名称,对应的config的名称-->
+    <string name="jiuyi_uiname">jiuyiuiphone</string>
+    <!--默认的首页-->
+    <string name="jiuyi_rootpage">5002</string>
+
+
+    <!--###### 导航栏配置 ####################################################################-->
+    <!--底部工具栏-->
+    <!--第三位是指此数组设置的是“背景色不变”的功能号和背景风格的值，为空表示切换会发生变化，1表示白色背景-->
+    <string name="newcomtoolbar">客户,5002|差旅,5003|常用,5004|我的,5005,1|</string>
+ <!--   <string name="newcomtoolbar">消息,5001|客户,5002|常用,5004|我的,5005,1|</string>-->
+
+    <!--客户明细界面tab配置 -->
+<!--    <string name="jiuyicustomerdetailtabbar">基本信息,2001|人事组织,2002|联系人,2003|门店信息,2004|经销商计划,2005|销售状况,2006|研发状况,2007|商务拜访,2008|商机跟进,2009|合同跟踪,2010|服务投诉,2011|费用分析,2012|系统信息,2601|</string>-->
+    <string name="jiuyicustomerdetailtabbar">基本信息,2001|人事组织,2002|门店信息,2003|经销商计划,2004|系统信息,2601|</string>
+
+    <string name="jiuyicustomercredittabbar">财务维度,2610|技术维度,2611|战略协同,2612|竞争分析,2613|质量成本,2614|关键需求,2615|关键指标,2616|</string>
+    <string name="jiuyicustomerlinkmantabbar">人事组织,2620|</string>
+    <string name="jiuyicustomerfinancialtabbar">财务状况,2627|财务情报,2628|</string>
+    <string name="jiuyicustomerpurchasetabbar">所有类型,2629|采购情报,2630|</string>
+    <string name="jiuyicustomerproducttabbar">所有类型,2635|生产情报,2636|</string>
+    <string name="jiuyicustomersalestabbar">所有类型,2647|销售情报,2648|</string>
+    <string name="jiuyicustomerresearchtabbar">所有类型,2655|研发情报,2656|</string>
+    <string name="jiuyicustomervisitreceipttabbar">拜访客户,2666|客户接待,2667|</string>
+    <string name="jiuyicustomervisittabbar">拜访过程,2663|拜访备注,2664|附件,2665|</string>
+    <string name="jiuyicustomerreceipttabbar">酒店,2671|用餐,2672|用车,2673|礼品,2674|接待,2675|会议,2676|</string>
+    <string name="jiuyicustomerbusinesstabbar">所有类型,2687|商机总览,2686|</string>
+    <string name="jiuyicustomercontracttabbar">所有类型,2689|合同总览,2688|</string>
+    <string name="jiuyicustomercosttabbar">费用类型分析,2700|铁三角费用分析,2701|</string>
+    <string name="jiuyicustomercoststatustabbar">所有,2702|OA审批中,2703|已审批,2704|</string>
+    <!--客户明细界面tab配置 -->
+    <string name="jiuyicustomerrisktabbar">风险跟踪,2018|风险总览,2019|</string>
+
+    <string name="jiuyicustomermarkettabbar">市场动态跟踪,2034|信息总览,2035|</string>
+    <string name="jiuyicustomertradetabbar">交易跟踪,2036|信息总览,2037|</string>
+
+<!--    <string name="jiuyidynamictabbar">所有,3010|情报,3011|活动,3012|线索,3013|商机,3014|样品,3015|报价,3016|拜访,3017|接待,3018|订单,3019|发货,3020|开票,3021|收款,3022|咨询,3023|客诉,3024|公告,3025|客户,3026|工作圈,3027|</string>-->
+<!--    <string name="jiuyidynamictabbar">所有,3010|情报,3011|活动,3012|线索,3013|商机,3014|样品,3015|报价,3016|拜访,3017|订单,3019|发货,3020|开票,3021|收款,3022|公告,3025|工作圈,3027|</string>-->
+    <string name="jiuyidynamictabbar">所有,3010|情报,3011|活动,3012|线索,3013|商机,3014|样品,3015|报价,3016|合同,3028|收款,3022|公告,3025|工作圈,3027|</string>
+    <string name="jiuyiintelligencetabbar">所有,3031|直销客户,3032|友商,3033|供应商,3034|终端客户,3035|政策情报,3036|技术趋势,3037|</string>
+    <string name="jiuyiactivitytabbar">所有,3041|草稿,3042|进行中,3043|结束,3044|取消,3045|</string>
+    <string name="jiuyicluetabbar">所有,3051|验证中,3052|培育中,3053|已转商机,3054|已关闭,3055|</string>
+    <string name="jiuyibusinesstabbar">所有,3061|指派中,3068|验证中,3062|无效,3063|培育中,3064|已转合同,3065|已关闭,3066|</string>
+    <string name="jiuyioffertabbar">所有,3071|审批中,3072|客户验证,3073|客户接受,3074|客户拒绝,3075|已取消,3076|</string>
+    <string name="jiuyisampletabbar">所有,3081|草稿,3087|审核中,3082|审批通过,3083|结果已录入,3084|取消,3088|</string>
+    <string name="jiuyicontracttabbar">所有,3091|草稿,3096|审批中,3092|待提交,3097|待发货,3098|发货中,3093|已完成,3094|已取消,3095|已终止,3099|</string>
+    <string name="jiuyidyordertabbar">所有,3101|冻结中,3102|正常,3103|已取消,3105|</string>
+<!--    <string name="jiuyideliverytabbar">所有,3111|未过账,3112|已过账,3113|部分开票,3114|已开票,3115|</string>-->
+    <string name="jiuyideliverytabbar">所有,3111|未过账,3112|部分过账,3114|已过账,3113|</string>
+ <!--   <string name="jiuyiinvoicetabbar">所有,3121|未过账,3122|已过账,3123|已清账,3124|已冲销,3125|</string>-->
+    <string name="jiuyiinvoicetabbar">所有,3121|未过账,3122|过账错误,3126|已过账,3123|取消开票,3127|<!--已冲销,3125|--></string>
+    <string name="jiuyireceivablestabbar">所有,3131|广东公司,3132|浙江公司,3133|天津公司,3134|</string>
+    <string name="jiuyicomplainttabbar">所有,3141|立案中,3142|处理中,3143|结案中,3144|已结案,3145|未立案,3146|</string>
+    <string name="jiuyi1000asktabbar">所有,3151|推荐,3152|热门,3153|等待回答,3154|</string>
+
+    <!--订单明细界面tab配置 -->
+    <string name="jiuyiordertabbar">所有,3001|审批中,3002|发货中,3003|已完成,3004|</string>
+
+    <!--任务明细界面tab配置 -->
+    <string name="jiuyitasktabbar">所有,7009|待认领,7010|处理中,7011|已完成,7012|确认完成,7017|</string>
+
+    <string name="jiuyiminevisitreceipttabbar">拜访客户,6019|客户接待,6020|</string>
+
+    <!--我的发货收款计划界面tab配置 -->
+    <string name="jiuyiminedeliveryreceipttabbar">发货计划汇总,6017|收款计划,6003|</string>
+
+    <!--我的收藏界面tab配置 -->
+    <string name="jiuyiminecollectiontabbar">客户,6009|任务,6012|</string>
+    <!--###### 其他配置 ####################################################################-->
+    <!--dialog默认的标题头-->
+    <string name="jiuyidefdialogtitle">系统提示</string>
+    <!--升级dialog默认的标题头-->
+    <string name="jiuyiupdatedialogtitle">升级信息</string>
+
+    <!--订单新增-->
+    <string name="jiuyineworder">orderonline</string>
+    <!--订单详情-->
+    <string name="jiuyiorderdetail">orderHelper</string>
+    <!--任务详情-->
+    <string name="jiuyitaskdetail">task-detail</string>
+    <!--外贸详情-->
+    <string name="jiuyiforeignorderdetail">foreignorder</string>
+    <!--信用欠款-->
+    <string name="jiuyicreditdetail">creditArrears</string>
+    <!--批号页面-->
+    <string name="jiuyibatchnum">barcodeSearch</string>
+    <!--批号页面-->
+    <string name="jiuyitransactionTracking">transactionTracking</string>
+
+
+</resources>

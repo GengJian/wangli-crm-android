@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/jiuyi_white"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/divider_dark" />
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <LinearLayout
+            android:id="@+id/ll_title"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/jiuyi_white_color"
+            >
+            <View style="@style/VerticalDivider"
+                android:layout_marginLeft="5dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_producttype"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:text="评价指标"
+                android:textColor="@color/jiuyi_title_color" />
+            <View style="@style/VerticalDivider"/>
+
+            <TextView
+                android:id="@+id/tv_productname"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/jiuyi_title_color"
+                android:text="指标柱状图/数据" />
+            <View style="@style/VerticalDivider"/>
+
+            <TextView
+                android:id="@+id/tv_operation"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/jiuyi_title_color"
+                android:text="得分" />
+            <View style="@style/VerticalDivider"
+                android:layout_marginRight="5dp"
+                />
+        </LinearLayout>
+        <View
+            style="@style/HorizontalDivider"
+            android:id="@+id/view_line"
+            android:layout_below="@+id/ll_title"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            />
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_content"
+            android:layout_below="@+id/view_line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-5dp"
+            />
+        <ImageView
+            android:id="@+id/iv_empty"
+            android:layout_above="@+id/tv_emptytext"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/nodata"
+            android:tint="@color/jiuyi_info2_color"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/tv_emptytext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            android:textColor="@color/jiuyi_info2_color"
+            android:text="暂无相关数据"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

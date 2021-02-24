@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:orientation="vertical">
+    <View
+        style="@style/HorizontalDivider"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/jiuyi_white_color"
+     >
+        <View style="@style/VerticalDivider"
+            android:layout_marginLeft="5dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_crmnum"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="crm编号" />
+        <View style="@style/VerticalDivider"/>
+
+        <TextView
+            android:id="@+id/tv_region"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="行政区" />
+        <View style="@style/VerticalDivider"/>
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="签订日期" />
+        <View style="@style/VerticalDivider"/>
+
+        <TextView
+            android:id="@+id/tv_operation"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:drawableLeft="@drawable/see"
+            android:padding="20dp"
+             android:layout_gravity="center_vertical"
+             />
+
+       <!-- <ImageView
+            android:id="@+id/tv_operation"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+           android:src="@drawable/c_produce_delete"
+            />-->
+        <View style="@style/VerticalDivider"
+            android:layout_marginRight="5dp"
+            />
+    </LinearLayout>
+</LinearLayout>

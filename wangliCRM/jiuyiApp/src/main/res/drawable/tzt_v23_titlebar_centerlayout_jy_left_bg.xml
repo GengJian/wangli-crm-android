@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 控件使用时 宽度为w = 200dp，圆角为r = 14dp -->
+    <item>
+        <shape android:shape="rectangle">
+            <!-- solid指定形状的填充色，只有android:color一个属性 -->
+            <!-- padding设置内容区域离边界的间距 -->
+            <!-- corners设置圆角，只适用于rectangle -->
+            <corners android:radius="14dp" />
+            <!-- stroke设置描边 -->
+            <stroke
+                android:width="1dp"
+                android:color="@color/tzt_white" />
+        </shape>
+    </item>
+
+    <!-- right = w / 2 -->
+    <item android:right="100dp">
+        <shape android:shape="rectangle">
+            <!-- solid指定形状的填充色，只有android:color一个属性 -->
+            <solid android:color="@color/tzt_white" />
+            <!-- corners设置圆角，只适用于rectangle -->
+            <corners android:radius="14dp" />
+        </shape>
+    </item>
+
+    <!-- right = w / 2, left = r -->
+    <item
+        android:right="100dp"
+        android:left="14dp">
+        <shape android:shape="rectangle">
+            <!-- solid指定形状的填充色，只有android:color一个属性 -->
+            <solid android:color="@color/tzt_white" />
+        </shape>
+    </item>
+</layer-list>

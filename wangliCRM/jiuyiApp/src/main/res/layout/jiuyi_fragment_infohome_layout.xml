@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/tzt_infohome_toplayout"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@color/tzt_v23_tabbar_background_color"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tzt_infohome_tablayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:tabGravity="center"
+            app:tabIndicatorColor="@color/tzt_v23_tabbar_text_select_color"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="@color/tzt_v23_tabbar_text_select_color"
+            app:tabTextColor="@color/tzt_v23_tabbar_text_color"
+            app:tabTextAppearance="@style/TabLayoutTextStyle" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/jiuyi_tabbarsmoreshadow" />
+
+        <LinearLayout
+            android:id="@+id/tzt_infohome_add"
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/jiuyi_tabbarsmore" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.control.widget.viewpager.JiuyiNotSmoothViewPager
+        android:id="@+id/tzt_infohome_childviewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tzt_infohome_toplayout"
+        android:layout_marginTop="10dp"/>
+
+</RelativeLayout>

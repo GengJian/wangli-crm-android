@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:contentScrim="#e4e6f1"
+            android:background="#f7f7f7"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            <LinearLayout
+                android:id="@+id/ll_contact"
+                android:layout_width="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_height="240dp"
+                android:gravity="center_vertical"
+                android:background="@color/jiuyi_white"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_pri"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/the_previous"
+                    />
+                <com.jiuyi.tools.jiuyiCustomerViewPager
+                    android:id="@+id/jiuyi_viewpager"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    />
+                <ImageView
+                    android:id="@+id/iv_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/next"
+
+                    />
+
+            </LinearLayout>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+        <LinearLayout
+            android:id="@+id/ll_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:layout_below="@+id/ll_contact"
+            android:background="@color/tzt_whitepage_bgcolor"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_business"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="关联商机"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/tv_need"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="需求痛点"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <!--
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@mipmap/back"
+                    android:orientation="horizontal">
+
+                    <RadioGroup
+                        android:id="@+id/rg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rb_des"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:button="@null"
+                            android:checked="true"
+                            android:gravity="center"
+                            android:text="关联商机"
+                            android:textColor="#000"
+                            android:textSize="14sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb_course"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="需求痛点"
+                            android:textColor="#000"
+                            android:textSize="14sp" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+        -->
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="always"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <!--- app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/rv_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_title"
+                android:orientation="vertical">
+                <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                    android:id="@+id/refreshLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    app:srlHeaderMaxDragRate="2.5"
+                    app:srlPrimaryColor="@android:color/darker_gray"
+                    app:srlAccentColor="@android:color/transparent"
+                    app:srlEnableLoadmore="false"
+                    >
+                    <!--srlHeaderMaxDragRate=2.5时候WaterDropHeader的下拉效果最好-->
+                    <com.scwang.smartrefresh.header.WaterDropHeader
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_list"
+                        android:layout_width="match_parent"
+                        android:layout_marginBottom="@dimen/jiuyi50dp"
+                        android:visibility="visible"
+                        android:layout_height="wrap_content"
+                        />
+
+                </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:background="#fff">
+
+        <LinearLayout
+            android:id="@+id/ll_bottomButton"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <customer.view.DrawableTextView
+                android:id="@+id/dtv_contact"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/jiuyi_white_color"
+                android:drawablePadding="5dp"
+                android:text="新建联系人"
+                android:textColor="@color/jiuyi_blue"
+                android:textSize="17sp"
+                app:leftDrawable="@drawable/contactsnew"
+                app:leftDrawableHeight="20dp"
+                app:leftDrawableWidth="20dp" />
+
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/line_bg"
+                />
+
+            <customer.view.DrawableTextView
+                android:id="@+id/dtv_need"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/jiuyi_white_color"
+                android:drawablePadding="5dp"
+                android:text="新建需求"
+                android:textColor="@color/jiuyi_blue"
+                android:textSize="17sp"
+                app:leftDrawable="@drawable/basic_informationnew"
+                app:leftDrawableHeight="20dp"
+                app:leftDrawableWidth="20dp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

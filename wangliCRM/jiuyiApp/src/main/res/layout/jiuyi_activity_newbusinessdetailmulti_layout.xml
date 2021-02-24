@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--主界面-->
+<com.control.widget.relativeLayout.JiuyiRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/jiuyi_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tzt_whitepage_bgcolor"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/jiuyi_titlebar_height"
+        android:layout_alignParentTop="true"
+        android:id="@+id/jiuyi_titlebar_layout"
+        layout="@layout/jiuyi_titlebar_completer_layout"/>
+
+        <LinearLayout
+            android:id="@+id/ll_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:layout_below="@+id/jiuyi_titlebar_layout"
+            android:orientation="vertical">
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_compete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_choose"
+                app:isEditable="false"
+                app:title="友商名称" />
+
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_competeincharge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_write"
+                app:isEditable="true"
+                app:jt_visible="false"
+                app:title="友商负责人" />
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_tel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_write"
+                app:isEditable="true"
+                app:jt_visible="false"
+                app:title="电话" />
+
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_deptment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_write"
+                app:isEditable="true"
+                app:jt_visible="false"
+                app:title="负责人部门" />
+
+            <com.control.widget.JiuyiItemGroup
+                android:id="@+id/jig_duty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edt_hint_content="@string/hint_write"
+                app:isEditable="true"
+                app:jt_visible="false"
+                app:title="负责人职位" />
+
+            <com.control.widget.JiuyiBigTextGroup
+                android:id="@+id/jig_remark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="100dp"
+                app:edt_hint_content="@string/hint_write"
+                app:title="备注"
+                />
+
+
+        </LinearLayout>
+<!--    </ScrollView>-->
+
+    <include layout="@layout/jiuyi_include_processbarview"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dip"
+        android:layout_below="@+id/ll_content"
+        android:layout_marginTop="15dp">
+
+        <com.control.widget.JiuyiButton
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/jiuyi_v23_button_bg_disable"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@color/tzt_white"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</com.control.widget.relativeLayout.JiuyiRelativeLayout>

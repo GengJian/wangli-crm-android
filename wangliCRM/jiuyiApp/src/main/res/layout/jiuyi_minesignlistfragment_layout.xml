@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#f0f0f0">
+
+    <View
+        android:id="@+id/view_1"
+        android:layout_width="match_parent"
+        android:layout_height="0.1px"
+        android:layout_alignParentTop="true"
+        android:background="#E2E2E2" />
+
+<!--
+    <LinearLayout
+        android:id="@+id/ll_title"
+        android:layout_below="@+id/view_1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#ffffff"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_sort"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_sort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="排序A-Z"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_marginLeft="5dp"
+                android:src="@mipmap/client_down_n" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_visitcustomer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_visitcustomer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="拜访客户"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_marginLeft="5dp"
+                android:src="@mipmap/client_down_n" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_status"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="状态"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_marginLeft="5dp"
+                android:src="@mipmap/client_down_n" />
+        </LinearLayout>
+    </LinearLayout>
+-->
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_below="@+id/view_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:ignore="RtlHardcoded,HardcodedText,RtlSymmetry,SmallSp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="horizontal"
+            >
+
+
+            <LinearLayout
+                android:id="@+id/ll_begin"
+                android:layout_width="115dp"
+                android:layout_height="30dp"
+                android:background="@drawable/jiuyi_condition_bg_normal"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_begintime"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="center"
+
+                    android:hint="请选择开始日期"
+                    android:singleLine="true"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/jiuyi_title_color"
+                    android:textColorHint="@color/jiuyi_info_color"
+                    android:textSize="14sp"
+                    tools:text="" />
+                <!--清除输入内容-->
+
+                <!--点击跳转或者弹出选择框-->
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:text="~"
+                android:textColor="@color/jiuyi_info_color"
+                android:textSize="15sp"
+                 />
+
+            <LinearLayout
+                android:id="@+id/ll_end"
+                android:layout_width="115dp"
+                android:layout_height="30dp"
+                android:background="@drawable/jiuyi_condition_bg_normal"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_endtime"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:hint="请选择结束日期"
+                    android:singleLine="true"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/jiuyi_title_color"
+                    android:textColorHint="@color/jiuyi_info_color"
+                    android:textSize="14sp"
+                    tools:text="" />
+                <!--清除输入内容-->
+
+                <!--点击跳转或者弹出选择框-->
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_query"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/jiuyi_customerstatusbutton_bg_normal"
+                android:gravity="center"
+                android:text="查询"
+                android:textColor="@color/jiuyi_blue"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/jiuyi_backgroud_color"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/jiuyi_linkback_color" />
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/refreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                app:srlHeaderMaxDragRate="2.5"
+                app:srlPrimaryColor="@android:color/darker_gray"
+                app:srlAccentColor="@android:color/transparent"
+                app:srlEnableLoadmore="true"
+                >
+            <!--srlHeaderMaxDragRate=2.5时候WaterDropHeader的下拉效果最好-->
+            <com.scwang.smartrefresh.header.WaterDropHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_infolist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/jiuyi_backgroud_color" />
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        >
+
+        <ImageButton
+            android:id="@+id/ib_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:background="@color/transparent"
+            android:src="@drawable/news_add" />
+    </LinearLayout>
+
+</RelativeLayout>

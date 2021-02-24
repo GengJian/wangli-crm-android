@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/jiuyi_white_color"
+    android:orientation="vertical">
+    <View
+        style="@style/HorizontalDivider"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <View style="@style/VerticalDivider"
+            android:layout_marginLeft="5dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_name"
+            style="@style/BlackText.standard"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center"
+            android:text="111"
+            android:textColor="@color/jiuyi_info_color" />
+        <View style="@style/VerticalDivider"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="18dp"
+            android:layout_gravity="center"
+            android:background="@null">
+
+            <TextView
+                android:id="@+id/tv_value2"
+                style="@style/BlackText.standard"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center"
+                android:text="11"
+                android:visibility="gone"
+                android:textColor="@color/jiuyi_info_color" />
+
+            <LinearLayout
+            android:id="@+id/ll_bar"
+            android:layout_width="170dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="center"
+            android:background="@drawable/circle_bar_back">
+
+            <View
+                android:id="@+id/first_bar"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/half_corner_bg_xc">
+
+            </View>
+
+
+        </LinearLayout>
+        </LinearLayout>
+        <View style="@style/VerticalDivider"/>
+        <TextView
+            android:id="@+id/tv_value"
+            style="@style/BlackText.standard"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center"
+            android:text="111"
+            android:textColor="@color/jiuyi_info_color" />
+        <View style="@style/VerticalDivider"
+            android:layout_marginRight="5dp"
+            />
+
+    </LinearLayout>
+    <View
+        style="@style/HorizontalDivider"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        />
+
+</LinearLayout>

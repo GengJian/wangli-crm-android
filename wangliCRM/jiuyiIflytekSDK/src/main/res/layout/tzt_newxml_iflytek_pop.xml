@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4c000000"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tzt_white"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_online_play"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="在线播放"
+                android:textColor="#212021"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="18dp"
+                android:background="#B8B8B8"
+                android:contentDescription="间隔" />
+
+            <TextView
+                android:id="@+id/tv_offline_play"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="离线播放"
+                android:textColor="#00A9F8"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="18dp"
+                android:background="#B8B8B8"
+                android:contentDescription="间隔" />
+
+            <TextView
+                android:id="@+id/tv_voicer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="发音人"
+                android:textColor="#212021"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progress_Speak"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:max="100"
+            android:progress="0"
+            android:progressDrawable="@drawable/tzt_progress_style1"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:baselineAligned="false"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <LinearLayout
+                    android:id="@+id/layout_start_pause"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/tzt_rectangle_pink"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="4dp" >
+
+                    <ImageView
+                        android:id="@+id/iv_start_pause"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:contentDescription="播放"
+                        android:src="@drawable/media_start" />
+
+                    <TextView
+                        android:id="@+id/tv_start_pause"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="4dp"
+                        android:paddingRight="4dp"
+                        android:paddingTop="4dp"
+                        android:text="开始播放"
+                        android:textColor="#ffffffff"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <LinearLayout
+                    android:id="@+id/layout_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/tzt_rectangle_gray"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="4dp" >
+
+                    <ImageView
+                        android:id="@+id/iv_cancel"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:contentDescription="取消播放"
+                        android:src="@drawable/media_cancel" />
+
+                    <TextView
+                        android:id="@+id/tv_cancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="4dp"
+                        android:paddingRight="4dp"
+                        android:paddingTop="4dp"
+                        android:text="取消播放"
+                        android:textColor="#ffffffff"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

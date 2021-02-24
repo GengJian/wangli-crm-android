@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="30dp"
+    android:background="@drawable/jiuyi_dialog_bg"
+    android:gravity="center">
+
+    <RelativeLayout
+        android:id="@+id/dialog_title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:id="@+id/dialog_title_textview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:lines="1"
+            android:textColor="@color/tzt_v23_dialog_title_text_color"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:background="@color/tzt_v23_dialog_split_color"
+            android:maxHeight="1dip" />
+    </RelativeLayout>
+
+    <com.control.widget.JiuyiMaxHeightScrollView
+        android:id="@+id/dialog_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialog_title_layout"
+        android:layout_marginBottom="10dip"
+        android:layout_marginTop="10dip"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:scrollbars="none">
+
+        <TextView
+            android:id="@+id/dialog_content_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/tzt_v23_dialog_content_text_color"
+            android:textSize="15sp" />
+    </com.control.widget.JiuyiMaxHeightScrollView>
+
+    <LinearLayout
+        android:id="@+id/dialog_toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialog_scrollview"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center">
+
+        <com.control.widget.JiuyiButton
+            android:id="@+id/dialog_toolbar_button_confirm"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="12dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/jiuyi_v23_button_bg_selector"
+            android:gravity="center"
+            android:lines="1"
+            android:text="@string/dialogbuttontext_confirm"
+            android:textColor="@color/jiuyi_v23_button_textcolor_selector"
+            android:textSize="17sp" />
+
+        <com.control.widget.JiuyiButton
+            android:id="@+id/dialog_toolbar_button_cancel"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="12dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/jiuyi_v23_backbutton_bg_selector"
+            android:gravity="center"
+            android:lines="1"
+            android:text="@string/dialogbuttontext_cancel"
+            android:textColor="@color/tzt_v23_button_background_color"
+            android:textSize="17sp" />
+    </LinearLayout>
+</RelativeLayout>

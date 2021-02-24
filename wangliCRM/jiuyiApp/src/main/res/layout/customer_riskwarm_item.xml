@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="5dp"
+    android:background="@drawable/jiuyi_linelayout_bg_selector"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/jiuyi_linelayout_bg_selector"
+        android:orientation="vertical">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/sdv_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            />
+
+   <!--     <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/c_decision" />-->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/jiuyi_info_color"
+                android:text="裁决文书" />
+
+            <TextView
+                android:id="@+id/tv_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginBottom="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/jiuyi_title_color"
+                android:text="0" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <!--
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:weightSum="3"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/jiuyi_linelayout_bg_selector"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/c_decision" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/jiuyi_info_color"
+                        android:text="裁决文书" />
+
+                    <TextView
+                        android:id="@+id/tv_decison"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginBottom="10dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/jiuyi_title_color"
+                        android:text="0" />
+                </LinearLayout>
+            </LinearLayout>
+    &lt;!&ndash;
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/jiuyi_linelayout_bg_selector"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/c_execution" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/jiuyi_info_color"
+                        android:text="被执行人" />
+
+                    <TextView
+                        android:id="@+id/tv_execute"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginBottom="10dp"
+                        android:textColor="@color/jiuyi_title_color"
+                        android:textStyle="bold"
+                        android:text="0" />
+                </LinearLayout>
+            </LinearLayout>
+    &ndash;&gt;
+
+    &lt;!&ndash;
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/jiuyi_linelayout_bg_selector"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/c_openingnotice" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/jiuyi_info_color"
+                        android:text="开庭公告" />
+
+                    <TextView
+                        android:id="@+id/tv_opennotice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginBottom="10dp"
+                        android:textColor="@color/jiuyi_title_color"
+                        android:textStyle="bold"
+                        android:text="0" />
+                </LinearLayout>
+            </LinearLayout>
+    &ndash;&gt;
+
+        </LinearLayout>
+    -->
+
+    <!--<com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sd_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:src="@drawable/c_decision"
+        android:scaleType="centerCrop"
+        />
+
+
+    &lt;!&ndash;<ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/c_decision" />&ndash;&gt;
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/jiuyi_info_color"
+                android:text="裁决文书" />
+
+            <TextView
+                android:id="@+id/tv_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginBottom="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/jiuyi_title_color"
+                android:text="0" />
+        </LinearLayout>
+-->
+</LinearLayout>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/jiuyi_dividebackgroud_color"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/jiuyi_white_color"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/jiuyi_white_color"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="left|center"
+                    android:text="工程"
+                    android:textColor="@color/jiuyi_title_color" />
+
+                <TextView
+                    android:id="@+id/tv_project"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:text=""
+                    android:textColor="@color/jiuyi_info_color" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="left|center"
+                    android:text="未履行原因"
+                    android:textColor="@color/jiuyi_title_color" />
+
+                <TextView
+                    android:id="@+id/tv_reasonsNoPerformance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="@color/jiuyi_info_color" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/jiuyi_white_color"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="left|center"
+                    android:text="合同是否有效"
+                    android:textColor="@color/jiuyi_title_color" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    android:background="@color/line_bg" />
+
+                <ToggleButton
+                    android:id="@+id/tb_effective"
+                    android:layout_width="54dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/toggle_drawable_selector"
+                    android:checked="true"
+                    android:textOff="否"
+                    android:textOn="是" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="left|center"
+                    android:text="预计下单时间"
+                    android:textColor="@color/jiuyi_title_color" />
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="@color/jiuyi_info_color" />
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--主界面-->
+<com.control.widget.relativeLayout.JiuyiRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/jiuyi_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/jiuyi_titlebar_height"
+        android:layout_alignParentTop="true"
+        android:id="@+id/jiuyi_titlebar_layout"
+        layout="@layout/jiuyi_titlebar_customerdetail_layout"/>
+
+
+
+    <com.jiuyi.tools.jiuyiCustomerViewPager
+        android:id="@+id/jiuyi_customer_childviewpager"
+        android:layout_below="@id/jiuyi_titlebar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+     />
+
+
+    <!-- 进度条 -->
+    <include layout="@layout/jiuyi_include_processbarview"/>
+</com.control.widget.relativeLayout.JiuyiRelativeLayout>

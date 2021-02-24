@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/tzt_whitepage_bgcolor">
+    <FrameLayout
+        android:id="@+id/fl_map"
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+    <com.amap.api.maps.TextureMapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="250dp" >
+    </com.amap.api.maps.TextureMapView>
+<!--        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            class="com.amap.api.maps.SupportMapFragment" />-->
+        <customer.view.DrawableTextView
+            android:id="@+id/tv_navigation"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:drawablePadding="2dp"
+            android:layout_gravity="bottom|left"
+            android:background="@drawable/navi_bg"
+            android:text="导航"
+            android:textColor="@color/jiuyi_blue"
+            android:textSize="15sp"
+            app:topDrawable="@drawable/nvai"
+            app:topDrawableHeight="20dp"
+            app:topDrawableWidth="20dp"/>
+       <!-- <TextView
+            android:id="@+id/tv_navigation"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom|left"
+            android:drawableTop="@drawable/nvai"
+            android:padding="5dp"
+            android:background="@drawable/navi_bg"
+            android:textColor="@color/jiuyi_blue"
+            android:visibility="visible"
+            android:gravity="center"
+            android:text="导航" />-->
+    </FrameLayout>
+    <LinearLayout
+        android:id="@+id/ll_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fl_map"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="3dp"
+            android:layout_height="17dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/jiuyi_vertical_bg_normal" />
+
+        <Space
+            android:layout_width="5dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_sendaddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:layout_marginLeft="3dp"
+            android:text="发货地址列表"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_title"
+        android:orientation="vertical">
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            app:srlHeaderMaxDragRate="2.5"
+            app:srlPrimaryColor="@android:color/darker_gray"
+            app:srlAccentColor="@android:color/transparent"
+            app:srlEnableLoadmore="false"
+            >
+        <!--srlHeaderMaxDragRate=2.5时候WaterDropHeader的下拉效果最好-->
+        <com.scwang.smartrefresh.header.WaterDropHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_addresslist"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="@dimen/jiuyi50dp"
+            android:visibility="visible"
+            android:layout_height="wrap_content"
+            />
+
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="4dp"
+            android:elevation="4dp"
+            android:background="@color/jiuyi_white_color"            >
+
+            <TextView
+                android:id="@+id/tv_addressadd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="添加收货地址"
+                android:drawableLeft="@drawable/client_add"
+                android:drawablePadding="5dp"
+                android:layout_centerInParent="true"
+                android:textColor="@color/jiuyi_blue"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+    <ImageView
+        android:id="@+id/iv_empty"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@id/tv_emptytext"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/nodata"
+        android:tint="@color/jiuyi_info2_color"
+        android:visibility="gone"
+        android:layout_marginBottom="10dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_emptytext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:visibility="gone"
+        android:textColor="@color/jiuyi_info2_color"
+        android:text="暂无相关数据"
+        />
+
+    <ImageView
+        android:id="@+id/iv_no_authority"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@id/tv_no_authoritytext"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/no_authority"
+        android:visibility="gone"
+        android:layout_marginBottom="10dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_no_authoritytext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:visibility="gone"
+        android:textColor="@color/jiuyi_info2_color"
+        android:text="暂无权限查看"
+        />
+
+
+    <!-- 进度条 -->
+    <include layout="@layout/jiuyi_include_processbarview"/>
+</RelativeLayout>
