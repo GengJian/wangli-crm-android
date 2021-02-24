@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="compresshelper:@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/compresshelper.aar/1170774a7cdc1cddb6632bcc377fb8c4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/compresshelper.aar/1170774a7cdc1cddb6632bcc377fb8c4/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

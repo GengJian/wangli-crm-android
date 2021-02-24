@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: ./imsdk/libs/mobilepb.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/imsdk/libs/mobilepb.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

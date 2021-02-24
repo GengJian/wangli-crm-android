@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: ./imsdk/libs/libammsdk.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/imsdk/libs/libammsdk.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

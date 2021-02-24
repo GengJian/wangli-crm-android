@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: ./jiuyiApp/libs/jaudiotagger.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/jiuyiApp/libs/jaudiotagger.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

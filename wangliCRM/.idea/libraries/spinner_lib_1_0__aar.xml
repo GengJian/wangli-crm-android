@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="spinner_lib-1.0:@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/spinner_lib-1.0.aar/aac1ca6e0c69bfedca2b22349cfa329d/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/spinner_lib-1.0.aar/aac1ca6e0c69bfedca2b22349cfa329d/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

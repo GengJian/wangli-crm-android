@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="picktime-release:@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/picktime-release.aar/6b76aa70ea0ad8ab959d810e1c1ff88c/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/picktime-release.aar/6b76aa70ea0ad8ab959d810e1c1ff88c/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

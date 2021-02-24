@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="__local_aars__:F.\WANGLICRM\app\android\wangliCRM\imsdk\libs\txrtmpsdk.jar:unspecified@jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/imsdk/libs/txrtmpsdk.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

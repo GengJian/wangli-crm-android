@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: :chart-release:@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/chart-release.aar/9495fa0400e1e9b6d4380cbad45b4bec/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/chart-release.aar/9495fa0400e1e9b6d4380cbad45b4bec/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/chart-release.aar/9495fa0400e1e9b6d4380cbad45b4bec/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

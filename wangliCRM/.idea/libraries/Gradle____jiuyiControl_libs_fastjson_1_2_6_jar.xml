@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: ./jiuyiControl/libs/fastjson-1.2.6.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/jiuyiControl/libs/fastjson-1.2.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

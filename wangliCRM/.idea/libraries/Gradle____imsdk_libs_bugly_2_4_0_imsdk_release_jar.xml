@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: ./imsdk/libs/bugly_2.4.0_imsdk_release.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/imsdk/libs/bugly_2.4.0_imsdk_release.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

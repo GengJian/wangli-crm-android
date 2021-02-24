@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="waveview-release:@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/waveview-release.aar/9b207ae3c87801da12fa8dc266abc033/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/waveview-release.aar/9b207ae3c87801da12fa8dc266abc033/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

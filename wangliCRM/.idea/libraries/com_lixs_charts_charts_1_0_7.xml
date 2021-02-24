@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.lixs.charts:charts-1.0.7">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/charts-1.0.7.aar/6396bfae8bd34700c6653ab84737a673/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/charts-1.0.7.aar/6396bfae8bd34700c6653ab84737a673/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.lixs.charts/charts/1.0.7/782c978395750dfbf7075468fffdc4e6567530d7/charts-1.0.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

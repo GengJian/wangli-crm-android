@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="leafchart-release:@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/leafchart-release.aar/a43f1f3397e5a8ac7d31861b7a0eae7a/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/leafchart-release.aar/a43f1f3397e5a8ac7d31861b7a0eae7a/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

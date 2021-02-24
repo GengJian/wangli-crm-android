@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="recordlib-release:@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/recordlib-release.aar/1ce1a1030a2d8559bf6721e9cb96cf49/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/recordlib-release.aar/1ce1a1030a2d8559bf6721e9cb96cf49/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

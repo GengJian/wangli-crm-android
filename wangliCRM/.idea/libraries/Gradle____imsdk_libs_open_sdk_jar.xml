@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: ./imsdk/libs/open_sdk.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/imsdk/libs/open_sdk.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="hipermission:@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/hipermission.aar/5853ed53653026991bf014c65987edea/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/hipermission.aar/5853ed53653026991bf014c65987edea/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

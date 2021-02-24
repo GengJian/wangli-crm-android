@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: :dialoglib-1.0:@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/dialoglib-1.0.aar/5831787600a996f353e94cf055d73214/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/dialoglib-1.0.aar/5831787600a996f353e94cf055d73214/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/dialoglib-1.0.aar/5831787600a996f353e94cf055d73214/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
