@@ -1,12 +1,11 @@
 package commonlyused.Utils;
 
 import com.alibaba.fastjson.JSON;
+import com.control.utils.SharedPreferencesUtil;
 import com.jiuyi.app.JiuyiMainApplication;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import com.control.utils.SharedPreferencesUtil;
 
 /**
  * @author Administrator 搜索工具

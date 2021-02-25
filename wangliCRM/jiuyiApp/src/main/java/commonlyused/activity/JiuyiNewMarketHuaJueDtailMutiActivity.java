@@ -39,7 +39,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import commonlyused.bean.JiuyiRetailChannelBean;
 import commonlyused.bean.MarketHuaJueBean;
 import customer.Utils.ViewOperatorType;
 import customer.activity.JiuyiCustomerSelectActivity;
@@ -50,7 +49,6 @@ import customer.entity.MemberBeanID;
 import customer.listener.PickerConfig;
 import customer.view.JiuyiAttachment;
 import customer.view.JiuyiToggleButtonGroup;
-import dynamic.activity.JiuyiCustomerNewClueActivity;
 
 import static commonlyused.activity.JiuyiRetailChannelNewActivity.SELECT_PICTURE;
 import static commonlyused.activity.JiuyiRetailChannelNewActivity.TAKE_PICTURE;

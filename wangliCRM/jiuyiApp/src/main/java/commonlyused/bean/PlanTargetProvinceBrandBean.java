@@ -1,7 +1,5 @@
 package commonlyused.bean;
 
-import java.util.List;
-
 /**
  * ****************************************************************
  * 文件名称:PlanTargetBean.java

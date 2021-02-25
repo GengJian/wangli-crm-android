@@ -23,8 +23,8 @@ import com.control.utils.Res;
 import com.control.widget.relativeLayout.JiuyiRelativeLayout;
 import com.http.JiuyiHttp;
 import com.http.callback.ACallback;
-import com.wanglicrm.android.R;
 import com.jiuyi.app.JiuyiActivityBase;
+import com.wanglicrm.android.R;
 
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -32,7 +32,6 @@ import org.greenrobot.eventbus.ThreadMode;
 import java.util.ArrayList;
 import java.util.List;
 
-import commonlyused.bean.ContactBean;
 import commonlyused.bean.LinkmanBean;
 import commonlyused.bean.LinkmanGreenBean;
 import commonlyused.bean.NormalOperatorBean;

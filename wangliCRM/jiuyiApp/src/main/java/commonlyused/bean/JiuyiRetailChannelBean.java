@@ -5,8 +5,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.RequiresApi;
 
-import com.control.utils.Func;
-
 import java.util.List;
 import java.util.Objects;
 

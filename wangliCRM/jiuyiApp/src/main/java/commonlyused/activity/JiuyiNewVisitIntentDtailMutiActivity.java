@@ -2,52 +2,29 @@ package commonlyused.activity;
 
 import android.app.Dialog;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.text.InputType;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.control.utils.DialogID;
 import com.control.utils.Func;
 import com.control.utils.JiuyiBundleKey;
-import com.control.utils.Rc;
 import com.control.utils.Res;
-import com.control.widget.JiuyiBigTextGroup;
 import com.control.widget.JiuyiButton;
 import com.control.widget.JiuyiItemGroup;
 import com.control.widget.dialog.JiuyiDialogBase;
 import com.control.widget.relativeLayout.JiuyiRelativeLayout;
-import com.http.JiuyiHttp;
-import com.http.callback.ACallback;
 import com.jiuyi.app.JiuyiActivityBase;
-import com.nanchen.compresshelper.CompressHelper;
-import com.tencent.qcloud.sdk.Constant;
 import com.wanglicrm.android.R;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-
 import commonlyused.bean.ChannelDevelopBean;
-import commonlyused.bean.JiuyiRetailChannelBean;
 import customer.Utils.ViewOperatorType;
-import customer.activity.JiuyiCustomerSelectActivity;
-import customer.entity.AttachmentBean;
-import customer.entity.Media;
-import customer.entity.MemberBeanID;
-import customer.listener.PickerConfig;
-import customer.view.JiuyiAttachment;
 import customer.view.JiuyiToggleButtonGroup;
 
-import static commonlyused.activity.JiuyiRetailChannelNewActivity.SELECT_PICTURE;
-import static commonlyused.activity.JiuyiRetailChannelNewActivity.TAKE_PICTURE;
 import static customer.Utils.ViewOperatorType.EDIT;
 
 /**

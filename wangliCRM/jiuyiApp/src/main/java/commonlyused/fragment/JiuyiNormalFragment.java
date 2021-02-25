@@ -14,21 +14,18 @@ import android.widget.ImageButton;
 
 import com.common.GsonUtil;
 import com.control.utils.DialogID;
-import com.control.utils.Func;
 import com.control.utils.JiuyiBundleKey;
+import com.control.utils.JiuyiLog;
 import com.control.utils.Pub;
 import com.control.utils.Rc;
 import com.control.utils.Res;
-import com.control.utils.JiuyiLog;
 import com.control.widget.JiuyiFragmentBase;
-import com.control.widget.dialog.JiuyiDialogBase;
 import com.control.widget.JiuyiSwipeRefreshLayout;
+import com.control.widget.dialog.JiuyiDialogBase;
 import com.http.JiuyiHttp;
 import com.http.callback.ACallback;
-import com.jiuyi.activity.common.activity.JiuyiRootActivity;
 import com.jiuyi.app.JiuyiMainApplication;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.umeng.analytics.MobclickAgent;
 import com.wanglicrm.android.R;
 
 import java.util.ArrayList;
@@ -36,7 +33,6 @@ import java.util.List;
 
 import commonlyused.adapter.AppCategoryAdapter;
 import commonlyused.adapter.AppCategoryDetailAdapter;
-import commonlyused.adapter.RecyclerGridViewAdapter;
 import commonlyused.bean.AppCategoryBean;
 import commonlyused.bean.AppItemBean;
 import commonlyused.bean.AppTotalBean;

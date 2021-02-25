@@ -20,7 +20,6 @@ import com.control.widget.dialog.JiuyiDialogBase;
 import com.control.widget.relativeLayout.JiuyiRelativeLayout;
 import com.http.JiuyiHttp;
 import com.http.callback.ACallback;
-import com.wanglicrm.android.R;
 import com.jiuyi.app.JiuyiActivityBase;
 import com.jiuyi.tools.NormalPinyinComparator;
 import com.jiuyi.tools.PinyinUtils;
@@ -28,6 +27,7 @@ import com.jiuyi.tools.SideBar;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
+import com.wanglicrm.android.R;
 
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;

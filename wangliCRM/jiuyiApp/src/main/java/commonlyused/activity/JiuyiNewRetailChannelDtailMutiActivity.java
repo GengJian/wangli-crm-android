@@ -25,17 +25,17 @@ import com.control.widget.dialog.JiuyiDialogBase;
 import com.control.widget.relativeLayout.JiuyiRelativeLayout;
 import com.http.JiuyiHttp;
 import com.http.callback.ACallback;
+import com.jiuyi.app.JiuyiActivityBase;
 import com.nanchen.compresshelper.CompressHelper;
 import com.tencent.qcloud.sdk.Constant;
 import com.wanglicrm.android.R;
-import com.jiuyi.app.JiuyiActivityBase;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import customer.Utils.ViewOperatorType;
 import commonlyused.bean.JiuyiRetailChannelBean;
+import customer.Utils.ViewOperatorType;
 import customer.activity.JiuyiCustomerSelectActivity;
 import customer.entity.AttachmentBean;
 import customer.entity.Media;

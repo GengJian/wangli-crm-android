@@ -8,9 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
-import com.wanglicrm.android.R;
 import com.tencent.qcloud.ui.CircleImageView;
+import com.wanglicrm.android.R;
 
 import java.util.List;
 

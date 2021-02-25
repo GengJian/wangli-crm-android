@@ -12,9 +12,7 @@ import android.os.Environment;
 import android.support.annotation.RequiresApi;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
-import android.text.Editable;
 import android.text.InputType;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,14 +25,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.lljjcoder.Interface.OnCityItemClickListener;
-import com.lljjcoder.bean.CityBean;
-import com.lljjcoder.bean.DistrictBean;
-import com.lljjcoder.bean.ProvinceBean;
-import com.lljjcoder.citywheel.CityConfig;
-import com.lljjcoder.style.citypickerview.CityPickerView;
-import com.tencent.qcloud.sdk.Constant;
-import com.wanglicrm.android.R;
 import com.codbking.widget.DatePickDialog;
 import com.codbking.widget.OnSureLisener;
 import com.codbking.widget.bean.DateType;
@@ -52,6 +42,12 @@ import com.control.widget.relativeLayout.JiuyiRelativeLayout;
 import com.http.JiuyiHttp;
 import com.http.callback.ACallback;
 import com.jiuyi.app.JiuyiActivityBase;
+import com.lljjcoder.Interface.OnCityItemClickListener;
+import com.lljjcoder.bean.CityBean;
+import com.lljjcoder.bean.DistrictBean;
+import com.lljjcoder.bean.ProvinceBean;
+import com.lljjcoder.citywheel.CityConfig;
+import com.lljjcoder.style.citypickerview.CityPickerView;
 import com.nanchen.compresshelper.CompressHelper;
 import com.recyclerview.swipe.Closeable;
 import com.recyclerview.swipe.OnSwipeMenuItemClickListener;
@@ -59,9 +55,10 @@ import com.recyclerview.swipe.SwipeMenu;
 import com.recyclerview.swipe.SwipeMenuCreator;
 import com.recyclerview.swipe.SwipeMenuItem;
 import com.recyclerview.swipe.SwipeMenuRecyclerView;
+import com.tencent.qcloud.sdk.Constant;
+import com.wanglicrm.android.R;
 
 import java.io.File;
-import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -72,31 +69,27 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import commonlyused.adapter.NewRetailChannelMutiAdapter;
+import commonlyused.bean.JiuyiRetailChannelBean;
 import commonlyused.bean.NormalOperatorBean;
-import commonlyused.bean.PlanTargetBean;
 import commonlyused.bean.PlanTargetProvinceBrandBean;
 import commonlyused.bean.ProvinceAndBrand;
 import commonlyused.bean.SumActualShipAndDayBean;
 import commonlyused.bean.SumActualShipmentBean;
 import customer.Utils.ViewOperatorType;
-import customer.activity.JiuyiCustomerSelectActivity;
 import customer.entity.AttachmentBean;
-import customer.entity.BrandBean;
 import customer.entity.Media;
 import customer.entity.MemberBeanID;
-//import customer.entity.ProvinceBean;
-//import customer.entity.ProvinceBean;
 import customer.listener.OnItemClickListener;
 import customer.listener.PickerConfig;
 import customer.view.JiuyiAttachment;
 import customer.view.JiuyiToggleButtonGroup;
 import customer.view.jiuyiRecycleViewDivider;
-import commonlyused.adapter.NewRetailChannelMutiAdapter;
-import commonlyused.bean.JiuyiRetailChannelBean;
-import dynamic.Utils.StringUtils;
-import freemarker.template.utility.CollectionUtils;
 
 import static customer.adapter.NewSpecialProductAdapter.VIEW_TYPE_MENU_DELETE;
+
+//import customer.entity.ProvinceBean;
+//import customer.entity.ProvinceBean;
 
 /**
  * ****************************************************************

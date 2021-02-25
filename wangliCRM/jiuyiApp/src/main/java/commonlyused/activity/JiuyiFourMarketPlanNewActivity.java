@@ -76,7 +76,6 @@ import commonlyused.adapter.NewUnfulProjectHuJueMutiAdapter;
 import commonlyused.adapter.NewVisitIntentMutiAdapter;
 import commonlyused.bean.ChannelDevelopBean;
 import commonlyused.bean.MarketHuaJueBean;
-import commonlyused.bean.MarketNengChengBean;
 import commonlyused.bean.MarketWorkPlanBean;
 import commonlyused.bean.NormalOperatorBean;
 import commonlyused.bean.PlanTargetProvinceBrandBean;

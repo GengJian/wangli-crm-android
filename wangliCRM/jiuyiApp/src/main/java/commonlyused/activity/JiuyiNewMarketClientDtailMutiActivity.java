@@ -9,14 +9,9 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.codbking.widget.DatePickDialog;
-import com.codbking.widget.OnSureLisener;
-import com.codbking.widget.bean.DateType;
 import com.control.utils.DialogID;
 import com.control.utils.Func;
 import com.control.utils.JiuyiBundleKey;
-import com.control.utils.JiuyiDateUtil;
-import com.control.utils.Rc;
 import com.control.utils.Res;
 import com.control.widget.JiuyiButton;
 import com.control.widget.JiuyiItemGroup;
@@ -25,10 +20,6 @@ import com.control.widget.relativeLayout.JiuyiRelativeLayout;
 import com.jiuyi.app.JiuyiActivityBase;
 import com.wanglicrm.android.R;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import commonlyused.bean.JiuyiRetailChannelBean;
 import commonlyused.bean.MarketEngineeringBean;
 import customer.Utils.ViewOperatorType;
 import customer.activity.JiuyiCustomerSelectActivity;

@@ -11,28 +11,19 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.jiuyi.app.JiuyiMainApplication;
-import com.control.widget.recyclerView.BaseMultiItemQuickAdapter;
-import com.control.widget.recyclerView.BaseViewHolder;
 import com.control.utils.Func;
 import com.control.utils.Res;
+import com.control.widget.recyclerView.BaseMultiItemQuickAdapter;
+import com.control.widget.recyclerView.BaseViewHolder;
+import com.jiuyi.app.JiuyiMainApplication;
 import com.wanglicrm.android.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
 import messages.timchat.model.CustomMessage;
 import messages.timchat.model.jiuyiCustomerMessageResult;
-import messages.timchat.utils.AfterSaleUtils;
-import com.control.utils.MarketUtils;
-import messages.timchat.utils.NoticeUtils;
-import com.control.utils.OrderUtils;
-import messages.timchat.utils.PerformaceUtils;
-import messages.timchat.utils.PlanUtils;
-import com.control.utils.ReceiveUtils;
 import messages.timchat.utils.TaskUtils;
-import messages.timchat.utils.TimHelperType;
 
 public class jiuyiMessageDetailAdapter extends BaseMultiItemQuickAdapter<jiuyiCustomerMessageResult, BaseViewHolder> {
     private List<String> lookedHistory;

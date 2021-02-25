@@ -68,16 +68,13 @@ import java.util.Map;
 import java.util.Set;
 
 import commonlyused.adapter.NewDirectSalesProjectItemMutiAdapter;
-import commonlyused.adapter.NewStrateItemMutiAdapter;
 import commonlyused.bean.DirectSalesBean;
 import commonlyused.bean.NormalOperatorBean;
 import commonlyused.bean.PlanTargetBean;
 import commonlyused.bean.PlanTargetProvinceBrandBean;
 import commonlyused.bean.ProvinceAndBrand;
-import commonlyused.bean.StategicEngineeringBean;
 import commonlyused.bean.SumActualShipmentBean;
 import customer.Utils.ViewOperatorType;
-import customer.activity.JiuyiCustomerSelectActivity;
 import customer.entity.AttachmentBean;
 import customer.entity.Media;
 import customer.listener.OnItemClickListener;

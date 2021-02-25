@@ -7,18 +7,16 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-
 import com.control.utils.Func;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.wanglicrm.android.R;
 import com.tencent.qcloud.ui.CircleImageView;
+import com.wanglicrm.android.R;
 
 import java.util.List;
 
 import messages.timchat.model.Conversation;
-
 import messages.timchat.utils.TimHelperType;
 import messages.timchat.utils.TimeUtil;
 

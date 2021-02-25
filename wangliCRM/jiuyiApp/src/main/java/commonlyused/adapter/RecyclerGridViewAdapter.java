@@ -5,14 +5,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
-import com.wanglicrm.android.R;
 import com.loader.ILoader;
 import com.loader.LoaderManager;
 import com.tencent.qcloud.sdk.Constant;
+import com.wanglicrm.android.R;
 
 import java.util.List;
 

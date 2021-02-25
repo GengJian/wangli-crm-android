@@ -6,8 +6,8 @@ import android.widget.TextView;
 
 import com.control.widget.recyclerView.BaseQuickAdapter;
 import com.control.widget.recyclerView.BaseViewHolder;
-import com.wanglicrm.android.R;
 import com.jiuyi.tools.jiuyiViewUtil;
+import com.wanglicrm.android.R;
 
 import java.util.List;
 

@@ -13,7 +13,6 @@ import com.wanglicrm.android.R;
 import java.util.List;
 
 import commonlyused.bean.MarketHuaJueBean;
-import commonlyused.bean.MarketNengChengBean;
 
 
 public class MarketHuaJueListAdapter extends BaseQuickAdapter<MarketHuaJueBean.ContentBean,BaseViewHolder>  {

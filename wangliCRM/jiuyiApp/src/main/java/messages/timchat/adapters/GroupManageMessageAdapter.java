@@ -10,13 +10,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.wanglicrm.android.R;
 import com.tencent.imsdk.TIMCallBack;
 import com.tencent.imsdk.ext.group.TIMGroupPendencyGetType;
 import com.tencent.imsdk.ext.group.TIMGroupPendencyHandledStatus;
 import com.tencent.imsdk.ext.group.TIMGroupPendencyItem;
-
 import com.tencent.qcloud.ui.CircleImageView;
+import com.wanglicrm.android.R;
 
 import java.util.List;
 

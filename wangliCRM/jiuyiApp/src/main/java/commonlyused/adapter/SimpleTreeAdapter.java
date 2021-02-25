@@ -11,10 +11,11 @@ import android.widget.TextView;
 
 import com.control.utils.Func;
 import com.wanglicrm.android.R;
-import commonlyused.treelist.Node;
-import commonlyused.treelist.TreeListViewAdapter;
 
 import java.util.List;
+
+import commonlyused.treelist.Node;
+import commonlyused.treelist.TreeListViewAdapter;
 
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 

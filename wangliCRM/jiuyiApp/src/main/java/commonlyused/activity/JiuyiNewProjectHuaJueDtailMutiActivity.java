@@ -20,7 +20,6 @@ import com.control.widget.relativeLayout.JiuyiRelativeLayout;
 import com.jiuyi.app.JiuyiActivityBase;
 import com.wanglicrm.android.R;
 
-import commonlyused.bean.MarketEngineeringBean;
 import commonlyused.bean.MarketHuaJueBean;
 import customer.Utils.ViewOperatorType;
 import customer.view.JiuyiToggleButtonGroup;
