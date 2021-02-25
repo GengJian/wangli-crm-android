@@ -1,9 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: :hipermission:@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/hipermission.aar/c04d745b2bb5a83f7011f3b260b3c4c4/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/hipermission.aar/c04d745b2bb5a83f7011f3b260b3c4c4/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/hipermission.aar/c04d745b2bb5a83f7011f3b260b3c4c4/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/hipermission.aar/de418e2d9d451edc1e9bd9bcfe24a51f/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/hipermission.aar/de418e2d9d451edc1e9bd9bcfe24a51f/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

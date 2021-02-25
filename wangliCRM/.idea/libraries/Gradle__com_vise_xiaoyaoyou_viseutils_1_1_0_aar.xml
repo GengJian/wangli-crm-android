@@ -1,9 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.vise.xiaoyaoyou:viseutils:1.1.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/viseutils-1.1.0.aar/598dcf1d9da5bea0c49fd4785384fcb9/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/viseutils-1.1.0.aar/598dcf1d9da5bea0c49fd4785384fcb9/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/viseutils-1.1.0.aar/598dcf1d9da5bea0c49fd4785384fcb9/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/viseutils-1.1.0.aar/2dd5aec5f1d14ff981fb6c064c42c627/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/viseutils-1.1.0.aar/2dd5aec5f1d14ff981fb6c064c42c627/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

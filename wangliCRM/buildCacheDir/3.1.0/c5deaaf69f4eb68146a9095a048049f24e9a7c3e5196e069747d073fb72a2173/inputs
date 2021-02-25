@@ -1,0 +1,5 @@
+COMMAND=GENERATE_MOCKABLE_JAR
+fileName=mockable-android-27.v3.jar
+platformJar.path=/Users/jgeng/GitSpace/Android/sdk/platforms/android-27/android.jar
+platformJar.size=29515251
+platformJar.timestamp=1614234697000

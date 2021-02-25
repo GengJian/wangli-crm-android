@@ -1,12 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: com.zly.widget:collapsed-textview:1.0.4@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/collapsed-textview-1.0.4.aar/23ebeeda89d704d681615dff4d35cc40/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/collapsed-textview-1.0.4.aar/cdd16da50f422cc2523e78a1190a964c/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/collapsed-textview-1.0.4.aar/23ebeeda89d704d681615dff4d35cc40/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/collapsed-textview-1.0.4.aar/23ebeeda89d704d681615dff4d35cc40/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/collapsed-textview-1.0.4.aar/23ebeeda89d704d681615dff4d35cc40/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/collapsed-textview-1.0.4.aar/cdd16da50f422cc2523e78a1190a964c/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/collapsed-textview-1.0.4.aar/cdd16da50f422cc2523e78a1190a964c/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

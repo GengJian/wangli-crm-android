@@ -1,12 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: com.scwang.smartrefresh:SmartRefreshHeader:1.0.4@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/SmartRefreshHeader-1.0.4.aar/47e96aa19ef160de4701e98ebe20c725/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/SmartRefreshHeader-1.0.4.aar/9f5b4787eb742563d9bb5ad73b9f7412/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/SmartRefreshHeader-1.0.4.aar/47e96aa19ef160de4701e98ebe20c725/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/SmartRefreshHeader-1.0.4.aar/47e96aa19ef160de4701e98ebe20c725/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/SmartRefreshHeader-1.0.4.aar/47e96aa19ef160de4701e98ebe20c725/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/SmartRefreshHeader-1.0.4.aar/9f5b4787eb742563d9bb5ad73b9f7412/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/SmartRefreshHeader-1.0.4.aar/9f5b4787eb742563d9bb5ad73b9f7412/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

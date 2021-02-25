@@ -1,9 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: :ImagePreview-debug:@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/ImagePreview-debug.aar/f94dfbb73ee86e7ddeb5509f0163d5f2/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/ImagePreview-debug.aar/f94dfbb73ee86e7ddeb5509f0163d5f2/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/ImagePreview-debug.aar/f94dfbb73ee86e7ddeb5509f0163d5f2/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/ImagePreview-debug.aar/6c2990eca889dad7fdf0ed709fc4accb/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/ImagePreview-debug.aar/6c2990eca889dad7fdf0ed709fc4accb/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

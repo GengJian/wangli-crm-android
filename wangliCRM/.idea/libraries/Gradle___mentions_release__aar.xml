@@ -1,9 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: :mentions-release:@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/mentions-release.aar/63b342378039a43233d61827db133a85/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/mentions-release.aar/63b342378039a43233d61827db133a85/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/mentions-release.aar/63b342378039a43233d61827db133a85/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/mentions-release.aar/c0c531e4d7d63b81b5ded7ec17d77701/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/mentions-release.aar/c0c531e4d7d63b81b5ded7ec17d77701/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -11,6 +11,14 @@
       <module fileurl="file://$PROJECT_DIR$/jiuyiIflytekSDK/jiuyiIflytekSDK.iml" filepath="$PROJECT_DIR$/jiuyiIflytekSDK/jiuyiIflytekSDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/jiuyiRxHttp/jiuyiRxHttp.iml" filepath="$PROJECT_DIR$/jiuyiRxHttp/jiuyiRxHttp.iml" />
       <module fileurl="file://$PROJECT_DIR$/wangliCRM.iml" filepath="$PROJECT_DIR$/wangliCRM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/impresentation/wangliCRM.impresentation.iml" filepath="$PROJECT_DIR$/.idea/modules/impresentation/wangliCRM.impresentation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/imsdk/wangliCRM.imsdk.iml" filepath="$PROJECT_DIR$/.idea/modules/imsdk/wangliCRM.imsdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/imtlslibrary/wangliCRM.imtlslibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/imtlslibrary/wangliCRM.imtlslibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/imui/wangliCRM.imui.iml" filepath="$PROJECT_DIR$/.idea/modules/imui/wangliCRM.imui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jiuyiApp/wangliCRM.jiuyiApp.iml" filepath="$PROJECT_DIR$/.idea/modules/jiuyiApp/wangliCRM.jiuyiApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jiuyiControl/wangliCRM.jiuyiControl.iml" filepath="$PROJECT_DIR$/.idea/modules/jiuyiControl/wangliCRM.jiuyiControl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jiuyiIflytekSDK/wangliCRM.jiuyiIflytekSDK.iml" filepath="$PROJECT_DIR$/.idea/modules/jiuyiIflytekSDK/wangliCRM.jiuyiIflytekSDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jiuyiRxHttp/wangliCRM.jiuyiRxHttp.iml" filepath="$PROJECT_DIR$/.idea/modules/jiuyiRxHttp/wangliCRM.jiuyiRxHttp.iml" />
     </modules>
   </component>
 </project>

@@ -1,9 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: :loadingdialog-release:@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/loadingdialog-release.aar/6f29b59e5b8494758495712911f063a9/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/loadingdialog-release.aar/6f29b59e5b8494758495712911f063a9/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/loadingdialog-release.aar/6f29b59e5b8494758495712911f063a9/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/loadingdialog-release.aar/dd659e72bc49e41ad1afc754a0de7cf1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/loadingdialog-release.aar/dd659e72bc49e41ad1afc754a0de7cf1/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
