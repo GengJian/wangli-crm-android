@@ -78,7 +78,7 @@
                 app:edt_hint_content="@string/hint_auto"
                 app:isEditable="false"
                 app:jt_visible="false"
-                app:title="本月预计回款" />
+                app:title="本月预计回款(元)" />
             <com.control.widget.JiuyiItemGroup
                 android:id="@+id/jig_cumulativeShipments"
                 android:layout_width="match_parent"
@@ -86,7 +86,7 @@
                 app:edt_hint_content="@string/hint_auto"
                 app:isEditable="false"
                 app:jt_visible="false"
-                app:title="本月累计回款" />
+                app:title="本月累计回款(元)" />
 
             <com.control.widget.JiuyiItemGroup
                 android:id="@+id/jig_projectedShipment"
@@ -95,7 +95,7 @@
                 app:edt_hint_content="@string/hint_write"
                 app:isEditable="true"
                 app:jt_visible="false"
-                app:title="当日预计回款" />
+                app:title="当日预计回款(元)" />
             <com.control.widget.JiuyiItemGroup
                 android:id="@+id/jig_actualShipment"
                 android:layout_width="match_parent"
@@ -103,7 +103,7 @@
                 app:edt_hint_content="@string/hint_write"
                 app:isEditable="true"
                 app:jt_visible="false"
-                app:title="实际回款" />
+                app:title="实际回款(元)" />
 
             <com.control.widget.JiuyiItemGroup
                 android:id="@+id/jig_ompletionRate"
@@ -165,8 +165,16 @@
                 android:layout_height="wrap_content"
                 android:minHeight="100dp"
                 app:edt_hint_content="@string/hint_write"
-                app:title="其他"
-                 />
+                app:title="其他事项"
+                />
+            <com.control.widget.JiuyiBigTextGroup
+                android:id="@+id/jig_remark_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="100dp"
+                app:edt_hint_content="@string/hint_write"
+                app:title="其他事项完成情况"
+                />
 
 
             <LinearLayout

@@ -25,17 +25,17 @@ import com.control.widget.dialog.JiuyiDialogBase;
 import com.control.widget.relativeLayout.JiuyiRelativeLayout;
 import com.http.JiuyiHttp;
 import com.http.callback.ACallback;
-import com.jiuyi.app.JiuyiActivityBase;
 import com.nanchen.compresshelper.CompressHelper;
 import com.tencent.qcloud.sdk.Constant;
 import com.wanglicrm.android.R;
+import com.jiuyi.app.JiuyiActivityBase;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import commonlyused.bean.JiuyiRetailChannelBean;
 import customer.Utils.ViewOperatorType;
+import commonlyused.bean.JiuyiRetailChannelBean;
 import customer.activity.JiuyiCustomerSelectActivity;
 import customer.entity.AttachmentBean;
 import customer.entity.Media;
@@ -44,6 +44,7 @@ import customer.entity.MemberBeanID;
 import customer.listener.PickerConfig;
 import customer.view.JiuyiAttachment;
 import customer.view.JiuyiToggleButtonGroup;
+import freemarker.template.utility.CollectionUtils;
 
 import static commonlyused.activity.JiuyiRetailChannelNewActivity.SELECT_PICTURE;
 import static commonlyused.activity.JiuyiRetailChannelNewActivity.TAKE_PICTURE;
@@ -70,6 +71,7 @@ public class JiuyiNewRetailChannelDtailMutiActivity extends JiuyiActivityBase {
     private JiuyiToggleButtonGroup jigIscompare;
     private JiuyiBigTextGroup jigContent;
     private JiuyiAttachment ahAttach;
+    private JiuyiAttachment ahAttachTwo;
     private JiuyiToggleButtonGroup jigIspolitics;
     private JiuyiToggleButtonGroup jigIstrain;
     private JiuyiButton btnSave;
@@ -78,6 +80,8 @@ public class JiuyiNewRetailChannelDtailMutiActivity extends JiuyiActivityBase {
     private String filePath;
     private  File[] files;
     private List<AttachmentBean> attachmentsBeanslist,attachmentsEditBeanslist;
+    private  File[] filesTwo;
+    private List<AttachmentBean> attachmentsTwoBeanslist,attachmentsTwoEditBeanslist;
     private Boolean needUpload=false;
     private LinearLayout ll_content;
     private String msProvince="";
@@ -150,6 +154,8 @@ public class JiuyiNewRetailChannelDtailMutiActivity extends JiuyiActivityBase {
         jigContent = (JiuyiBigTextGroup) mBodyLayout.findViewById(R.id.jig_content);
         ahAttach = (JiuyiAttachment) mBodyLayout.findViewById(R.id.ah_attach);
         ahAttach.setAdapter();
+        ahAttachTwo = (JiuyiAttachment) mBodyLayout.findViewById(R.id.ah_attach_two);
+        ahAttachTwo.setAdapter();
         jigIspolitics = (JiuyiToggleButtonGroup) mBodyLayout.findViewById(R.id.jig_ispolitics);
         jigIstrain = (JiuyiToggleButtonGroup) mBodyLayout.findViewById(R.id.jig_istrain);
         btnSave = (JiuyiButton) mBodyLayout.findViewById(R.id.btn_save);
@@ -193,6 +199,27 @@ public class JiuyiNewRetailChannelDtailMutiActivity extends JiuyiActivityBase {
                     jigContent.setText(retailChannelItemsBean.getContent());
                 }
             }
+            if(retailChannelItemsBean.getAttachmentsTwo()!=null && retailChannelItemsBean.getAttachmentsTwo().size()>0){
+                attachmentsTwoBeanslist=retailChannelItemsBean.getAttachmentsTwo();
+                ArrayList mediaArrayList=new ArrayList<>();
+                for(int i=0;i<retailChannelItemsBean.getAttachmentsTwo().size();i++){
+
+                    AttachmentBean attachmentBean = retailChannelItemsBean.getAttachmentsTwo().get(i);//把JSON字符串转为对象
+                    Media media=new Media();
+                    media.setUrl(Constant.BaseUrl+"file/"+attachmentBean.getQiniuKey());
+                    media.setThumbnailPath(Constant.BaseUrl+"file/"+attachmentBean.getQiniuKey()+"/_thumbnail");
+                    media.setExtension(".jpg");
+                    media.setMediaType(0);
+                    if(operType.equals(ViewOperatorType.VIEW)){
+                        media.setShowIcon(false);
+                    }
+                    mediaArrayList.add(media);
+                }
+                ahAttachTwo.setMediaArrayList(mediaArrayList);
+                ahAttachTwo.adapter.setMviewBeanList(mediaArrayList);
+                ahAttachTwo.adapter.notifyDataSetChanged();
+                ahAttachTwo.refreshAttach();
+            }
             jigIspolitics.tb_type.setChecked(retailChannelItemsBean.isPolicyProcessAdvocacy());
             jigIstrain.tb_type.setChecked(retailChannelItemsBean.isTrain());
 
@@ -228,50 +255,93 @@ public class JiuyiNewRetailChannelDtailMutiActivity extends JiuyiActivityBase {
                     retailChannelItemsBean.setContent(jigContent.getText());
                     retailChannelItemsBean.setPolicyProcessAdvocacy(jigIspolitics.bdefautl);
                     retailChannelItemsBean.setTrain(jigIstrain.bdefautl);
-                    if(ahAttach.getMediaArrayList().size()>0) {
+                    if(ahAttach.getMediaArrayList().size()>0 || ahAttachTwo.getMediaArrayList().size()>0) {
                         if(operType.equals(ViewOperatorType.EDIT)){
                             attachmentsEditBeanslist=new ArrayList<>();
+                            attachmentsTwoEditBeanslist=new ArrayList<>();
                         }
 
-                        files = new File[ahAttach.getMediaArrayList().size()];
-                        for (int i = 0; i < ahAttach.getMediaArrayList().size(); i++) {
-                            Media media=ahAttach.getMediaArrayList().get(i);
-                            if (media.getPath() != null ) {
-                                File file1 = new File(media.getPath());
-                                files[i] = file1;
-                                needUpload=true;
-                            }else{
-                                if(media.getUrl()!=null && attachmentsBeanslist!=null && attachmentsBeanslist.size()>0  ){
-                                    for(int j=0;j<attachmentsBeanslist.size();j++){
-                                        AttachmentBean attachmentBean=attachmentsBeanslist.get(j);
-                                        if(attachmentBean.getQiniuKey()!=null   ){
-                                            int pos=media.getUrl().lastIndexOf("/");
-                                            if(pos>0){
-                                                String qiuniukey=media.getUrl().substring(pos+1,media.getUrl().length());
-                                                if(qiuniukey.equals(attachmentBean.getQiniuKey())){
-                                                    attachmentsEditBeanslist.add(attachmentBean);
+                        if(ahAttach.getMediaArrayList().size()>0 ){
+                            files = new File[ahAttach.getMediaArrayList().size()];
+                            for (int i = 0; i < ahAttach.getMediaArrayList().size(); i++) {
+                                Media media=ahAttach.getMediaArrayList().get(i);
+                                if (media.getPath() != null ) {
+                                    File file1 = new File(media.getPath());
+                                    files[i] = file1;
+                                    needUpload=true;
+                                }else{
+                                    if(media.getUrl()!=null && attachmentsBeanslist!=null && attachmentsBeanslist.size()>0  ){
+                                        for(int j=0;j<attachmentsBeanslist.size();j++){
+                                            AttachmentBean attachmentBean=attachmentsBeanslist.get(j);
+                                            if(attachmentBean.getQiniuKey()!=null   ){
+                                                int pos=media.getUrl().lastIndexOf("/");
+                                                if(pos>0){
+                                                    String qiuniukey=media.getUrl().substring(pos+1,media.getUrl().length());
+                                                    if(qiuniukey.equals(attachmentBean.getQiniuKey())){
+                                                        attachmentsEditBeanslist.add(attachmentBean);
+                                                    }
                                                 }
                                             }
                                         }
+
                                     }
 
+
                                 }
-
-
                             }
                         }
+                        if(ahAttachTwo.getMediaArrayList().size()>0 ){
+                            filesTwo = new File[ahAttachTwo.getMediaArrayList().size()];
+                            for (int i = 0; i < ahAttachTwo.getMediaArrayList().size(); i++) {
+                                Media media=ahAttachTwo.getMediaArrayList().get(i);
+                                if (media.getPath() != null ) {
+                                    File file1 = new File(media.getPath());
+                                    filesTwo[i] = file1;
+                                    needUpload=true;
+                                }else{
+                                    if(media.getUrl()!=null && attachmentsTwoBeanslist!=null && attachmentsTwoBeanslist.size()>0  ){
+                                        for(int j=0;j<attachmentsTwoBeanslist.size();j++){
+                                            AttachmentBean attachmentBean=attachmentsTwoBeanslist.get(j);
+                                            if(attachmentBean.getQiniuKey()!=null   ){
+                                                int pos=media.getUrl().lastIndexOf("/");
+                                                if(pos>0){
+                                                    String qiuniukey=media.getUrl().substring(pos+1,media.getUrl().length());
+                                                    if(qiuniukey.equals(attachmentBean.getQiniuKey())){
+                                                        attachmentsTwoEditBeanslist.add(attachmentBean);
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                    }
+
+
+                                }
+                            }
+                        }
+
+
                         if(needUpload){
                             upload();
                         }else{
                             if(attachmentsEditBeanslist.size()>0){
                                 retailChannelItemsBean.setAttachments(attachmentsEditBeanslist);
-                                setBackActivityBundle();
-                                backPage();
                             }
+                            if(attachmentsTwoEditBeanslist.size()>0){
+                                retailChannelItemsBean.setAttachmentsTwo(attachmentsTwoEditBeanslist);
+                            }
+                            setBackActivityBundle();
+                            backPage();
                         }
 
                     }else{
-                        retailChannelItemsBean.setAttachments(null);
+                        if(ahAttach.getMediaArrayList()==null ||ahAttach.getMediaArrayList().size()<1){
+                            retailChannelItemsBean.setAttachments(null);
+                        }
+                        if(ahAttachTwo.getMediaArrayList()==null ||ahAttachTwo.getMediaArrayList().size()<1){
+                            retailChannelItemsBean.setAttachmentsTwo(null);
+                        }
+
                         setBackActivityBundle();
                         backPage();
                     }
@@ -337,7 +407,7 @@ public class JiuyiNewRetailChannelDtailMutiActivity extends JiuyiActivityBase {
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (data == null || data.getExtras() == null) {
+        if ((data == null || data.getExtras() == null) && (requestCode!=TAKE_PICTURE  &&  requestCode!=1200)) {
             return;
         }
         Bundle bundle;
@@ -392,6 +462,36 @@ public class JiuyiNewRetailChannelDtailMutiActivity extends JiuyiActivityBase {
                 ahAttach.adapter.setMviewBeanList(selects);
                 ahAttach.refreshAttach();
                 break;
+            case 1100:
+                ArrayList<Media> selectsTwo = data.getParcelableArrayListExtra(PickerConfig.EXTRA_RESULT);
+                ahAttachTwo.setMediaArrayList(selectsTwo);
+                ahAttachTwo.adapter.setMviewBeanList(selectsTwo);
+                ahAttachTwo.refreshAttach();
+                break;
+            case 1200:
+                if (resultCode == RESULT_OK) { //
+                    String sdStatus = Environment.getExternalStorageState();
+                    if (!sdStatus.equals(Environment.MEDIA_MOUNTED)) {  // 检测sd是否可用
+                        Log.i("TestFile", "SD card is not avaiable/writeable right now.");
+                        return;
+                    }
+                    if(!Func.IsStringEmpty(Rc.picVideoUrl)){
+                        filePath=Rc.picVideoUrl;
+                        Rc.picVideoUrl="";
+                    }
+
+                    //优化压缩图片
+                    Uri uri = null;
+                    File file1 = new File(filePath);
+                    File newFile = CompressHelper.getDefault(getApplicationContext()).compressToFile(file1);
+                    Media media=new Media();
+                    media.setExtension(".jpg");
+                    media.setMediaType(0);
+                    media.setPath(newFile.getPath());
+                    ahAttachTwo.adapter.getMviewBeanList().add(media);
+                    ahAttachTwo.refreshAttach();
+                }
+                break;
 
 
 
@@ -406,10 +506,10 @@ public class JiuyiNewRetailChannelDtailMutiActivity extends JiuyiActivityBase {
             startDialog(DialogID.DialogDoNothing, "", "请选择客户！", JiuyiDialogBase.Dialog_Type_Yes, null);
             return false;
         }
-//        if(jigIscompare.bdefautl && (ahAttach.getMediaArrayList()==null||ahAttach.getMediaArrayList().size()==0)){
-//            startDialog(DialogID.DialogDoNothing, "", "请选择附件！", JiuyiDialogBase.Dialog_Type_Yes, null);
-//            return false;
-//        }
+        if(jigIsvisit.bdefautl && (ahAttachTwo.getMediaArrayList()==null||ahAttachTwo.getMediaArrayList().size()==0)){
+            startDialog(DialogID.DialogDoNothing, "", "请选择走访附件！", JiuyiDialogBase.Dialog_Type_Yes, null);
+            return false;
+        }
 //        if(!jigIscompare.bdefautl && Func.IsStringEmpty(jigContent.getText())){
 //            startDialog(DialogID.DialogDoNothing, "", "请输入内容！", JiuyiDialogBase.Dialog_Type_Yes, null);
 //            return false;
@@ -424,40 +524,80 @@ public class JiuyiNewRetailChannelDtailMutiActivity extends JiuyiActivityBase {
             @Override
             public void run() {
                 super.run();
-                JiuyiHttp.UPLOAD("file/upload-multi")
-                        .tag("upload-multi")
-                        .addFiles2("file",files)
-                        .addHeader("Authorization", Rc.id_tokenparam)
-                        .request(new ACallback<ArrayList<AttachmentBean>>() {
-                            @Override
-                            public void onSuccess(ArrayList<AttachmentBean> data) {
-                                if(data!=null && data.size()>0){
-                                    attachmentsBeanslist=data;
-                                    if(operType.equals(ViewOperatorType.ADD)){
-                                        retailChannelItemsBean.setAttachments(attachmentsBeanslist);
-                                    }else if(operType.equals(ViewOperatorType.EDIT)){
-                                        for(int i=0;i<attachmentsBeanslist.size();i++){
-                                            attachmentsEditBeanslist.add(attachmentsBeanslist.get(i));
+                if(files!=null && files.length>0){
+                    JiuyiHttp.UPLOAD("file/upload-multi")
+                            .tag("upload-multi")
+                            .addFiles2("file",files)
+                            .addHeader("Authorization", Rc.id_tokenparam)
+                            .request(new ACallback<ArrayList<AttachmentBean>>() {
+                                @Override
+                                public void onSuccess(ArrayList<AttachmentBean> data) {
+                                    if(data!=null && data.size()>0){
+                                        attachmentsBeanslist=data;
+                                        if(operType.equals(ViewOperatorType.ADD)){
+                                            retailChannelItemsBean.setAttachments(attachmentsBeanslist);
+                                        }else if(operType.equals(ViewOperatorType.EDIT)){
+                                            for(int i=0;i<attachmentsBeanslist.size();i++){
+                                                attachmentsEditBeanslist.add(attachmentsBeanslist.get(i));
+                                            }
+                                            retailChannelItemsBean.setAttachments(attachmentsEditBeanslist);
                                         }
-                                        retailChannelItemsBean.setAttachments(attachmentsEditBeanslist);
                                     }
-                                }
-                                if(progressLoadingDialog!=null){
-                                    progressLoadingDialog.dismiss();
-                                }
-                                setBackActivityBundle();
-                                backPage();
+                                    if(progressLoadingDialog!=null){
+                                        progressLoadingDialog.dismiss();
+                                    }
+                                    setBackActivityBundle();
+                                    backPage();
 
-                            }
-
-                            @Override
-                            public void onFail(int errCode, String errMsg) {
-                                if(progressDialog!=null){
-                                    progressDialog.dismiss();
                                 }
-                                startDialog(DialogID.DialogTrue, "", "附件上传失败！", JiuyiDialogBase.Dialog_Type_Yes, null);
-                            }
-                        });
+
+                                @Override
+                                public void onFail(int errCode, String errMsg) {
+                                    if(progressDialog!=null){
+                                        progressDialog.dismiss();
+                                    }
+                                    startDialog(DialogID.DialogTrue, "", "附件上传失败！", JiuyiDialogBase.Dialog_Type_Yes, null);
+                                }
+                            });
+
+                }
+                if(filesTwo!=null && filesTwo.length>0){
+                    JiuyiHttp.UPLOAD("file/upload-multi")
+                            .tag("upload-multi")
+                            .addFiles2("file",filesTwo)
+                            .addHeader("Authorization", Rc.id_tokenparam)
+                            .request(new ACallback<ArrayList<AttachmentBean>>() {
+                                @Override
+                                public void onSuccess(ArrayList<AttachmentBean> data) {
+                                    if(data!=null && data.size()>0){
+                                        attachmentsTwoBeanslist=data;
+                                        if(operType.equals(ViewOperatorType.ADD)){
+                                            retailChannelItemsBean.setAttachmentsTwo(attachmentsTwoBeanslist);
+                                        }else if(operType.equals(ViewOperatorType.EDIT)){
+                                            for(int i=0;i<attachmentsTwoBeanslist.size();i++){
+                                                attachmentsTwoEditBeanslist.add(attachmentsTwoBeanslist.get(i));
+                                            }
+                                            retailChannelItemsBean.setAttachmentsTwo(attachmentsTwoEditBeanslist);
+                                        }
+                                    }
+                                    if(progressLoadingDialog!=null){
+                                        progressLoadingDialog.dismiss();
+                                    }
+                                    setBackActivityBundle();
+                                    backPage();
+
+                                }
+
+                                @Override
+                                public void onFail(int errCode, String errMsg) {
+                                    if(progressDialog!=null){
+                                        progressDialog.dismiss();
+                                    }
+                                    startDialog(DialogID.DialogTrue, "", "附件上传失败！", JiuyiDialogBase.Dialog_Type_Yes, null);
+                                }
+                            });
+
+                }
             }
         };
 

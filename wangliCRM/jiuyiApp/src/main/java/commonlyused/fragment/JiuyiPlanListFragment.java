@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.codbking.widget.DatePickDialog;
@@ -20,6 +22,8 @@ import com.common.GsonUtil;
 import com.control.utils.DialogID;
 import com.control.utils.Func;
 import com.control.utils.JiuyiBundleKey;
+import com.control.utils.JiuyiDateUtil;
+import com.control.utils.JiuyiLog;
 import com.control.utils.Pub;
 import com.control.utils.Rc;
 import com.control.utils.Res;
@@ -29,16 +33,16 @@ import com.control.widget.dialog.JiuyiDialogBase;
 import com.control.widget.recyclerView.BaseQuickAdapter;
 import com.http.JiuyiHttp;
 import com.http.callback.ACallback;
+import com.wanglicrm.android.R;
 import com.jiuyi.app.JiuyiMainApplication;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
-import com.wanglicrm.android.R;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import commonlyused.adapter.ChannelDevelopListAdapter;
 import commonlyused.adapter.DirectSalesEngineerListAdapter;
@@ -51,7 +55,6 @@ import commonlyused.adapter.RetailChannelListAdapter;
 import commonlyused.adapter.StategicEngineerListAdapter;
 import commonlyused.bean.ChannelDevelopBean;
 import commonlyused.bean.DirectSalesBean;
-import commonlyused.bean.JiuyiRetailChannelBean;
 import commonlyused.bean.MarketEngineeringBean;
 import commonlyused.bean.MarketHuaJueBean;
 import commonlyused.bean.MarketJinMumenBean;
@@ -63,6 +66,7 @@ import commonlyused.bean.StategicEngineeringBean;
 import customer.Utils.KeyBoardUtils;
 import customer.Utils.ViewOperatorType;
 import customer.view.jiuyiRecycleViewDivider;
+import commonlyused.bean.JiuyiRetailChannelBean;
 
 /**
  * ****************************************************************

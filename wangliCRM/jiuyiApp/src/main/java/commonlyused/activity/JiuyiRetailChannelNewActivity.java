@@ -25,6 +25,14 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.lljjcoder.Interface.OnCityItemClickListener;
+import com.lljjcoder.bean.CityBean;
+import com.lljjcoder.bean.DistrictBean;
+import com.lljjcoder.bean.ProvinceBean;
+import com.lljjcoder.citywheel.CityConfig;
+import com.lljjcoder.style.citypickerview.CityPickerView;
+import com.tencent.qcloud.sdk.Constant;
+import com.wanglicrm.android.R;
 import com.codbking.widget.DatePickDialog;
 import com.codbking.widget.OnSureLisener;
 import com.codbking.widget.bean.DateType;
@@ -42,12 +50,6 @@ import com.control.widget.relativeLayout.JiuyiRelativeLayout;
 import com.http.JiuyiHttp;
 import com.http.callback.ACallback;
 import com.jiuyi.app.JiuyiActivityBase;
-import com.lljjcoder.Interface.OnCityItemClickListener;
-import com.lljjcoder.bean.CityBean;
-import com.lljjcoder.bean.DistrictBean;
-import com.lljjcoder.bean.ProvinceBean;
-import com.lljjcoder.citywheel.CityConfig;
-import com.lljjcoder.style.citypickerview.CityPickerView;
 import com.nanchen.compresshelper.CompressHelper;
 import com.recyclerview.swipe.Closeable;
 import com.recyclerview.swipe.OnSwipeMenuItemClickListener;
@@ -55,8 +57,6 @@ import com.recyclerview.swipe.SwipeMenu;
 import com.recyclerview.swipe.SwipeMenuCreator;
 import com.recyclerview.swipe.SwipeMenuItem;
 import com.recyclerview.swipe.SwipeMenuRecyclerView;
-import com.tencent.qcloud.sdk.Constant;
-import com.wanglicrm.android.R;
 
 import java.io.File;
 import java.text.DecimalFormat;
@@ -69,8 +69,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import commonlyused.adapter.NewRetailChannelMutiAdapter;
-import commonlyused.bean.JiuyiRetailChannelBean;
 import commonlyused.bean.NormalOperatorBean;
 import commonlyused.bean.PlanTargetProvinceBrandBean;
 import commonlyused.bean.ProvinceAndBrand;
@@ -80,16 +78,17 @@ import customer.Utils.ViewOperatorType;
 import customer.entity.AttachmentBean;
 import customer.entity.Media;
 import customer.entity.MemberBeanID;
+//import customer.entity.ProvinceBean;
+//import customer.entity.ProvinceBean;
 import customer.listener.OnItemClickListener;
 import customer.listener.PickerConfig;
 import customer.view.JiuyiAttachment;
 import customer.view.JiuyiToggleButtonGroup;
 import customer.view.jiuyiRecycleViewDivider;
+import commonlyused.adapter.NewRetailChannelMutiAdapter;
+import commonlyused.bean.JiuyiRetailChannelBean;
 
 import static customer.adapter.NewSpecialProductAdapter.VIEW_TYPE_MENU_DELETE;
-
-//import customer.entity.ProvinceBean;
-//import customer.entity.ProvinceBean;
 
 /**
  * ****************************************************************
@@ -117,6 +116,7 @@ public class JiuyiRetailChannelNewActivity extends JiuyiActivityBase {
     private JiuyiToggleButtonGroup jigIscomplete;
     private JiuyiItemGroup jigDate,jigWorkPlanDate;
     private JiuyiBigTextGroup jigRemark;
+    private JiuyiBigTextGroup jigRemarkCompletion;
     private SwipeMenuRecyclerView rvDetaillist;
 
     private JiuyiAttachment ahAttach;
@@ -273,6 +273,15 @@ public class JiuyiRetailChannelNewActivity extends JiuyiActivityBase {
             jigUnhandle.contentEdt.setClickable(false);
             jigUnhandle.contentEdt.setEnabled(false);
             jigIscomplete.tb_type.setEnabled(false);
+            jigRemark.setEnabled(true);
+            jigRemark.contentEdt.setEnabled(true);
+            jigRemark.contentEdt.setClickable(true);
+
+            jigRemarkCompletion.setEnabled(true);
+            jigRemarkCompletion.contentEdt.setEnabled(true);
+            jigRemarkCompletion.contentEdt.setClickable(true);
+
+
 
         }else if(operatorType.equals(ViewOperatorType.SPECIAL)){
             mtvcomplete.setVisibility(View.VISIBLE);
@@ -283,7 +292,15 @@ public class JiuyiRetailChannelNewActivity extends JiuyiActivityBase {
             jigUnhandle.contentEdt.setClickable(true);
             jigUnhandle.contentEdt.setEnabled(true);
             jigIscomplete.tb_type.setEnabled(true);
+            jigRemark.setEnabled(true);
+            jigRemark.contentEdt.setEnabled(true);
+            jigRemark.contentEdt.setClickable(true);
+
+            jigRemarkCompletion.setEnabled(true);
+            jigRemarkCompletion.contentEdt.setEnabled(true);
+            jigRemarkCompletion.contentEdt.setClickable(true);
         }
+
     }
     public void initViews(){
         ll_content= (LinearLayout) mBodyLayout.findViewById(R.id.ll_content);
@@ -410,6 +427,7 @@ public class JiuyiRetailChannelNewActivity extends JiuyiActivityBase {
         jigDate = (JiuyiItemGroup) mBodyLayout.findViewById(R.id.jig_date);
         jigWorkPlanDate = (JiuyiItemGroup) mBodyLayout.findViewById(R.id.jig_workplandate);
         jigRemark = (JiuyiBigTextGroup) mBodyLayout.findViewById(R.id.jig_remark);
+        jigRemarkCompletion = (JiuyiBigTextGroup) mBodyLayout.findViewById(R.id.jig_remark_result);
 
         jigIscomplete = (JiuyiToggleButtonGroup) mBodyLayout.findViewById(R.id.jig_iscomplete);
         jigIscomplete.tb_type.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -743,6 +761,10 @@ public class JiuyiRetailChannelNewActivity extends JiuyiActivityBase {
             startDialog(DialogID.DialogDoNothing, "", "请选择工作计划日期！", JiuyiDialogBase.Dialog_Type_Yes, null);
             return false;
         }
+        if(!Func.IsStringEmpty(jigRemark.getText().toString().trim()) && Func.IsStringEmpty(jigRemarkCompletion.getText().toString().trim())){
+            startDialog(DialogID.DialogDoNothing, "", "请填写其他事项完成情况！", JiuyiDialogBase.Dialog_Type_Yes, null);
+            return false;
+        }
         if(Func.IsStringEmpty(jigUnhandle.getText().toString().trim()) && operatorType.equals(ViewOperatorType.SPECIAL)){
             startDialog(DialogID.DialogDoNothing, "", "请输入售后未处理事项！", JiuyiDialogBase.Dialog_Type_Yes, null);
             return false;
@@ -964,12 +986,16 @@ public class JiuyiRetailChannelNewActivity extends JiuyiActivityBase {
                             if(!Func.IsStringEmpty(contentBean.getRemark())){
                                 jigRemark.setText(contentBean.getRemark());
                             }
+                            if(!Func.IsStringEmpty(contentBean.getRemarkCompletion())){
+                                jigRemarkCompletion.setText(contentBean.getRemarkCompletion());
+                            }
                             if(contentBean.getRetailChannelItems()!=null && contentBean.getRetailChannelItems().size()>0){
                                 retailChannelItemsBeanList =contentBean.getRetailChannelItems();
                                 menuAdapter.setmViewTypeBeanList(retailChannelItemsBeanList);
                                 menuAdapter.notifyDataSetChanged();
                                 for(int i=0;i<contentBean.getRetailChannelItems().size();i++){
                                     getDetailAttachment("RETAIL_CHANNEL_ITEM",contentBean.getRetailChannelItems().get(i).getId(),i);
+                                    getDetailAttachmentTwo("RETAIL_CHANNEL_ITEM_TWO",contentBean.getRetailChannelItems().get(i).getId(),i);
                                 }
                             }else{
                                 if(progressLoadingDialog!=null){
@@ -1013,6 +1039,8 @@ public class JiuyiRetailChannelNewActivity extends JiuyiActivityBase {
 
     }
 
+
+
     private void getDetailAttachment(String fktype,Long id,int i) {
         JiuyiHttp.GET("attachment/list/"+fktype+"/"+id)
                 .tag("request_get_")
@@ -1040,6 +1068,34 @@ public class JiuyiRetailChannelNewActivity extends JiuyiActivityBase {
                 });
 
     }
+    private void getDetailAttachmentTwo(String fktype,Long id,int i) {
+        JiuyiHttp.GET("attachment/list/"+fktype+"/"+id)
+                .tag("request_get_")
+                .addHeader("Authorization", Rc.id_tokenparam)
+                .request(new ACallback<List<AttachmentBean>>() {
+                    @Override
+                    public void onSuccess(List<AttachmentBean> data) {
+                        if(data!=null){
+                            createBean.getRetailChannelItems().get(i).setAttachmentsTwo(data);
+                            if(i==createBean.getRetailChannelItems().size()-1){
+                                if(progressLoadingDialog!=null){
+                                    progressLoadingDialog.dismiss();
+                                }
+                            }
+                        }
+
+                    }
+
+                    @Override
+                    public void onFail(int errCode, String errMsg) {
+                        if(progressLoadingDialog!=null){
+                            progressLoadingDialog.dismiss();
+                        }
+                    }
+                });
+
+    }
+
     public void setBean(){
         if(!Func.IsStringEmpty(jigSalesTarget.getText().toString().trim())){
             createBean.setSalesTarget(Double.parseDouble(jigSalesTarget.getText().toString().trim()));
@@ -1080,6 +1136,9 @@ public class JiuyiRetailChannelNewActivity extends JiuyiActivityBase {
         }
         if(!Func.IsStringEmpty(jigRemark.getText().toString().trim())){
             createBean.setRemark(jigRemark.getText().toString().trim());
+        }
+        if(!Func.IsStringEmpty(jigRemarkCompletion.getText().toString().trim())){
+            createBean.setRemarkCompletion(jigRemarkCompletion.getText().toString().trim());
         }
         if(retailChannelItemsBeanList !=null && retailChannelItemsBeanList.size()>0){
             createBean.setRetailChannelItems(retailChannelItemsBeanList);

@@ -195,6 +195,16 @@ public class ChannelDevelopBean {
         private long developmentProject;
         private String areaNumber;
         private String remark;
+
+        public String getRemarkCompletion() {
+            return remarkCompletion;
+        }
+
+        public void setRemarkCompletion(String remarkCompletion) {
+            this.remarkCompletion = remarkCompletion;
+        }
+
+        private String remarkCompletion;//其他事项完成情况
         private long finishVisit;
         private double ompletionRate;
         private NormalOperatorBean.OperatorBeanID operator;

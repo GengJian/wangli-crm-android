@@ -28,6 +28,8 @@
         <attr name="isEditable" format="boolean"/>
         <!--向的右箭头图标是否可见-->
         <attr name="jt_visible" format="boolean"/>
+        <attr name="select_picture_num" format="integer"/>
+        <attr name="take_picture_num" format="integer"/>
         <!--item布局的内边距-->
         <attr name="paddingLeft" format="dimension"/>
         <attr name="paddingRight" format="dimension"/>

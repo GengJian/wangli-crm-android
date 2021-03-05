@@ -10,6 +10,7 @@ import com.huawei.android.pushagent.api.PushEventReceiver;
 import com.tencent.imsdk.TIMCallBack;
 import com.tencent.imsdk.TIMManager;
 import com.tencent.imsdk.TIMOfflinePushToken;
+import com.tencent.qcloud.presentation.event.MessageEvent;
 import com.tencent.qcloud.sdk.Constant;
 
 

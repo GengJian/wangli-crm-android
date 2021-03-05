@@ -12,7 +12,9 @@ import android.os.Environment;
 import android.support.annotation.RequiresApi;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
+import android.text.Editable;
 import android.text.InputType;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -69,15 +71,22 @@ import java.util.Set;
 
 import commonlyused.adapter.NewMarketClientMutiAdapter;
 import commonlyused.adapter.NewProjectMutiAdapter;
+import commonlyused.adapter.NewRetailChannelMutiAdapter;
+import commonlyused.adapter.NewSignIntentMutiAdapter;
 import commonlyused.adapter.NewUnfulProjectMutiAdapter;
+import commonlyused.adapter.NewVisitIntentMutiAdapter;
+import commonlyused.bean.ChannelDevelopBean;
+import commonlyused.bean.JiuyiRetailChannelBean;
 import commonlyused.bean.MarketEngineeringBean;
 import commonlyused.bean.NormalOperatorBean;
+import commonlyused.bean.PlanTargetBean;
 import commonlyused.bean.PlanTargetProvinceBrandBean;
 import commonlyused.bean.ProvinceAndBrand;
 import commonlyused.bean.ProvinceProjectBean;
 import commonlyused.bean.SumActualShipAndDayBean;
 import commonlyused.bean.SumActualShipmentBean;
 import customer.Utils.ViewOperatorType;
+import customer.activity.JiuyiCustomerSelectActivity;
 import customer.entity.AttachmentBean;
 import customer.entity.Media;
 import customer.entity.MemberBeanID;
@@ -111,6 +120,8 @@ public class JiuyiMarketEngineerNewActivity extends JiuyiActivityBase {
     private JiuyiItemGroup jigActualVisit;
     private JiuyiItemGroup jigDate,jigWorkPlanDate;
     private JiuyiBigTextGroup jigRemark;
+    private JiuyiBigTextGroup jigRemarkCompletion;
+
     private SwipeMenuRecyclerView rvDetaillist, rv_unfuldetaillist,rv_clientdetaillist;
 
     private JiuyiAttachment ahAttach;
@@ -228,6 +239,14 @@ public class JiuyiMarketEngineerNewActivity extends JiuyiActivityBase {
             rv_signnew.setVisibility(View.GONE);
             rv_clientnew.setVisibility(View.GONE);
             disableSubControls(ll_content);
+        }else{
+            jigRemark.setEnabled(true);
+            jigRemark.contentEdt.setEnabled(true);
+            jigRemark.contentEdt.setClickable(true);
+
+            jigRemarkCompletion.setEnabled(true);
+            jigRemarkCompletion.contentEdt.setEnabled(true);
+            jigRemarkCompletion.contentEdt.setClickable(true);
         }
 
     }
@@ -362,7 +381,7 @@ public class JiuyiMarketEngineerNewActivity extends JiuyiActivityBase {
         jigDate = (JiuyiItemGroup) mBodyLayout.findViewById(R.id.jig_date);
         jigWorkPlanDate = (JiuyiItemGroup) mBodyLayout.findViewById(R.id.jig_workplandate);
         jigRemark = (JiuyiBigTextGroup) mBodyLayout.findViewById(R.id.jig_remark);
-
+        jigRemarkCompletion = (JiuyiBigTextGroup) mBodyLayout.findViewById(R.id.jig_remark_result);
 
         jigWorkPlanDate.setItemOnClickListener(new JiuyiItemGroup.ItemOnClickListener() {
             @Override
@@ -920,6 +939,10 @@ public class JiuyiMarketEngineerNewActivity extends JiuyiActivityBase {
             startDialog(DialogID.DialogDoNothing, "", "客户不能空！", JiuyiDialogBase.Dialog_Type_Yes, null);
             return false;
         }
+        if(!Func.IsStringEmpty(jigRemark.getText().toString().trim()) && Func.IsStringEmpty(jigRemarkCompletion.getText().toString().trim())){
+            startDialog(DialogID.DialogDoNothing, "", "请填写其他事项完成情况！", JiuyiDialogBase.Dialog_Type_Yes, null);
+            return false;
+        }
 //        if(menuAdapter!=null && menuAdapter.mViewTypeBeanList.size()<3){
 //            startDialog(DialogID.DialogDoNothing, "", "拜访意向客户不能少于3家！", JiuyiDialogBase.Dialog_Type_Yes, null);
 //            return false;
@@ -1017,6 +1040,9 @@ public class JiuyiMarketEngineerNewActivity extends JiuyiActivityBase {
                             if(!Func.IsStringEmpty(contentBean.getRemark())){
                                 jigRemark.setText(contentBean.getRemark());
                             }
+                            if(!Func.IsStringEmpty(contentBean.getRemarkCompletion())){
+                                jigRemarkCompletion.setText(contentBean.getRemarkCompletion());
+                            }
                             if(!Func.IsStringEmpty(contentBean.getFollowUpReportingProject())){
                                 jig_followUpReportingProject.setText(contentBean.getFollowUpReportingProject());
                             }
@@ -1113,6 +1139,9 @@ public class JiuyiMarketEngineerNewActivity extends JiuyiActivityBase {
                             if(!Func.IsStringEmpty(contentBean.getRemark())){
                                 jigRemark.setText(contentBean.getRemark());
                             }
+                            if(!Func.IsStringEmpty(contentBean.getRemarkCompletion())){
+                                jigRemarkCompletion.setText(contentBean.getRemarkCompletion());
+                            }
                             if(!Func.IsStringEmpty(contentBean.getFollowUpReportingProject())){
                                 jig_followUpReportingProject.setText(contentBean.getFollowUpReportingProject());
                             }
@@ -1186,6 +1215,9 @@ public class JiuyiMarketEngineerNewActivity extends JiuyiActivityBase {
         }
         if(!Func.IsStringEmpty(jigRemark.getText().toString().trim())){
             createBean.setRemark(jigRemark.getText().toString().trim());
+        }
+        if(!Func.IsStringEmpty(jigRemarkCompletion.getText().toString().trim())){
+            createBean.setRemarkCompletion(jigRemarkCompletion.getText().toString().trim());
         }
         if(!Func.IsStringEmpty(jig_followUpReportingProject.getText().toString().trim())){
             createBean.setFollowUpReportingProject(jig_followUpReportingProject.getText().toString().trim());

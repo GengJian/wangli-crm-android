@@ -199,6 +199,7 @@ public class MarketNengChengBean {
         private double cumulativeShipments;
         private double actualShipment;
         private String remark;
+        private String remarkCompletion;//其他事项完成情况
         private double completionRate;
         private double ompletionRate;
         private NormalOperatorBean.OperatorBeanID operator;
@@ -310,8 +311,17 @@ public class MarketNengChengBean {
             this.actualShipment = actualShipment;
         }
 
+        public String getRemarkCompletion() {
+            return remarkCompletion;
+        }
+
+        public void setRemarkCompletion(String remarkCompletion) {
+            this.remarkCompletion = remarkCompletion;
+        }
+
         public String getRemark() {
             return remark;
+
         }
 
         public void setRemark(String remark) {
@@ -1112,6 +1122,7 @@ public class MarketNengChengBean {
                 createdBy = in.readString();
                 monopoly = in.readByte() != 0;
                 attachments = in.createTypedArrayList(AttachmentBean.CREATOR);
+                attachmentsTwo = in.createTypedArrayList(AttachmentBean.CREATOR);
                 member = in.readParcelable(MemberBeanID.class.getClassLoader());
                 comparativeSales = in.readByte() != 0;
                 id = in.readLong();
@@ -1141,6 +1152,16 @@ public class MarketNengChengBean {
             }
 
             private List<AttachmentBean> attachments;
+
+            public List<AttachmentBean> getAttachmentsTwo() {
+                return attachmentsTwo;
+            }
+
+            public void setAttachmentsTwo(List<AttachmentBean> attachmentsTwo) {
+                this.attachmentsTwo = attachmentsTwo;
+            }
+
+            private List<AttachmentBean> attachmentsTwo;
 
 
 
@@ -1289,6 +1310,7 @@ public class MarketNengChengBean {
                 dest.writeString(createdBy);
                 dest.writeByte((byte) (monopoly ? 1 : 0));
                 dest.writeTypedList(attachments);
+                dest.writeTypedList(attachmentsTwo);
                 dest.writeParcelable(member, flags);
                 dest.writeByte((byte) (comparativeSales ? 1 : 0));
                 dest.writeLong(id);

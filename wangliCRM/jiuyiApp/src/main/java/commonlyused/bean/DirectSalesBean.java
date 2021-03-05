@@ -206,6 +206,16 @@ public class DirectSalesBean {
         private double expectReceivedPayments;
         private String areaNumber;
         private String remark;
+
+        public String getRemarkCompletion() {
+            return remarkCompletion;
+        }
+
+        public void setRemarkCompletion(String remarkCompletion) {
+            this.remarkCompletion = remarkCompletion;
+        }
+
+        private String remarkCompletion;//其他事项完成情况
         private double actualReceivedPayments;
         private double ompletionRate;
         private NormalOperatorBean.OperatorBeanID operator;

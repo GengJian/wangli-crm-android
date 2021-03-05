@@ -1,9 +1,10 @@
 package commonlyused.bean;
 
 
-import java.util.Set;
-
+import customer.entity.BrandBean;
 import customer.entity.ProvinceBean;
+
+import java.util.Set;
 
 /**
  * @author: zhengss

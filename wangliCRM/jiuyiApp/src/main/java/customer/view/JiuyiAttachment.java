@@ -71,15 +71,17 @@ public class JiuyiAttachment extends FrameLayout implements View.OnClickListener
     private LinearLayout itemGroupLayout; //组合控件的布局
     private TextView tvCount; //附件数量
     protected RecyclerView noScrollGridView;
-    protected static final int SELECT_PICTURE = 1500;
+
 
     private ItemOnClickListener itemOnClickListener; //Item的点击事件
 
     public CommonPictureAdapter adapter;
     protected SelectPicPopupWindow menuWindow;
     protected String filePath;
-
+    protected static final int SELECT_PICTURE = 1500;
     protected static final int TAKE_PICTURE = 1000;
+    private  int SELECT_PICTURE_NUM=1500;
+    private  int TAKE_PICTURE_NUM=1000;
 
     public ArrayList<Media> getMediaArrayList() {
         return mediaArrayList;
@@ -190,7 +192,7 @@ public class JiuyiAttachment extends FrameLayout implements View.OnClickListener
                             if(mediaArrayList!=null && mediaArrayList.size()>0 ){
                                 intent.putExtra(PickerConfig.DEFAULT_SELECTED_LIST,mediaArrayList); //可以设置默认选中的照片(非必填参数)
                             }
-                            Rc.getIns().getBaseCallTopCallBack().getCurrentActivity().startActivityForResult(intent,SELECT_PICTURE);
+                            Rc.getIns().getBaseCallTopCallBack().getCurrentActivity().startActivityForResult(intent,SELECT_PICTURE_NUM);
                         }
                     });
 
@@ -223,7 +225,7 @@ public class JiuyiAttachment extends FrameLayout implements View.OnClickListener
         // 启动Camera
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
-        Rc.getIns().getBaseCallTopCallBack().getCurrentActivity().startActivityForResult(intent, TAKE_PICTURE);
+        Rc.getIns().getBaseCallTopCallBack().getCurrentActivity().startActivityForResult(intent, TAKE_PICTURE_NUM);
     }
 
 
@@ -263,6 +265,8 @@ public class JiuyiAttachment extends FrameLayout implements View.OnClickListener
         boolean isEditable = typedArray.getBoolean(R.styleable.ItemGroup_isEditable, true);
         //向右的箭头图标是否可见，默认可见
         boolean showJtIcon = typedArray.getBoolean(R.styleable.ItemGroup_jt_visible, true);
+        SELECT_PICTURE_NUM = typedArray.getColor(R.styleable.ItemGroup_select_picture_num, 1500);
+        TAKE_PICTURE_NUM = typedArray.getColor(R.styleable.ItemGroup_take_picture_num, 1000);
         typedArray.recycle();
 
         //设置数据

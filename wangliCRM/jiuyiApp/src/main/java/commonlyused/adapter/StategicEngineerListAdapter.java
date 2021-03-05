@@ -12,6 +12,7 @@ import com.wanglicrm.android.R;
 
 import java.util.List;
 
+import commonlyused.bean.MarketEngineeringBean;
 import commonlyused.bean.StategicEngineeringBean;
 
 

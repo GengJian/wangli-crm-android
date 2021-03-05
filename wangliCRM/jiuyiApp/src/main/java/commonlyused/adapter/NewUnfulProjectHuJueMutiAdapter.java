@@ -27,6 +27,7 @@ import com.wanglicrm.android.R;
 
 import java.util.List;
 
+import commonlyused.bean.MarketEngineeringBean;
 import commonlyused.bean.MarketHuaJueBean;
 import customer.listener.OnItemClickListener;
 

@@ -13,6 +13,7 @@ import com.wanglicrm.android.R;
 import java.util.List;
 
 import commonlyused.bean.ChannelDevelopBean;
+import commonlyused.bean.JiuyiRetailChannelBean;
 
 
 public class ChannelDevelopListAdapter extends BaseQuickAdapter<ChannelDevelopBean.ContentBean,BaseViewHolder>  {

@@ -41,6 +41,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:title="是否走访" />
+            <customer.view.JiuyiAttachment
+                android:id="@+id/ah_attach_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:select_picture_num="1100"
+                app:take_picture_num="1200"
+                app:title="0/9" />
             <customer.view.JiuyiToggleButtonGroup
                 android:id="@+id/jig_issell"
                 android:layout_width="match_parent"

@@ -1,38 +1,44 @@
 package commonlyused.activity;
 
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.wanglicrm.android.R;
 import com.common.GsonUtil;
 import com.control.utils.DialogID;
 import com.control.utils.Func;
 import com.control.utils.JiuyiBundleKey;
-import com.control.utils.JiuyiLog;
 import com.control.utils.Pub;
 import com.control.utils.Rc;
 import com.control.utils.Res;
+import com.control.utils.JiuyiLog;
 import com.control.widget.dialog.JiuyiDialogBase;
 import com.control.widget.relativeLayout.JiuyiRelativeLayout;
+import com.google.gson.internal.LinkedTreeMap;
 import com.http.JiuyiHttp;
 import com.http.callback.ACallback;
 import com.jiuyi.app.JiuyiActivityBase;
-import com.wanglicrm.android.R;
+
+import commonlyused.bean.OperatorNodeBean;
+import commonlyused.db.DbHelper;
+import commonlyused.treelist.Node;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import commonlyused.adapter.NormalRecentContactAdapter;
 import commonlyused.adapter.SimpleTreeAdapter;
+import commonlyused.bean.LinkmanBean;
 import commonlyused.bean.NormalDeptBean;
 import commonlyused.bean.NormalOperatorBean;
-import commonlyused.bean.OperatorNodeBean;
 import commonlyused.bean.QueryConditionBean;
-import commonlyused.db.DbHelper;
-import commonlyused.treelist.Node;
 import commonlyused.treelist.OnTreeNodeClickListener;
 
 /**

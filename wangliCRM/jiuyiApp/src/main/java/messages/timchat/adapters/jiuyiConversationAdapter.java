@@ -13,9 +13,9 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.wanglicrm.android.R;
 import com.loader.ILoader;
 import com.loader.LoaderManager;
-import com.wanglicrm.android.R;
 
 import java.util.List;
 

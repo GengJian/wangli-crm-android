@@ -76,6 +76,7 @@ import commonlyused.adapter.NewUnfulProjectHuJueMutiAdapter;
 import commonlyused.adapter.NewVisitIntentMutiAdapter;
 import commonlyused.bean.ChannelDevelopBean;
 import commonlyused.bean.MarketHuaJueBean;
+import commonlyused.bean.MarketNengChengBean;
 import commonlyused.bean.MarketWorkPlanBean;
 import commonlyused.bean.NormalOperatorBean;
 import commonlyused.bean.PlanTargetProvinceBrandBean;
@@ -121,6 +122,8 @@ public class JiuyiFourMarketPlanNewActivity extends JiuyiActivityBase {
 
     private JiuyiItemGroup jig_monthCumulative,jig_signIntent,jig_signactual;
     private JiuyiBigTextGroup jigRemark;
+    private JiuyiBigTextGroup jigRemarkCompletion;
+
     private SwipeMenuRecyclerView rvDetaillist, rv_unfuldetaillist,rv_clientdetaillist;
     private SwipeMenuRecyclerView rv_intentdetaillist,rv_signintentdetaillist;
     private JiuyiBigTextGroup jigUnhandle;
@@ -311,6 +314,13 @@ public class JiuyiFourMarketPlanNewActivity extends JiuyiActivityBase {
             jigUnhandle.contentEdt.setClickable(false);
             jigUnhandle.contentEdt.setEnabled(false);
             jigIscomplete.tb_type.setEnabled(false);
+            jigRemark.setEnabled(true);
+            jigRemark.contentEdt.setEnabled(true);
+            jigRemark.contentEdt.setClickable(true);
+
+            jigRemarkCompletion.setEnabled(true);
+            jigRemarkCompletion.contentEdt.setEnabled(true);
+            jigRemarkCompletion.contentEdt.setClickable(true);
         }else if(operatorType.equals(ViewOperatorType.SPECIAL)){
             mtvcomplete.setVisibility(View.VISIBLE);
 //            rvNew.setVisibility(View.GONE);
@@ -323,6 +333,13 @@ public class JiuyiFourMarketPlanNewActivity extends JiuyiActivityBase {
             jigUnhandle.setClickable(true);
             jigUnhandle.contentEdt.setClickable(true);
             jigUnhandle.contentEdt.setEnabled(true);
+            jigRemark.setEnabled(true);
+            jigRemark.contentEdt.setEnabled(true);
+            jigRemark.contentEdt.setClickable(true);
+
+            jigRemarkCompletion.setEnabled(true);
+            jigRemarkCompletion.contentEdt.setEnabled(true);
+            jigRemarkCompletion.contentEdt.setClickable(true);
         }
 
     }
@@ -590,6 +607,7 @@ public class JiuyiFourMarketPlanNewActivity extends JiuyiActivityBase {
         jigDate = (JiuyiItemGroup) mBodyLayout.findViewById(R.id.jig_date);
         jigWorkPlanDate = (JiuyiItemGroup) mBodyLayout.findViewById(R.id.jig_workplandate);
         jigRemark = (JiuyiBigTextGroup) mBodyLayout.findViewById(R.id.jig_remark);
+        jigRemarkCompletion = (JiuyiBigTextGroup) mBodyLayout.findViewById(R.id.jig_remark_result);
 
 
         jigWorkPlanDate.setItemOnClickListener(new JiuyiItemGroup.ItemOnClickListener() {
@@ -1331,6 +1349,10 @@ public class JiuyiFourMarketPlanNewActivity extends JiuyiActivityBase {
             startDialog(DialogID.DialogDoNothing, "", "请选择走访市场！", JiuyiDialogBase.Dialog_Type_Yes, null);
             return false;
         }
+        if(!Func.IsStringEmpty(jigRemark.getText().toString().trim()) && Func.IsStringEmpty(jigRemarkCompletion.getText().toString().trim())){
+            startDialog(DialogID.DialogDoNothing, "", "请填写其他事项完成情况！", JiuyiDialogBase.Dialog_Type_Yes, null);
+            return false;
+        }
         if(Func.IsStringEmpty(jigWorkPlanDate.getText().toString().trim())){
             startDialog(DialogID.DialogDoNothing, "", "请选择工作计划日期！", JiuyiDialogBase.Dialog_Type_Yes, null);
             return false;
@@ -1470,6 +1492,9 @@ public class JiuyiFourMarketPlanNewActivity extends JiuyiActivityBase {
 //                            }
                             if(!Func.IsStringEmpty(contentBean.getRemark())){
                                 jigRemark.setText(contentBean.getRemark());
+                            }
+                            if(!Func.IsStringEmpty(contentBean.getRemarkCompletion())){
+                                jigRemarkCompletion.setText(contentBean.getRemarkCompletion());
                             }
                             jig_projectedIntent.setText(contentBean.getVisitIntentional()+"");
                             jig_actualIntent.setText(contentBean.getFinishVisit()+"");
@@ -1639,6 +1664,9 @@ public class JiuyiFourMarketPlanNewActivity extends JiuyiActivityBase {
                             if(!Func.IsStringEmpty(contentBean.getRemark())){
                                 jigRemark.setText(contentBean.getRemark());
                             }
+                            if(!Func.IsStringEmpty(contentBean.getRemarkCompletion())){
+                                jigRemarkCompletion.setText(contentBean.getRemarkCompletion());
+                            }
                             jig_projectedIntent.setText(contentBean.getVisitIntentional()+"");
                             jig_actualIntent.setText(contentBean.getFinishVisit()+"");
 
@@ -1680,6 +1708,7 @@ public class JiuyiFourMarketPlanNewActivity extends JiuyiActivityBase {
                                 marketClientMutiAdapter.notifyDataSetChanged();
                                 for(int i=0;i<contentBean.getWorkPlanItems().size();i++){
                                     getDetailAttachment("WORK_PLAN_ITEM",contentBean.getWorkPlanItems().get(i).getId(),i);
+                                    getDetailAttachmentTwo("WORK_PLAN_ITEM_TWO",contentBean.getWorkPlanItems().get(i).getId(),i);
                                 }
                             }else{
                                 if(progressLoadingDialog!=null){
@@ -1784,6 +1813,9 @@ public class JiuyiFourMarketPlanNewActivity extends JiuyiActivityBase {
         }
         if(!Func.IsStringEmpty(jigRemark.getText().toString().trim())){
             createBean.setRemark(jigRemark.getText().toString().trim());
+        }
+        if(!Func.IsStringEmpty(jigRemarkCompletion.getText().toString().trim())){
+            createBean.setRemarkCompletion(jigRemarkCompletion.getText().toString().trim());
         }
 
         if(!Func.IsStringEmpty(jig_projectedIntent.getText().toString().trim())){
@@ -2017,6 +2049,33 @@ public class JiuyiFourMarketPlanNewActivity extends JiuyiActivityBase {
                     public void onSuccess(List<AttachmentBean> data) {
                         if(data!=null){
                             createBean.getWorkPlanItems().get(i).setAttachments(data);
+                            if(i==createBean.getWorkPlanItems().size()-1){
+                                if(progressLoadingDialog!=null){
+                                    progressLoadingDialog.dismiss();
+                                }
+                            }
+                        }
+
+                    }
+
+                    @Override
+                    public void onFail(int errCode, String errMsg) {
+                        if(progressLoadingDialog!=null){
+                            progressLoadingDialog.dismiss();
+                        }
+                    }
+                });
+
+    }
+    private void getDetailAttachmentTwo(String fktype,Long id,int i) {
+        JiuyiHttp.GET("attachment/list/"+fktype+"/"+id)
+                .tag("request_get_")
+                .addHeader("Authorization", Rc.id_tokenparam)
+                .request(new ACallback<List<AttachmentBean>>() {
+                    @Override
+                    public void onSuccess(List<AttachmentBean> data) {
+                        if(data!=null){
+                            createBean.getWorkPlanItems().get(i).setAttachmentsTwo(data);
                             if(i==createBean.getWorkPlanItems().size()-1){
                                 if(progressLoadingDialog!=null){
                                     progressLoadingDialog.dismiss();

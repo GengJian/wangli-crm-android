@@ -4,10 +4,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.wanglicrm.android.R;
 import com.control.widget.recyclerView.BaseQuickAdapter;
 import com.control.widget.recyclerView.BaseViewHolder;
 import com.jiuyi.tools.jiuyiViewUtil;
-import com.wanglicrm.android.R;
 
 import java.util.List;
 

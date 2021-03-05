@@ -439,6 +439,16 @@ public class MarketJinMumenBean {
         private double cumulativeShipments;
         private double actualShipment;
         private String remark;
+
+        public String getRemarkCompletion() {
+            return remarkCompletion;
+        }
+
+        public void setRemarkCompletion(String remarkCompletion) {
+            this.remarkCompletion = remarkCompletion;
+        }
+
+        private String remarkCompletion;//其他事项完成情况
         private double ompletionRate;
         private NormalOperatorBean.OperatorBeanID operator;
         private String cityName;

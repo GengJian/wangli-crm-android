@@ -5,7 +5,6 @@ import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
-
 import com.control.utils.DialogID;
 import com.control.utils.Func;
 import com.control.utils.JiuyiBundleKey;
@@ -13,9 +12,8 @@ import com.control.utils.Pub;
 import com.control.utils.Res;
 import com.control.widget.relativeLayout.JiuyiRelativeLayout;
 import com.jiuyi.app.JiuyiActivityBase;
-
-import commonlyused.fragment.JiuyiPlanListFragment;
 import customer.Utils.ViewOperatorType;
+import commonlyused.fragment.JiuyiPlanListFragment;
 
 /**
  * ****************************************************************

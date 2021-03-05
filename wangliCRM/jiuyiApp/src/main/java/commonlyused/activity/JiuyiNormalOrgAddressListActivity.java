@@ -8,14 +8,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.control.utils.JiuyiBundleKey;
 import com.control.utils.Pub;
 import com.control.utils.Res;
-import com.control.widget.recyclerView.BaseQuickAdapter;
+import com.control.utils.JiuyiBundleKey;
 import com.control.widget.relativeLayout.JiuyiRelativeLayout;
+import com.wanglicrm.android.R;
 import com.jiuyi.app.JiuyiActivityBase;
 import com.jiuyi.tools.PinyinComparator;
-import com.wanglicrm.android.R;
+import com.control.widget.recyclerView.BaseQuickAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

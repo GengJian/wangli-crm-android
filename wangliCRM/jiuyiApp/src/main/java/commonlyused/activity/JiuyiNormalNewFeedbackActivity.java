@@ -27,11 +27,10 @@ import com.control.permission.JiuyiHiPermissionUtil;
 import com.control.shared.JiuyiPasswordLockShared;
 import com.control.utils.Res;
 import com.control.widget.JiuyiButton;
-import com.control.widget.NoScrollGridView;
 import com.control.widget.relativeLayout.JiuyiRelativeLayout;
+import com.wanglicrm.android.R;
 import com.jiuyi.app.JiuyiActivityBase;
 import com.nanchen.compresshelper.CompressHelper;
-import com.wanglicrm.android.R;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -45,6 +44,7 @@ import customer.adapter.PictureAdapter;
 import customer.entity.ImageBean;
 import customer.listener.ItemClickListener;
 import customer.view.Bimp;
+import com.control.widget.NoScrollGridView;
 import customer.view.SelectPicPopupWindow;
 
 /**

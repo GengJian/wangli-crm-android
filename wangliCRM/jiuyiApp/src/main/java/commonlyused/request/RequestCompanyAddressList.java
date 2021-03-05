@@ -4,16 +4,18 @@ import com.common.GsonUtil;
 import com.control.utils.JiuyiLog;
 import com.control.utils.Rc;
 import com.google.gson.internal.LinkedTreeMap;
-import com.http.JiuyiHttp;
 import com.http.callback.ACallback;
+import com.http.JiuyiHttp;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import commonlyused.bean.AppItemBean;
 import commonlyused.bean.NormalDeptBean;
 import commonlyused.bean.NormalOperatorBean;
 import commonlyused.bean.OperatorNodeBean;
 import commonlyused.bean.QueryConditionBean;
+import commonlyused.db.AppItemBeanDao;
 import commonlyused.db.DbHelper;
 import commonlyused.db.OperatorNodeBeanDao;
 import commonlyused.treelist.Node;

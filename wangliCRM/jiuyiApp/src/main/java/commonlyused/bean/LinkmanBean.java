@@ -3,6 +3,8 @@ package commonlyused.bean;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.List;
+
 import customer.entity.SexEnum;
 
 public class LinkmanBean implements Parcelable {

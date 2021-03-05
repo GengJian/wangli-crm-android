@@ -17,13 +17,14 @@ import com.control.utils.Rc;
 import com.control.utils.Res;
 import com.control.widget.dialog.JiuyiDialogBase;
 import com.control.widget.relativeLayout.JiuyiRelativeLayout;
-import com.http.JiuyiHttp;
 import com.http.callback.ACallback;
+import com.http.JiuyiHttp;
+import com.wanglicrm.android.R;
 import com.jiuyi.app.JiuyiActivityBase;
+import com.jiuyi.model.OperatorLoginBean;
 import com.jiuyi.tools.NormalPinyinComparator;
 import com.jiuyi.tools.PinyinUtils;
 import com.jiuyi.tools.SideBar;
-import com.wanglicrm.android.R;
 
 import java.util.ArrayList;
 import java.util.Collections;

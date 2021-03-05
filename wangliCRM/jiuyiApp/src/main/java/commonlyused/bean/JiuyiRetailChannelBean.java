@@ -5,6 +5,8 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.RequiresApi;
 
+import com.control.utils.Func;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -386,6 +388,16 @@ public class JiuyiRetailChannelBean {
         private double cumulativeShipments;
         private double actualShipment;
         private String remark;
+
+        public String getRemarkCompletion() {
+            return remarkCompletion;
+        }
+
+        public void setRemarkCompletion(String remarkCompletion) {
+            this.remarkCompletion = remarkCompletion;
+        }
+
+        private String remarkCompletion;
         private double ompletionRate;
         private NormalOperatorBean.OperatorBeanID operator;
         private String cityName;
@@ -432,6 +444,16 @@ public class JiuyiRetailChannelBean {
 
         private List<AttachmentBean> attachments;
 
+        public List<AttachmentBean> getAttachmentsTwo() {
+            return attachmentsTwo;
+        }
+
+        public void setAttachmentsTwo(List<AttachmentBean> attachmentsTwo) {
+            this.attachmentsTwo = attachmentsTwo;
+        }
+
+        private List<AttachmentBean> attachmentsTwo;
+
 
 
 
@@ -442,6 +464,7 @@ public class JiuyiRetailChannelBean {
 
         private boolean policyProcessAdvocacy;
         private String content;
+
 
         protected RetailChannelItemsBean(Parcel in) {
             policyProcessAdvocacy = in.readByte() != 0;
@@ -460,6 +483,7 @@ public class JiuyiRetailChannelBean {
             complete = in.readByte() != 0;
             train = in.readByte() != 0;
             attachments = in.createTypedArrayList(AttachmentBean.CREATOR);
+            attachmentsTwo = in.createTypedArrayList(AttachmentBean.CREATOR);
         }
 
         public static final Creator<RetailChannelItemsBean> CREATOR = new Creator<RetailChannelItemsBean>() {
@@ -581,32 +605,19 @@ public class JiuyiRetailChannelBean {
         private boolean train=false;
         private List<AttachmentBean> attachments;
 
-
-        @Override
-        public int describeContents() {
-            return 0;
+        public List<AttachmentBean> getAttachmentsTwo() {
+            return attachmentsTwo;
         }
 
-        @Override
-        public void writeToParcel(Parcel dest, int flags) {
-            dest.writeByte((byte) (policyProcessAdvocacy ? 1 : 0));
-            dest.writeString(content);
-            dest.writeString(createdDate);
-            dest.writeString(createdBy);
-            dest.writeByte((byte) (monopoly ? 1 : 0));
-            dest.writeParcelable(member, flags);
-            dest.writeByte((byte) (comparativeSales ? 1 : 0));
-            if (id == null) {
-                dest.writeByte((byte) 0);
-            } else {
-                dest.writeByte((byte) 1);
-                dest.writeLong(id);
-            }
-            dest.writeByte((byte) (visit ? 1 : 0));
-            dest.writeByte((byte) (complete ? 1 : 0));
-            dest.writeByte((byte) (train ? 1 : 0));
-            dest.writeTypedList(attachments);
+        public void setAttachmentsTwo(List<AttachmentBean> attachmentsTwo) {
+            this.attachmentsTwo = attachmentsTwo;
         }
+
+        private List<AttachmentBean> attachmentsTwo;
+
+
+
+
 
         @RequiresApi(api = Build.VERSION_CODES.KITKAT)
         @Override
@@ -634,6 +645,33 @@ public class JiuyiRetailChannelBean {
         public int hashCode() {
 
             return Objects.hash(member.getId());
+        }
+
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+            dest.writeByte((byte) (policyProcessAdvocacy ? 1 : 0));
+            dest.writeString(content);
+            dest.writeString(createdDate);
+            dest.writeString(createdBy);
+            dest.writeByte((byte) (monopoly ? 1 : 0));
+            dest.writeParcelable(member, flags);
+            dest.writeByte((byte) (comparativeSales ? 1 : 0));
+            if (id == null) {
+                dest.writeByte((byte) 0);
+            } else {
+                dest.writeByte((byte) 1);
+                dest.writeLong(id);
+            }
+            dest.writeByte((byte) (visit ? 1 : 0));
+            dest.writeByte((byte) (complete ? 1 : 0));
+            dest.writeByte((byte) (train ? 1 : 0));
+            dest.writeTypedList(attachments);
+            dest.writeTypedList(attachmentsTwo);
         }
     }
 

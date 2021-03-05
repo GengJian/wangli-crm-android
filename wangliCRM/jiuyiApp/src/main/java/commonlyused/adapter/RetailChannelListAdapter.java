@@ -4,15 +4,19 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.control.utils.Func;
+import com.control.utils.JiuyiDateUtil;
 import com.control.widget.recyclerView.BaseQuickAdapter;
 import com.control.widget.recyclerView.BaseViewHolder;
 import com.jiuyi.tools.BGAProgressBar;
+import com.jiuyi.tools.RoundlProgresWithNum;
 import com.jiuyi.tools.jiuyiViewUtil;
 import com.wanglicrm.android.R;
 
 import java.util.List;
 
 import commonlyused.bean.JiuyiRetailChannelBean;
+import dynamic.Utils.DynamicUtils;
+import dynamic.entity.DyActivityBean;
 
 
 public class RetailChannelListAdapter extends BaseQuickAdapter<JiuyiRetailChannelBean.ContentBean,BaseViewHolder>  {

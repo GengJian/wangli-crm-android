@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Gradle: ./imsdk/libs/HwPush_SDK_V2705.jar">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/imsdk/libs/HwPush_SDK_V2705.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

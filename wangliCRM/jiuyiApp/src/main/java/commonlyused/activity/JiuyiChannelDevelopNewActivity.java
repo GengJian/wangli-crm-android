@@ -12,7 +12,9 @@ import android.os.Environment;
 import android.support.annotation.RequiresApi;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
+import android.text.Editable;
 import android.text.InputType;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -74,8 +76,10 @@ import commonlyused.bean.NormalOperatorBean;
 import commonlyused.bean.PlanTargetBean;
 import commonlyused.bean.PlanTargetProvinceBrandBean;
 import commonlyused.bean.ProvinceAndBrand;
+import commonlyused.bean.SumActualShipAndDayBean;
 import commonlyused.bean.SumActualShipmentBean;
 import customer.Utils.ViewOperatorType;
+import customer.activity.JiuyiCustomerSelectActivity;
 import customer.entity.AttachmentBean;
 import customer.entity.Media;
 import customer.listener.OnItemClickListener;
@@ -108,6 +112,7 @@ public class JiuyiChannelDevelopNewActivity extends JiuyiActivityBase {
     private JiuyiItemGroup jigActualVisit;
     private JiuyiItemGroup jigDate,jigWorkPlanDate;
     private JiuyiBigTextGroup jigRemark;
+    private JiuyiBigTextGroup jigRemarkCompletion;
     private SwipeMenuRecyclerView rvDetaillist,rv_signdetaillist;
 
     private JiuyiAttachment ahAttach;
@@ -220,7 +225,13 @@ public class JiuyiChannelDevelopNewActivity extends JiuyiActivityBase {
             });
 
         }
+        jigRemark.setEnabled(true);
+        jigRemark.contentEdt.setEnabled(true);
+        jigRemark.contentEdt.setClickable(true);
 
+        jigRemarkCompletion.setEnabled(true);
+        jigRemarkCompletion.contentEdt.setEnabled(true);
+        jigRemarkCompletion.contentEdt.setClickable(true);
 
     }
     public void initViews(){
@@ -338,7 +349,7 @@ public class JiuyiChannelDevelopNewActivity extends JiuyiActivityBase {
         jigDate = (JiuyiItemGroup) mBodyLayout.findViewById(R.id.jig_date);
         jigWorkPlanDate = (JiuyiItemGroup) mBodyLayout.findViewById(R.id.jig_workplandate);
         jigRemark = (JiuyiBigTextGroup) mBodyLayout.findViewById(R.id.jig_remark);
-
+        jigRemarkCompletion = (JiuyiBigTextGroup) mBodyLayout.findViewById(R.id.jig_remark_result);
 
         jigWorkPlanDate.setItemOnClickListener(new JiuyiItemGroup.ItemOnClickListener() {
             @Override
@@ -735,6 +746,10 @@ public class JiuyiChannelDevelopNewActivity extends JiuyiActivityBase {
             startDialog(DialogID.DialogDoNothing, "", "请选择工作计划日期！", JiuyiDialogBase.Dialog_Type_Yes, null);
             return false;
         }
+        if(!Func.IsStringEmpty(jigRemark.getText().toString().trim()) && Func.IsStringEmpty(jigRemarkCompletion.getText().toString().trim())){
+            startDialog(DialogID.DialogDoNothing, "", "请填写其他事项完成情况！", JiuyiDialogBase.Dialog_Type_Yes, null);
+            return false;
+        }
         if(Func.IsStringEmpty(jig_cumulativeShipments.getText().toString().trim())){
             startDialog(DialogID.DialogDoNothing, "", "当月累计拜访量不能为空！", JiuyiDialogBase.Dialog_Type_Yes, null);
             return false;
@@ -834,6 +849,9 @@ public class JiuyiChannelDevelopNewActivity extends JiuyiActivityBase {
 //                            }
                             if(!Func.IsStringEmpty(contentBean.getRemark())){
                                 jigRemark.setText(contentBean.getRemark());
+                            }
+                            if(!Func.IsStringEmpty(contentBean.getRemarkCompletion())){
+                                jigRemarkCompletion.setText(contentBean.getRemarkCompletion());
                             }
                             if(contentBean.getVisitIntentions()!=null && contentBean.getVisitIntentions().size()>0){
                                 for(int i=0;i<contentBean.getVisitIntentions().size();i++){
@@ -979,6 +997,9 @@ public class JiuyiChannelDevelopNewActivity extends JiuyiActivityBase {
         }
         if(!Func.IsStringEmpty(jigRemark.getText().toString().trim())){
             createBean.setRemark(jigRemark.getText().toString().trim());
+        }
+        if(!Func.IsStringEmpty(jigRemarkCompletion.getText().toString().trim())){
+            createBean.setRemarkCompletion(jigRemarkCompletion.getText().toString().trim());
         }
         if(visitIntentionsBeans !=null && visitIntentionsBeans.size()>0){
             createBean.setVisitIntentions(visitIntentionsBeans);

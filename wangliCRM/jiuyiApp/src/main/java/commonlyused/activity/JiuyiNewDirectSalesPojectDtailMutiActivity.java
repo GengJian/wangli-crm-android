@@ -21,6 +21,7 @@ import com.jiuyi.app.JiuyiActivityBase;
 import com.wanglicrm.android.R;
 
 import commonlyused.bean.DirectSalesBean;
+import commonlyused.bean.StategicEngineeringBean;
 import customer.Utils.ViewOperatorType;
 import customer.view.JiuyiToggleButtonGroup;
 

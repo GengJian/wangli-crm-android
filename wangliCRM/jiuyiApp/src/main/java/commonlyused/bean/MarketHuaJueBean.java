@@ -442,6 +442,16 @@ public class MarketHuaJueBean {
         private double cumulativeShipments;
         private double actualShipment;
         private String remark;
+        private String remarkCompletion;//其他事项完成情况
+
+        public String getRemarkCompletion() {
+            return remarkCompletion;
+        }
+
+        public void setRemarkCompletion(String remarkCompletion) {
+            this.remarkCompletion = remarkCompletion;
+        }
+
         private double ompletionRate;
         private NormalOperatorBean.OperatorBeanID operator;
         private String cityName;
@@ -669,11 +679,16 @@ public class MarketHuaJueBean {
                 monopoly = in.readByte() != 0;
                 member = in.readParcelable(MemberBeanID.class.getClassLoader());
                 comparativeSales = in.readByte() != 0;
-                id = in.readLong();
+                if (in.readByte() == 0) {
+                    id = null;
+                } else {
+                    id = in.readLong();
+                }
                 visit = in.readByte() != 0;
                 complete = in.readByte() != 0;
                 train = in.readByte() != 0;
                 attachments = in.createTypedArrayList(AttachmentBean.CREATOR);
+                attachmentsTwo = in.createTypedArrayList(AttachmentBean.CREATOR);
             }
 
             public static final Creator<HuaJueItemsBean> CREATOR = new Creator<HuaJueItemsBean>() {
@@ -831,36 +846,20 @@ public class MarketHuaJueBean {
             private boolean train;
             private List<AttachmentBean> attachments;
 
-
-            @Override
-            public int describeContents() {
-                return 0;
+            public List<AttachmentBean> getAttachmentsTwo() {
+                return attachmentsTwo;
             }
 
-            @Override
-            public void writeToParcel(Parcel dest, int flags) {
-                dest.writeParcelable(memberAttribute, flags);
-                dest.writeString(lastModifiedDate);
-                dest.writeString(engineerProcessingMatters);
-                dest.writeString(lastModifiedBy);
-                dest.writeByte((byte) (policyProcessAdvocacy ? 1 : 0));
-                dest.writeString(content);
-                dest.writeString(createdDate);
-                dest.writeString(createdBy);
-                dest.writeByte((byte) (monopoly ? 1 : 0));
-                dest.writeParcelable(member, flags);
-                dest.writeByte((byte) (comparativeSales ? 1 : 0));
-                if (id == null) {
-                    dest.writeByte( (byte) 0 );
-                } else {
-                    dest.writeByte( (byte) 1 );
-                    dest.writeLong( id );
-                }
-                dest.writeByte((byte) (visit ? 1 : 0));
-                dest.writeByte((byte) (complete ? 1 : 0));
-                dest.writeByte((byte) (train ? 1 : 0));
-                dest.writeTypedList(attachments);
+            public void setAttachmentsTwo(List<AttachmentBean> attachmentsTwo) {
+                this.attachmentsTwo = attachmentsTwo;
             }
+
+            private List<AttachmentBean> attachmentsTwo;
+
+
+
+
+
             @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
             public boolean equals(Object o) {
@@ -887,6 +886,37 @@ public class MarketHuaJueBean {
             public int hashCode() {
 
                 return Objects.hash(member.getId());
+            }
+
+            @Override
+            public int describeContents() {
+                return 0;
+            }
+
+            @Override
+            public void writeToParcel(Parcel dest, int flags) {
+                dest.writeParcelable(memberAttribute, flags);
+                dest.writeString(lastModifiedDate);
+                dest.writeString(engineerProcessingMatters);
+                dest.writeString(lastModifiedBy);
+                dest.writeByte((byte) (policyProcessAdvocacy ? 1 : 0));
+                dest.writeString(content);
+                dest.writeString(createdDate);
+                dest.writeString(createdBy);
+                dest.writeByte((byte) (monopoly ? 1 : 0));
+                dest.writeParcelable(member, flags);
+                dest.writeByte((byte) (comparativeSales ? 1 : 0));
+                if (id == null) {
+                    dest.writeByte((byte) 0);
+                } else {
+                    dest.writeByte((byte) 1);
+                    dest.writeLong(id);
+                }
+                dest.writeByte((byte) (visit ? 1 : 0));
+                dest.writeByte((byte) (complete ? 1 : 0));
+                dest.writeByte((byte) (train ? 1 : 0));
+                dest.writeTypedList(attachments);
+                dest.writeTypedList(attachmentsTwo);
             }
         }
 

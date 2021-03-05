@@ -12,17 +12,18 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+
 import com.control.utils.Func;
 import com.control.utils.JiuyiBundleKey;
 import com.control.utils.Pub;
 import com.control.utils.Rc;
 import com.control.utils.Res;
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.wanglicrm.android.R;
 import com.jiuyi.app.JiuyiMainApplication;
 import com.loader.ILoader;
 import com.loader.LoaderManager;
 import com.tencent.qcloud.sdk.Constant;
-import com.wanglicrm.android.R;
 
 import java.util.List;
 

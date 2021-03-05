@@ -13,12 +13,12 @@ import com.control.utils.JiuyiBundleKey;
 import com.control.utils.Pub;
 import com.control.utils.Rc;
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.wanglicrm.android.R;
 import com.jiuyi.app.JiuyiMainApplication;
 import com.loader.ILoader;
 import com.loader.LoaderManager;
 import com.tencent.qcloud.sdk.Constant;
 import com.umeng.analytics.MobclickAgent;
-import com.wanglicrm.android.R;
 
 import java.util.List;
 

@@ -28,6 +28,7 @@ import com.wanglicrm.android.R;
 import java.util.List;
 
 import commonlyused.bean.DirectSalesBean;
+import commonlyused.bean.StategicEngineeringBean;
 import customer.listener.OnItemClickListener;
 
 /**

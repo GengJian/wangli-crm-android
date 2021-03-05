@@ -69,14 +69,19 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import commonlyused.adapter.NewSignIntentMutiAdapter;
 import commonlyused.adapter.NewStrateItemMutiAdapter;
+import commonlyused.adapter.NewVisitIntentMutiAdapter;
+import commonlyused.bean.ChannelDevelopBean;
 import commonlyused.bean.NormalOperatorBean;
+import commonlyused.bean.PlanTargetBean;
 import commonlyused.bean.PlanTargetProvinceBrandBean;
 import commonlyused.bean.ProvinceAndBrand;
 import commonlyused.bean.StategicEngineeringBean;
 import commonlyused.bean.SumActualShipAndDayBean;
 import commonlyused.bean.SumActualShipmentBean;
 import customer.Utils.ViewOperatorType;
+import customer.activity.JiuyiCustomerSelectActivity;
 import customer.entity.AttachmentBean;
 import customer.entity.Media;
 import customer.listener.OnItemClickListener;
@@ -109,6 +114,7 @@ public class JiuyiStrategicEngineeringNewActivity extends JiuyiActivityBase {
     private JiuyiItemGroup jigActualVisit;
     private JiuyiItemGroup jigDate,jigWorkPlanDate;
     private JiuyiBigTextGroup jigRemark;
+    private JiuyiBigTextGroup jigRemarkCompletion;
     private SwipeMenuRecyclerView rv_signdetaillist;
 
     private JiuyiAttachment ahAttach;
@@ -220,6 +226,21 @@ public class JiuyiStrategicEngineeringNewActivity extends JiuyiActivityBase {
             mtvcomplete.setVisibility(View.VISIBLE);
 //            rv_signnew.setVisibility(View.GONE);
             disableSubControls(ll_content);
+            jigRemark.setEnabled(true);
+            jigRemark.contentEdt.setEnabled(true);
+            jigRemark.contentEdt.setClickable(true);
+
+            jigRemarkCompletion.setEnabled(true);
+            jigRemarkCompletion.contentEdt.setEnabled(true);
+            jigRemarkCompletion.contentEdt.setClickable(true);
+        }else{
+            jigRemark.setEnabled(true);
+            jigRemark.contentEdt.setEnabled(true);
+            jigRemark.contentEdt.setClickable(true);
+
+            jigRemarkCompletion.setEnabled(true);
+            jigRemarkCompletion.contentEdt.setEnabled(true);
+            jigRemarkCompletion.contentEdt.setClickable(true);
         }
 
 
@@ -340,6 +361,7 @@ public class JiuyiStrategicEngineeringNewActivity extends JiuyiActivityBase {
         jigDate = (JiuyiItemGroup) mBodyLayout.findViewById(R.id.jig_date);
         jigWorkPlanDate = (JiuyiItemGroup) mBodyLayout.findViewById(R.id.jig_workplandate);
         jigRemark = (JiuyiBigTextGroup) mBodyLayout.findViewById(R.id.jig_remark);
+        jigRemarkCompletion = (JiuyiBigTextGroup) mBodyLayout.findViewById(R.id.jig_remark_result);
 
 
         jigWorkPlanDate.setItemOnClickListener(new JiuyiItemGroup.ItemOnClickListener() {
@@ -642,6 +664,10 @@ public class JiuyiStrategicEngineeringNewActivity extends JiuyiActivityBase {
             startDialog(DialogID.DialogDoNothing, "", "请选择工作计划日期！", JiuyiDialogBase.Dialog_Type_Yes, null);
             return false;
         }
+        if(!Func.IsStringEmpty(jigRemark.getText().toString().trim()) && Func.IsStringEmpty(jigRemarkCompletion.getText().toString().trim())){
+            startDialog(DialogID.DialogDoNothing, "", "请填写其他事项完成情况！", JiuyiDialogBase.Dialog_Type_Yes, null);
+            return false;
+        }
         if(operatorType.equals(ViewOperatorType.SPECIAL)){
             if(strateItemMutiAdapter!=null&&strateItemMutiAdapter.mViewTypeBeanList!=null && strateItemMutiAdapter.mViewTypeBeanList.size()>0){
                 for(int i=0;i<strateItemMutiAdapter.mViewTypeBeanList.size();i++){
@@ -745,6 +771,9 @@ public class JiuyiStrategicEngineeringNewActivity extends JiuyiActivityBase {
                             if(!Func.IsStringEmpty(contentBean.getRemark())){
                                 jigRemark.setText(contentBean.getRemark());
                             }
+                            if(!Func.IsStringEmpty(contentBean.getRemarkCompletion())){
+                                jigRemarkCompletion.setText(contentBean.getRemarkCompletion());
+                            }
 
                             if(contentBean.getStrategicEngineeringItems()!=null && contentBean.getStrategicEngineeringItems().size()>0){
                                 for(int i=0;i<contentBean.getStrategicEngineeringItems().size();i++){
@@ -819,6 +848,9 @@ public class JiuyiStrategicEngineeringNewActivity extends JiuyiActivityBase {
                             if(!Func.IsStringEmpty(contentBean.getRemark())){
                                 jigRemark.setText(contentBean.getRemark());
                             }
+                            if(!Func.IsStringEmpty(contentBean.getRemarkCompletion())){
+                                jigRemarkCompletion.setText(contentBean.getRemarkCompletion());
+                            }
 
                             if(contentBean.getStrategicEngineeringItems()!=null && contentBean.getStrategicEngineeringItems().size()>0){
                                 strategicEngineeringItemsBeans =contentBean.getStrategicEngineeringItems();
@@ -877,6 +909,9 @@ public class JiuyiStrategicEngineeringNewActivity extends JiuyiActivityBase {
         }
         if(!Func.IsStringEmpty(jigRemark.getText().toString().trim())){
             createBean.setRemark(jigRemark.getText().toString().trim());
+        }
+        if(!Func.IsStringEmpty(jigRemarkCompletion.getText().toString().trim())){
+            createBean.setRemarkCompletion(jigRemarkCompletion.getText().toString().trim());
         }
         if(strategicEngineeringItemsBeans !=null && strategicEngineeringItemsBeans.size()>0){
             createBean.setStrategicEngineeringItems(strategicEngineeringItemsBeans);

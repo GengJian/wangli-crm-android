@@ -12,7 +12,9 @@ import android.os.Environment;
 import android.support.annotation.RequiresApi;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
+import android.text.Editable;
 import android.text.InputType;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -69,17 +71,23 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import commonlyused.adapter.NewMarketClientMutiAdapter;
 import commonlyused.adapter.NewMarketHuaJueMutiAdapter;
 import commonlyused.adapter.NewProjectHuaJueMutiAdapter;
+import commonlyused.adapter.NewProjectMutiAdapter;
 import commonlyused.adapter.NewUnfulProjectHuJueMutiAdapter;
+import commonlyused.adapter.NewUnfulProjectMutiAdapter;
+import commonlyused.bean.MarketEngineeringBean;
 import commonlyused.bean.MarketHuaJueBean;
 import commonlyused.bean.NormalOperatorBean;
+import commonlyused.bean.PlanTargetBean;
 import commonlyused.bean.PlanTargetProvinceBrandBean;
 import commonlyused.bean.ProvinceAndBrand;
 import commonlyused.bean.ProvinceProjectBean;
 import commonlyused.bean.SumActualShipAndDayBean;
 import commonlyused.bean.SumActualShipmentBean;
 import customer.Utils.ViewOperatorType;
+import customer.activity.JiuyiCustomerSelectActivity;
 import customer.entity.AttachmentBean;
 import customer.entity.Media;
 import customer.entity.MemberBeanID;
@@ -114,6 +122,7 @@ public class JiuyiHuaJueMarketNewActivity extends JiuyiActivityBase {
     private JiuyiItemGroup jigActualVisit;
     private JiuyiItemGroup jigDate,jigWorkPlanDate;
     private JiuyiBigTextGroup jigRemark;
+    private JiuyiBigTextGroup jigRemarkCompletion;
     private SwipeMenuRecyclerView rvDetaillist, rv_unfuldetaillist,rv_clientdetaillist;
     private JiuyiBigTextGroup jigUnhandle;
     private JiuyiItemGroup jigActivity;
@@ -281,6 +290,13 @@ public class JiuyiHuaJueMarketNewActivity extends JiuyiActivityBase {
             jigUnhandle.contentEdt.setClickable(false);
             jigUnhandle.contentEdt.setEnabled(false);
             jigIscomplete.tb_type.setEnabled(false);
+            jigRemark.setEnabled(true);
+            jigRemark.contentEdt.setEnabled(true);
+            jigRemark.contentEdt.setClickable(true);
+
+            jigRemarkCompletion.setEnabled(true);
+            jigRemarkCompletion.contentEdt.setEnabled(true);
+            jigRemarkCompletion.contentEdt.setClickable(true);
         }else if(operatorType.equals(ViewOperatorType.SPECIAL)){
             mtvcomplete.setVisibility(View.VISIBLE);
 //            rvNew.setVisibility(View.GONE);
@@ -291,6 +307,13 @@ public class JiuyiHuaJueMarketNewActivity extends JiuyiActivityBase {
             jigUnhandle.setClickable(true);
             jigUnhandle.contentEdt.setClickable(true);
             jigUnhandle.contentEdt.setEnabled(true);
+            jigRemark.setEnabled(true);
+            jigRemark.contentEdt.setEnabled(true);
+            jigRemark.contentEdt.setClickable(true);
+
+            jigRemarkCompletion.setEnabled(true);
+            jigRemarkCompletion.contentEdt.setEnabled(true);
+            jigRemarkCompletion.contentEdt.setClickable(true);
         }
 
     }
@@ -437,7 +460,7 @@ public class JiuyiHuaJueMarketNewActivity extends JiuyiActivityBase {
         jigDate = (JiuyiItemGroup) mBodyLayout.findViewById(R.id.jig_date);
         jigWorkPlanDate = (JiuyiItemGroup) mBodyLayout.findViewById(R.id.jig_workplandate);
         jigRemark = (JiuyiBigTextGroup) mBodyLayout.findViewById(R.id.jig_remark);
-
+        jigRemarkCompletion = (JiuyiBigTextGroup) mBodyLayout.findViewById(R.id.jig_remark_result);
 
         jigWorkPlanDate.setItemOnClickListener(new JiuyiItemGroup.ItemOnClickListener() {
             @Override
@@ -990,6 +1013,10 @@ public class JiuyiHuaJueMarketNewActivity extends JiuyiActivityBase {
             startDialog(DialogID.DialogDoNothing, "", "请选择工作计划日期！", JiuyiDialogBase.Dialog_Type_Yes, null);
             return false;
         }
+        if(!Func.IsStringEmpty(jigRemark.getText().toString().trim()) && Func.IsStringEmpty(jigRemarkCompletion.getText().toString().trim())){
+            startDialog(DialogID.DialogDoNothing, "", "请填写其他事项完成情况！", JiuyiDialogBase.Dialog_Type_Yes, null);
+            return false;
+        }
         if(marketClientMutiAdapter!=null){
             if(marketClientMutiAdapter.mViewTypeBeanList.size()<1){
                 startDialog(DialogID.DialogDoNothing, "", "客户不能空！", JiuyiDialogBase.Dialog_Type_Yes, null);
@@ -1113,6 +1140,9 @@ public class JiuyiHuaJueMarketNewActivity extends JiuyiActivityBase {
 //                            }
                             if(!Func.IsStringEmpty(contentBean.getRemark())){
                                 jigRemark.setText(contentBean.getRemark());
+                            }
+                            if(!Func.IsStringEmpty(contentBean.getRemarkCompletion())){
+                                jigRemarkCompletion.setText(contentBean.getRemarkCompletion());
                             }
                             if(!Func.IsStringEmpty(contentBean.getFollowUpReportingProject())){
                                 jig_followUpReportingProject.setText(contentBean.getFollowUpReportingProject());
@@ -1252,6 +1282,9 @@ public class JiuyiHuaJueMarketNewActivity extends JiuyiActivityBase {
                             if(!Func.IsStringEmpty(contentBean.getRemark())){
                                 jigRemark.setText(contentBean.getRemark());
                             }
+                            if(!Func.IsStringEmpty(contentBean.getRemarkCompletion())){
+                                jigRemarkCompletion.setText(contentBean.getRemarkCompletion());
+                            }
                             if(!Func.IsStringEmpty(contentBean.getFollowUpReportingProject())){
                                 jig_followUpReportingProject.setText(contentBean.getFollowUpReportingProject());
                             }
@@ -1275,6 +1308,7 @@ public class JiuyiHuaJueMarketNewActivity extends JiuyiActivityBase {
                                 marketClientMutiAdapter.notifyDataSetChanged();
                                 for(int i=0;i<contentBean.getHuaJueItems().size();i++){
                                     getDetailAttachment("HUA_JUE_ITEM",contentBean.getHuaJueItems().get(i).getId(),i);
+                                    getDetailAttachmentTwo("HUA_JUE_ITEM_TWO",contentBean.getHuaJueItems().get(i).getId(),i);
                                 }
                             }else{
                                 if(progressLoadingDialog!=null){
@@ -1360,6 +1394,9 @@ public class JiuyiHuaJueMarketNewActivity extends JiuyiActivityBase {
         }
         if(!Func.IsStringEmpty(jigRemark.getText().toString().trim())){
             createBean.setRemark(jigRemark.getText().toString().trim());
+        }
+        if(!Func.IsStringEmpty(jigRemarkCompletion.getText().toString().trim())){
+            createBean.setRemarkCompletion(jigRemarkCompletion.getText().toString().trim());
         }
         if(!Func.IsStringEmpty(jig_followUpReportingProject.getText().toString().trim())){
             createBean.setFollowUpReportingProject(jig_followUpReportingProject.getText().toString().trim());
@@ -1529,6 +1566,33 @@ public class JiuyiHuaJueMarketNewActivity extends JiuyiActivityBase {
                     public void onSuccess(List<AttachmentBean> data) {
                         if(data!=null){
                             createBean.getHuaJueItems().get(i).setAttachments(data);
+                            if(i==createBean.getHuaJueItems().size()-1){
+                                if(progressLoadingDialog!=null){
+                                    progressLoadingDialog.dismiss();
+                                }
+                            }
+                        }
+
+                    }
+
+                    @Override
+                    public void onFail(int errCode, String errMsg) {
+                        if(progressLoadingDialog!=null){
+                            progressLoadingDialog.dismiss();
+                        }
+                    }
+                });
+
+    }
+    private void getDetailAttachmentTwo(String fktype,Long id,int i) {
+        JiuyiHttp.GET("attachment/list/"+fktype+"/"+id)
+                .tag("request_get_")
+                .addHeader("Authorization", Rc.id_tokenparam)
+                .request(new ACallback<List<AttachmentBean>>() {
+                    @Override
+                    public void onSuccess(List<AttachmentBean> data) {
+                        if(data!=null){
+                            createBean.getHuaJueItems().get(i).setAttachmentsTwo(data);
                             if(i==createBean.getHuaJueItems().size()-1){
                                 if(progressLoadingDialog!=null){
                                     progressLoadingDialog.dismiss();

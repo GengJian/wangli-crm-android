@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Gradle: ./imsdk/libs/imsdk_sns_ext.jar">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/imsdk/libs/imsdk_sns_ext.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

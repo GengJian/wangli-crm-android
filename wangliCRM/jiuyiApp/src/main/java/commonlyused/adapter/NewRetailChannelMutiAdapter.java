@@ -22,13 +22,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
-import com.recyclerview.swipe.SwipeMenuAdapter;
 import com.wanglicrm.android.R;
+import com.recyclerview.swipe.SwipeMenuAdapter;
 
 import java.util.List;
 
-import commonlyused.bean.JiuyiRetailChannelBean;
 import customer.listener.OnItemClickListener;
+import commonlyused.bean.JiuyiRetailChannelBean;
 
 /**
  *
